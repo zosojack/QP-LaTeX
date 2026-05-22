@@ -1,0 +1,76 @@
+# Build files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+*.xdv
+
+# Intermediate / cache
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.ilg
+*.ind
+*.idx
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.ist
+
+# Latexmk
+.latexmkrc
+
+# minted
+_minted*
+*.pyg
+
+# TikZ / externalization
+*-figure*.pdf
+*.md5
+*.dep
+
+# Compressed files
+*.gz
+
+# Output PDFs (decommenta se NON vuoi versionare i pdf)
+# *.pdf
+
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+# Temporary editors files
+*~
+*.swp
+*.swo
+
+# Aux folders
+aux/
+build/
+out/
+tmp/
+temp/
