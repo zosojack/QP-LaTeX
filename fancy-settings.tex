@@ -1,0 +1,116 @@
+%-----------------------------------------------------------------------------------
+
+%dettagli di lavoro per il pacchetto fancyhdr
+\pagestyle{fancy}
+\rhead{}
+\fancyfoot[C]{\thepage}
+%%% Fine impostazioni fancyhdr.
+
+%\appto{\bibsetup}{\raggedright}
+
+\setlength{\parindent}{0pt} % per rimuovere le indentazioni automatiche
+
+%-----------------------------------------------------------------------------------
+
+% Formato delle intestazioni
+%\titleformat{\chapter}[Bloch]
+%  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
+%\titlespacing{\chapter}{0pt}{-20pt}{25pt}
+
+% Formato delle intestazioni dei capitoli
+\titlespacing{\chapter}{0pt}{-20pt}{30pt} % Margini e spaziatura
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries} % Formattazione del testo
+  {Capitolo \thechapter} % "Capitolo #" allineato a sinistra
+  {20pt} % Spaziatura tra "Capitolo #" e il titolo
+  {\Huge} % Nessun comando aggiuntivo per il titolo
+
+%-----------------------------------------------------------------------------------
+
+% COLORI
+\usepackage{xcolor}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{navy}{HTML}{000080}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=navy,  
+    citecolor=mygreen,     
+    urlcolor=blue    
+}
+
+%===================================================================================
+
+%Comandi nuovi
+\newcommand{\inglese}[1]{\foreignlanguage{english}{\em #1}}
+\DeclareMathOperator{\sgn}{sgn}
+
+% preferisco la linea sotto alla freccia alta per i vettori, ! per ora lascio la freccia su !
+%\renewcommand{\vec}[1]{\underline{\hspace{-0.1em}#1\hspace{-0.05em}}}
+
+% per i differenziali
+\renewcommand{\d}{\text{d}}
+
+% il forall normale è orribile
+\usepackage{stackengine}
+\usepackage{upgreek}
+\renewcommand{\forall}{\stackMath\rotatebox[origin=c]{180}{\stackinset{c}{0.2pt}{c}{-0.65pt}{\scalebox{1.5}[1.0]{-}}{\Uplambda}}\!}
+% stessa cosa vale per nexists
+\renewcommand{\nexists}{\stackMath\rotatebox[origin=c]{180}{\stackinset{c}{0.2pt}{c}{-0.65pt}{\scalebox{1.5}[1.0]{\textbackslash}}{E}}\!}
+
+% il \Re è solo la R, a me piace di più Re
+\renewcommand{\Re}{\mathfrak{Re}}
+\renewcommand{\Im}{\mathfrak{Im}}
+
+% vettori colonna
+\newcommand{\vectorTwo}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+
+%===================================================================================
+\usepackage{fontawesome5}
+
+% CALLOUTS
+\usepackage[most]{tcolorbox}
+
+% Domanda
+\definecolor{questioncolor}{RGB}{72,121,247}
+\newcommand{\question}[2]{%
+    \begin{tcolorbox}[colback=questioncolor!4!white, colframe=questioncolor!95!black, title={\calloutfont {\small{Question}.} #1}]
+        #2
+    \end{tcolorbox}
+}
+
+% Callout generico
+\definecolor{calloutcolor}{RGB}{220,159,81} % cambiarlo
+\newcommand{\callout}[2]{%
+    \begin{tcolorbox}[colback=calloutcolor!3!white, colframe=calloutcolor!99!black, title={\calloutfont #1}]
+        #2
+    \end{tcolorbox}
+}
+% Callout avvertimento
+\definecolor{calloutwarncolor}{RGB}{220,159,81}
+\newcommand{\calloutwarn}[1]{%
+    \begin{tcolorbox}[colback=calloutwarncolor!3!white, colframe=calloutwarncolor!99!black, title={\faExclamationTriangle}]
+        #1
+    \end{tcolorbox}
+}
+% Callout errore
+\definecolor{callouterrorcolor}{RGB}{185,55,43}
+\newcommand{\callouterror}[1]{%
+    \begin{tcolorbox}[colback=callouterrorcolor!3!white, colframe=callouterrorcolor!99!black, title={\faTimesCircle}]
+        #1
+    \end{tcolorbox}
+}
+% Callout informazione
+\definecolor{calloutinfocolor}{RGB}{155,191,57}
+\newcommand{\calloutinfo}[1]{%
+    \begin{tcolorbox}[colback=calloutinfocolor!3!white, colframe=calloutinfocolor!99!black, title={\faInfoCircle}]
+        #1
+    \end{tcolorbox}
+}
+%-----------------------------------------------------------------------------------

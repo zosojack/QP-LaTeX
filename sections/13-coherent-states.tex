@@ -1,0 +1,278 @@
+\section{Coherent states}\label{sec:coherent-states}
+   A coherent state is a linear superposition of number states and this provides the closest approximation of a radiation by a laser.
+   \[\begin{cases}
+       \hat{x}_1 = \frac{1}{2}\cdot (\hat{a}+\hat{a}^+) \\
+       \hat{x}_2 = \frac{i}{2}\cdot (\hat{a}-\hat{a}^+) 
+   \end{cases} \implies \begin{cases}
+       \hat{a} \hspace{0.23cm} = \hat{x}_1+i\hat{x}_2\\
+       \hat{a}^+ = \hat{x}_1-i\hat{x}_2
+   \end{cases} \implies \hat{H} = \hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2}\biggr) =\hbar \omega (\hat{x}_1^2+\hat{x}_2^2)\]
+   We want to relay on photon number state, the basis can be used fo block body radiation or chaotic light too.
+   \[\begin{split}
+       &\hat{n}\cdot\ket{n} = n\cdot \ket{n}\\\\
+       &\braket{\Delta n^2} = \braket{n|\hat{n}\cdot \hat{n}|n}-(\braket{n|\hat{n}|n})^2 = n^2-n^2 = 0\\\\
+       &\hat{H}\cdot \ket{n} = \hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2} \biggr)\cdot \ket{n} =\hbar \omega \biggr(n+\frac{1}{2}\biggr) = \hbar \omega (\hat{x}_1^2+\hat{x}_2^2)\cdot \ket{n} \\
+       &\implies (\hat{x}_1^2+\hat{x}_2^2)\cdot \ket{n} = \biggr(n+\frac{1}{2}\biggr) \cdot \ket{n}
+   \end{split}\]
+   The expectation values are zero $\braket{n|\hat{x}_1|n} = \braket{n|\hat{x}_2|n} = 0$, so we can define:
+   \[X = \cos(\theta)\cdot \hat{x}_1+\sin(\theta) \cdot \hat{x}_2\]
+   where $\theta$ is the phase. If we consider:
+   \begin{itemize}
+       \item \textbf{Classical case:} the quadrature amplitudes oscillates.\\
+       \item \textbf{Number states:} the average instead is always zero and is indipendent on the phase angle.
+   \end{itemize}
+   Photon number state rappresents an exotic state of light in contrast with that of a classical wawe of stable amplitude and phase, it also has a well defined field amplitude, but it doesn't posses an analogue of classical phase. The $\ket{n}$ of well defined photon number has completely random phase, while  a state of well defined phase should have a completely random photon number distribution. This means that a phase is expected to be complementary to the photon number similarly to position and momentum.\\\\
+   The vacuum state $\ket{0}$ for a single mode of frequency $\omega$, when $T<< \frac{\hbar \omega}{k_bT}$ we can think it as the ground state. The first excited state $\ket{1}$ (1 photon) can be obtained with the cascade emission (stream of sodium atom hit by a light) or we can use the parametric down conversion. For excite states $\ket{2}$,$\ket{3}$,... the things became more difficult to obtain experimentally. \\\\
+   Single mode states correspond to a linear superposition of $\ket{n}$, suppose to consider a \textbf{laser light} which has a precise phase. A single mode generates coherent state excitation described by \textbf{COHERENT STATE} $\ket{\alpha}$.\\\\
+   Initially the electric and magnetic field are zero, then by some means, the electric field is displaced to some value $\vec{E} = |\alpha| \ne 0$, this displaces the magnetic field and then again the electric field and so on. This generates a propagating wawe. If we apply this concept in Q.M. framework, we should displace the vacuum state to a value different from zero and induces an oscillating field. \\
+   We introduce the \textbf{Displacement Operator} $\hat{D}$ : acting on $\ket{0}$ and displaces it by a quantity $\alpha \in \mathbb{C}$
+   \[\begin{split}
+       &\ket{\alpha} = \hat{D}(\alpha) \cdot \ket{0}\\
+       &\braket{\alpha|\alpha} = 1\\\\
+       &\hat{D}(\alpha) = e^{(\alpha \hat{a}^+-\alpha^*\hat{a})}\\\\
+       &\textbf{Properties:}\\
+       &\hat{D}^+(\alpha) = \hat{D}^{-1}(\alpha) = \hat{D}(-\alpha) \\
+       &\hat{D}^+\cdot \hat{a}\cdot \hat{D} = \hat{a}+\alpha\\
+       &\hat{D}^+\cdot \hat{a}^+\cdot \hat{D} = \hat{a}^++\alpha^*
+   \end{split}\]
+   $\ket{\alpha}$ are eigenstates of $\hat{a}$:
+   \[\begin{split}
+       \hat{D}^+(\alpha) \cdot \hat{a}\cdot \ket{\alpha} &=\hat{D}^+(\alpha) \cdot \hat{a}\cdot \hat{D}(\alpha)\cdot \ket{0} \\
+       &= (\hat{a}+\alpha)\cdot\ket{0} = 0 + \alpha \ket{0} \\
+       \hat{D}(\alpha)\cdot \hat{D}^+(\alpha) \cdot \hat{a}\cdot \ket{\alpha} &= \hat{D}(\alpha) \cdot \alpha \cdot \ket{0}\\
+       \mathbb{I}\cdot \hat{a}\cdot \ket{\alpha} &= \hat{D}(\alpha) \cdot \alpha \cdot \ket{0}\\\\
+       \implies &\hat{a}\cdot \ket{\alpha} = \alpha \cdot \ket{\alpha}
+   \end{split}\]
+   The expectation value for the photon number in a coherent state:
+   \[\braket{\alpha|\hat{n}|\alpha} = \braket{\alpha|\hat{a}^+\hat{a}|\alpha}=\alpha^*\alpha \cdot \braket{\alpha|\alpha} = |\alpha|^2\]
+   It is the same of classical field:
+   \[\braket{\alpha|\hat{n}|\alpha} = \overline{n}\]
+   Unlike the number state or a classical field that cointains a definite amount of energy, a coherent state doesn't contain a definit amount of photons, this is due to effect that a coherent state is made of superposition of number states:
+   \[\begin{split}
+       &\ket{\alpha} = \sum_{n=0}^{\infty} = \ket{n} \cdot \braket{n|\alpha}\\
+       &\ket{n} = \frac{(\hat{a}^+)^n}{\sqrt{n!}}\cdot \ket{0}\\
+       &\braket{n|n'} = \delta_{n,n'} \hspace{1cm} \sum_{n=0}^{\infty} \ket{n}\bra{n} = \mathbb{I}\\
+       &\implies \braket{n|\alpha} = \frac{\alpha^n}{\sqrt{n!}}\cdot e^{-\frac{1}{2}|\alpha|^2} \hspace{1cm} \text{hence} \hspace{0.2cm}\ket{\alpha} = e^{-\frac{1}{2}|\alpha|^2}\cdot \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}}\cdot \ket{n} 
+   \end{split}\]
+   Howewer notice that coherent states are not hortogonal!\\
+   \[\begin{split}
+       \braket{\alpha_1|\alpha_2} &= e^{-\frac{1}{2}|\alpha_1|^2-\frac{1}{2}|\alpha_2|^2}\cdot \sum_n \frac{\alpha_1^n\cdot \alpha_2^n}{n!}\cdot \braket{n|n}\\
+       & = e^{-\frac{1}{2}|\alpha_1|^2-\frac{1}{2}|\alpha_2|^2+ \alpha_1\alpha_2}\\
+       &=e^{-\frac{1}{2}|\alpha_1-\alpha_2|^2}\ne 0
+   \end{split}\]
+   Howewer for two states with significantly different photon numbers:\\
+   If $|\alpha_1-\alpha_2|>1 \implies \braket{\alpha_1|\alpha_2}\approx 0 \implies$ approximately orthogonal.\\\\
+   The variance of the photon number:
+   \[\begin{split}
+       (\Delta n)^2 &= \braket{\alpha|(\hat{n}-\overline{n})^2|\alpha}\\
+       &=\braket{\alpha|\hat{n}^2|\alpha}-2\overline{n}\braket{\alpha|\hat{n}|\alpha}+\overline{n}^2\braket{\alpha|\alpha}\\
+       &=\braket{\alpha|\hat{n}^2|\alpha} -\overline{n}^2\\\\
+       \hat{n}^2 &=(\hat{a}^+\hat{a})(\hat{a}^+\hat{a})\\
+       &=\hat{a}^+\cdot [\hat{a}\hat{a^+}+(-\hat{a}^+\hat{a}+\hat{a}^+\hat{a})] \cdot \hat{a}\\
+       &= \hat{a}^+\hat{a}+ \hat{a}^+\hat{a}^+\hat{a}\hat{a}\\\\
+       \implies \braket{\alpha|\hat{n}^2|\alpha}&=\braket{\alpha|\hat{a}^+\hat{a}|\alpha}+ \braket{\alpha|\hat{a}^+\hat{a}^+\hat{a}\hat{a}|\alpha} \\
+       &= \alpha^*\alpha \braket{\alpha|\alpha} + \alpha^*\alpha^*\alpha\alpha \braket{\alpha|\alpha} \\
+       &= |\alpha|^2+|\alpha|^4 = \overline{n}+\overline{n}^2\\\\
+       \implies (\Delta n)^2 &= \overline{n}
+   \end{split}\]
+   From the quantization of the field we obtain a \textbf{Poissonian process}.\\\\
+   In fact for a measurement of the number of photons in the field, the probability of detecting $n$ photons is obtained by evaluating:
+   \[ \begin{split}
+       \braket{n|\alpha} &= e^{-\frac{1}{2}|\alpha|^2}\cdot \sum_{m=0}^{\infty} \frac{\alpha^m}{\sqrt{m!}}\cdot \braket{n|m} \\
+       &= e^{-\frac{1}{2}|\alpha|^2}\cdot \sum_{m=0}^{\infty} \frac{\alpha^m}{\sqrt{m!}}\cdot \delta_{n,m}\\
+       &= e^{-\frac{1}{2}|\alpha|^2}\cdot \frac{\alpha^m}{\sqrt{m!}}\\\\
+       \implies P(n) &\equiv |\braket{n|\alpha}|^2 = e^{-|\alpha|^2}\cdot\frac{\alpha^{2m}}{\sqrt{m!}}\\
+       P(n) &= e^{-\overline{n}} \cdot \frac{\overline{n}^m}{m!}
+   \end{split}  \]
+   We obtain the Poissonian distribution with mean $\overline{n}$.\\\\
+   The fractional uncertainty in the number of photons in the coherent state is:
+   \[\frac{\Delta n}{\overline{n}} = \frac{\sqrt{\overline{n}}}{\overline{n}} =\frac{1}{\sqrt{\overline{n}}}\]
+   It decreases with increase in the number mean photon $\overline{n}$.\\\\
+   the coherent states $\ket{\alpha}$ are quantum states close to the classical ones:
+   \begin{enumerate}
+       \item The expectation value of the $\vec{E}$ has the form of a classical field \\
+       \item The fluctuations in the $\vec{E}$ variables are the same as for the vacuum.\\
+       \item The fluctuations in the fractional uncertainty decreases with increasing the averaga photon number. This lead us to classical limit where variance of a stable wawe vanishes. \\
+       \item The states become well localized in phase with increasing of photon number.\\
+   \end{enumerate}
+   \[\begin{split}
+       &\begin{cases}
+          \hat{x}_1 = \sqrt{\frac{m\omega}{2\hbar}}\cdot \hat{q} =\frac{1}{2}(\hat{a}+\hat{a}^+)\\
+        \hat{x}_2 = \sqrt{2m\hbar \omega}\cdot \hat{p} = \frac{1}{2i}(\hat{a}-\hat{a}^+)
+       \end{cases}\\\\
+       &\alpha = |\alpha|\cdot e^{i\theta}\\\\
+       &\implies \braket{\alpha|\hat{x}_1|\alpha} = \frac{1}{2}\braket{\alpha|(\hat{a}^++\hat{a})|\alpha} = \frac{1}{2}(\alpha^*+\alpha) \\
+       &\hspace{2.35cm}= Re(\alpha) = |\alpha|\cdot \cos(\theta)\\\\
+       &\implies \braket{\alpha|\hat{x}_2|\alpha} = \frac{1}{2}i\braket{\alpha|(\hat{a}^+-\hat{a})|\alpha} = \frac{1}{2}(\alpha^*+\alpha) \\
+       &\hspace{2.35cm}= Im(\alpha) = |\alpha|\cdot \sin(\theta)\\
+   \end{split}\]
+   \textbf{A coherent state can be represented with a phasor of length $|\alpha|$ and angle $\theta$}.\\\\
+   If we use:
+   \[\begin{cases}
+       \hat{x}_1^2 = \frac{1}{4}(\hat{a}^+\hat{a}+2\hat{a}^+\hat{a}+\hat{a}\hat{a}+1)\\
+       \hat{x}_2^2 = \frac{1}{4}(-\hat{a}^+\hat{a}+2\hat{a}^+\hat{a}-\hat{a}\hat{a}+1)
+   \end{cases}\]
+   It can be proven that:
+   \[(\Delta \hat{x}_1)^2 = (\Delta \hat{x}_2)^2 = \frac{1}{4}\]
+   In contrast to the variances for the number state, \textbf{the coherent state is a quadrature-minimum uncertainty state for all mean photon numbers $\overline{n} =|\alpha|^2$}.
+   The mean field amplitude associated with the coherent state is an arrow of length $|\alpha| = \sqrt{\overline{n}}$ inclined at an angle $\theta$ to the real axis.
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_68.pdf}
+        \end{figure}
+
+   $|\alpha|^2$ and $\theta$ are uncertain, in contrast with the classical wawe where these quantities are well known.\\\\
+   The length of the phasor is between $\alpha+\frac{1}{4}$ and $\alpha-\frac{1}{4}$:
+   \[ \begin{split}
+       \Delta n &= \biggr(\sqrt{\overline{n}}+\frac{1}{4}\biggr)^2-\biggr(\sqrt{\overline{n}}-\frac{1}{4}\biggr)^2 \\
+       &=\biggr(|\alpha|+\frac{1}{4}\biggr)^2-\biggr(|\alpha|-\frac{1}{4}\biggr)^2 \\
+       &= |\alpha| = \sqrt{\overline{n}}
+   \end{split} \]
+   \textbf{The shot-noise in optical detection is a result of quantum nature of light}.\\\\
+   $\Delta \theta$ subtended by the diameter of the disk at origin. If $|\alpha| >> 1$ the arc rule gives:
+   \[\Delta\theta \approx \frac{\text{uncertainty diameter}}{|\alpha|} =\frac{\frac{1}{2}}{|\alpha|} = \frac{1}{2\sqrt{\overline{n}}}\]
+   We can calculate:
+   \[\Delta n \cdot \Delta \theta = \sqrt{\overline{n}}\cdot \frac{1}{2\sqrt{\overline{n}}} = \frac{1}{2}\]
+   This is a form of an uncertainty relation, but obtained by geometrical argoument. So $\frac{\Delta \overline{n}}{\overline{n}}$ and $\Delta \theta$ vary like $\frac{1}{\alpha}$. When $\overline{n}$ increases, the E.M. wawes becomes better defined both in amplitude and phase and lead us to the classical wawe limit.\\\\
+   So what we see is:
+   \begin{itemize}
+       \item \textbf{Coherent states $\ket{\alpha}$}:
+       Fluctuation are equal in every direction (circle).
+       \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_69.pdf}
+        \end{figure}
+
+       Center is at distance $|\alpha| = \sqrt{\overline{n}}$ at angle $\theta$ above x-axis.\\\\
+       \item \textbf{Vacuum state $\ket{0}$}: 
+       Fluctuation are equal in every direction(circle.)
+       \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_70.pdf}
+        \end{figure}
+
+       $|\alpha |= 0$ and $\Delta \theta$ is large as possible $\Delta \theta = 2\pi$\\\\
+       \textbf{Number state $\ket{n}$}: 
+       We have a circle of radius $n$.
+       \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_71.pdf}
+        \end{figure}
+
+       $\Delta n = 0$, we know the number of photons, $\Delta \theta = 2\pi$  is max 
+   \end{itemize}
+   We recall the operator:
+   \[\begin{cases}
+       \hat{E}_x =A_0 (\hat{a}+\hat{a}^+)\sin(kz)\\
+       \hat{x}_1 = \frac{1}{2}(\hat{a}+\hat{a}^+) 
+   \end{cases} \implies\hat{E}_x = 2A_0\cdot \sin(kz) \cdot \hat{x}_1 \]
+   Let us consider the time evolution of a quantum state for not interacting field:
+   \[\begin{split}
+       &\ket{\alpha} \to \ket{\alpha e^{-i\omega t}}\\
+       \implies &\braket{\alpha e^{-i\omega t}|\hat{x}_1|\alpha e^{-i\omega t}} = \alpha\cdot  \cos(\omega t)\\
+        \implies &\braket{\alpha e^{-i\omega t}|\hat{x}_2|\alpha e^{-i\omega t}} = -\alpha\cdot  \sin(\omega t)\\
+   \end{split}\]
+   In the phasor diagram that means a clockwise rotation of the circle. 
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_72.pdf}
+        \end{figure}
+
+   \[  \braket{\alpha e^{-i\omega t}|\hat{E}_x|\alpha e^{-i\omega t}} = 2A_0\cdot  \sin(\omega t) \cdot \braket{\hat{x}_1} = 2A_0\cdot  \sin(\omega t) \cdot \alpha \cdot \cos(\omega t) \]
+   The time evolution is the projection of the $\braket{\hat{x}_1}$ axis as a function of the time.
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_73.pdf}
+        \end{figure}
+
+   Notice that the greater is the field $\braket{\hat{E}_x} \propto \alpha$, more the field appears classical. Coherent state is the most classical of all the quantum states, the expectation value of field must be very dfferent from the classical ones. In case of number state $\braket{\hat{E}_x} = $.  Howewer we will see that there are states with expectation value different from zero, but the fluctuations are less than a coherent state in one part of the field. These kind of states are called $\textbf{SQUEEZED STATES}$.\\\\
+   We have other minumum uncertainty states with: 
+   \[\Delta x_1^2 < \frac{1}{4} \hspace{1cm} \text{or} \hspace{1cm} \Delta x_2^2 > \frac{1}{4}\]
+   This means that we have less noise in one of the quadrature operators, the circle is \textbf{squeezed} into an ellipse of the same area: 
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_74.pdf}
+        \end{figure}
+
+   While coherent state have poissonian photon number distribution and shot-noise, \textbf{the amplitude-squeezed light will have sub-poissonian statistics with a noise level below the shot-noise.}\\\\
+   These states are rappresented by $(\alpha,\epsilon)$ with $\epsilon = r_s \cdot e^{i2\theta_s}$, where:
+   \begin{itemize}
+       \item $|\alpha|^2$ is the intensity of the state.
+       \item $\theta_s$ is the orientation of the squeezing axis.
+       \item$r_s$ is the degree of squeezing, $\epsilon = 0$ for a coherent state.
+    \end{itemize}
+   We can generate a squeezed state starting from a vacuum state:
+   \[ \ket{\alpha,\epsilon} = \hat{D}(\alpha) \cdot \hat{S}(\epsilon) \cdot \ket{0}\]
+   Where we define the \textbf{squeezing operator}:
+   \[ \hat{S}(\epsilon) = \exp{\biggr(\frac{1}{2}\epsilon^*\hat{a}^2-\frac{1}{2}\epsilon \hat{a}^+\biggr)}\]
+   We can compute:
+   \[\begin{split}
+       &\braket{\alpha,\epsilon|\hat{a}|\alpha,\epsilon} = \alpha\\\\
+       &\braket{\alpha,\epsilon|\hat{a}^2|\alpha,\epsilon} = \alpha^2-cosh(r_s)\cdot sinh(r_s)\cdot e^{2i\theta_s}\\\\
+       &\braket{\alpha,\epsilon|\hat{a}^+\hat{a}|\alpha,\epsilon} = |\alpha|^2+sinh^2(r_s)
+   \end{split}\]
+   The coherent state are obtained for $r_s \to 0$, while the vacuum states are obtained for $\alpha \to 0$.\\\\
+   We can define the rotated quadrature operators for vacuum state:
+   \[\begin{bmatrix}
+       \hat{y}_1\\
+       \hat{y_2}
+   \end{bmatrix} = \begin{bmatrix}
+       cos (\frac{\theta}{2})\hspace{0.7cm}\sin(\frac{\theta}{2})\\
+       -\sin(\frac{\theta}{2}) \hspace{0.7cm} \cos(\frac{\theta}{2})
+   \end{bmatrix} \cdot \begin{bmatrix}
+       \hat{x}_1\\
+       \hat{x}_2
+   \end{bmatrix} \]
+   Or:
+   \[\hat{y}_1+i\hat{y}_2 = (\hat{x}_1+\hat{x}_2)\cdot e^{-i\frac{\theta}{2}}\]
+   The variances should be:
+   \[\begin{cases}
+       \Delta \hat{y}_1^2 = \frac{1}{4}e^{-2r_s}\\
+       \Delta \hat{y}_1^2 = \frac{1}{4}e^{+2r_s}
+   \end{cases}\]
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_75.pdf}
+        \end{figure}
+
+   For a generic squeeze state$\ket{\alpha,\epsilon}$, we have:
+   \[\braket{\hat{y}_1+i\hat{y}_2} = \alpha e^{-i\frac{\theta}{2}}\]
+ \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_76.pdf}
+        \end{figure}
+
+   Error ellipse is the same as for the squeeze vacuum, although displaced by $\alpha$. If we cosider the single mode $\hat{E}$:
+   \[\hat{E}(t) = A_0 \sin(kz)\biggr(\hat{a}e^{-i\omega t}+\hat{a}^+e^{i\omega t}\biggr)\]
+   Where: 
+   \begin{itemize}
+       \item $\omega t = $ phase of the field.
+       \item $\hat{a},\hat{a}^+ =$ operators at $t=0$. 
+   \end{itemize}
+   If we set $X = \omega t$ in terms of quadrature operators
+   \[\hat{E}(x)= 2A_0\cdot \sin(kz) [\hat{x}_1\cdot \cos(x) + \hat{x}_2 \cdot \sin(x)] \]
+   From $[\hat{x}_1,\hat{x}_2] = \frac{i}{2}$ we obtain:
+   \[[\hat{E}(x=0) ,\hat{E}(x)] = i A_0^2 \cdot sin^2(kz)\cdot \sin(x)\]
+   Operators at different phases don't commute!\\
+   If the uncertainty in the field fo $x=0$ is:
+   \[\Delta \hat{E}(0) < \frac{1}{\sqrt{2}}A_0\cdot|\sin(kz)\cdot \sin(x)|\]
+   Then at some other phases we must have:
+   \[\Delta \hat{E}(x) > \frac{1}{\sqrt{2}} A_0\cdot |\sin(kz)\cdot \sin(x)|\]
+   Squeeze light cointains phase-dependent noise that is reduced below that of the vacuum for some phases and enanched above that of the vacuum for others. \\\\
+   Distribution of noise in the $\vec{E}$ for squeezed states is:
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_77.pdf}
+            \caption{}
+        \end{figure}
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_78.pdf}
+            \caption{}
+        \end{figure}
+
+   It can be shown that:
+   
+\input{tables/13-/squeezed-states.tex}
+
+This means that $\Delta n_{A.S.} < \Delta n = \sqrt{\overline{n}}$ and $\Delta \theta_{P.S.} < \Delta \theta$, \textbf{the photon number fluctuation are sub-poissonian in a squeezed state.}

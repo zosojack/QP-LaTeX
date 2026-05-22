@@ -1,0 +1,74 @@
+\section{Quantum entanglement}\label{sec:quantum-entanglement}
+The fondamental goal is to use entangled states to conduct optical test of Q.M., but we need to have single photons in order to conduct interference experiments and teleportation.\\\\
+In Q.M. the observables follow a probability distribution and unless a system is in a eigenvalue of the observable, all we can do is to predict the probability with a particular eigenvalue when the measurement is repeated several times on identically prepared systems.\\\\
+This means that making a measurement \textbf{doesn't reveal a pre-existing value of the observable}. The act of measurement make collapse the wawe function in a way that is not certain.\\\\
+Suppose to prepare a photon as bit 1 in $\ket{V}$ state, a measurement of the diagonal component $\ket{D_+}$ with a beam splitter could return the value $+1$ (transmission) or $-1$ (reflection) with equal probability $50 \%$. Until the measurement is made it simply doesn't have a well defined value of the diagonal component. This reflect the \textbf{ortodox wiew of Q.M.}\\\\
+Instead the \textbf{realist position} consider the Q.M. as incomplete theory where there is some other unknown information which is required to complete the description of the physical system. This lead to the \textbf{Hidden variables theory and EPR paradox 1935}.
+\subsection{EPRB}
+Now we discuss a semplified version of EPR proposed by Bohm:\\\\
+Let us assume to have  a source that emits photon pairs having \textbf{correlated polarizations}, if one is $\ket{H}$ the other one will be $\ket{V}$. We can describe it with the following form:
+\[\ket{\psi} = \frac{1}{\sqrt{2}} \cdot  \biggr(\ket{H,V}-\ket{V,H}\biggr)\]
+the photons are indistinguishable, each on can be equally $\ket{H}$ and $\ket{V}$. This configuration is a classic example of a \textbf{Entangled state:} which is a state that cannot be expressed as a tensor product state ($\ket{H}\otimes  \ket{V}$.\\\\
+Suppose to emit two photons in opposite directions, then we place a B.S. and a photodetector at $10$ m far from the source and measure one of the photon and obtain $\ket{H}$. We immediately know that the other photon measurement will get $\ket{V}$ at any arbitrary distance. \\\\
+In the "realist" point of wiew: the photon we measured was $\ket{H}$ from the moment it was emitted. Instead in the "ortodox" point of wiew: the measurement collapes the wawe function and produces istantaneously the state $\ket{H}$ for one photon and $\ket{V}$ for the other one. This contraddicts the relativistic principle: the information can't be faster than the light velocity.\\\\
+\subsection{Bell experiment}
+Allowed two polarizers to be indipendently adjusted (da capire). We have a polarizer A with $\vec{n}_A$ orientation and a polarizer B with $\vec{n}_B$ orientation. He proposed to compute the average of the product of the polarizations for a given pair of correlated photons and polarizers  orientation.\\\\
+According to Q.M.
+\[P(\vec{n}_A,\vec{n}_B) = -\vec{n}_A\cdot\vec{n}_B\]
+Bell demostrate that this result is incompatible with any local hidenn variable theory. If we suppose to have a third polarizer $\vec{n}_C$, it is possible to derive the \textbf{Bell inequality}
+\[|P(\vec{n}_A,\vec{n}_B)-P(\vec{n}_A,\vec{n}_C)| \leq 1+ P(\vec{n}_B,\vec{n}_C)\]
+And it holds for any local hidden variable theory. Q.M. turns out to be incompatible with Bell's inequality, to show this suppose to have three polarization directions such as: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/15-/Grafico_82.pdf}
+\end{figure}
+
+\[P(\vec{n}_A,\vec{n}_B) =-\vec{n}_A\cdot \vec{n}_B =0 \hspace{1cm} P(\vec{n}_A,\vec{n}_C) = P(\vec{n}_B,\vec{n}_C) = -\frac{\sqrt{2}}{2} = -0.707\]
+It can be easily shown that is inconsistent with Bell's inequality:
+\[|0-\frac{\sqrt{2}}{2}| \leq 1-\frac{\sqrt{2}}{2} \implies \frac{\sqrt{2}}{2} \cancel{\leq} 1-\frac{\sqrt{2}}{2}\]
+if the inequeality is not satisfied, Q.M. is correct and hidden variable theory doesn't hold.\\\\
+\textbf{Experimental test:} suppose to have a structure as 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/15-/Grafico_83.pdf}
+\end{figure}
+
+\begin{itemize}
+    \item The ground state and the excitate state are $J=0$ states, which means that photon pairs have no net angular momentum.\\
+    \item The parity of the energy levels implies polarization correlation.\\
+\end{itemize}
+The set up consists in a beam of $Ca$ atoms which is excite, this generates a pair of photons propagating in opposite directions, each one goes to a PM polarimeter (that measure the linear polarization), a filter $F_i$ (to select photon wawelengths) and then a PMT photomultiplier. Both the photomultipliers are connected to a same electronic system.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/15-/Grafico_84.pdf}
+\end{figure}
+
+if we measure along $\vec{n}_A$ direction, this yelds to $\ket{V}$ if the polarization is parallel to $\vec{n}_A$ or $\ket{H}$ if the polarization is perpendiculare to $\vec{n}_A$. We can define the \textbf{correlation coefficient:}
+\[E(\vec{n}_A,\vec{n}_B) = P_{VV}(\vec{n}_A,\vec{n}_B)+P_{HH}(\vec{n}_A,\vec{n}_B)-P_{VH}(\vec{n}_A,\vec{n}_B)-P_{HV}(\vec{n}_A,\vec{n}_B)\]
+Let us consider a combination for two different orientations $(\vec{n}_A,\vec{n}_A')$ and $(\vec{n}_B,\vec{n}_B')$ of the polarizers:
+\[S = E(\vec{n}_A,\vec{n}_B)-E(\vec{n}_A',\vec{n}_B')+ E(\vec{n}_A,\vec{n}_B')+E(\vec{n}_A',\vec{n}_B)\]
+In relistic local theory wiew the Bell inequality reads:
+\[-2\leq S\leq 2\]
+Instead according to Q.M. for particular orientations of $(\vec{n}_A,\vec{n}_A')$ and $(\vec{n}_B,\vec{n}_B')$, we can obtain:
+\[S = \pm 2\sqrt{2}\]
+this result contraddicts the Bell inequality called \textbf{CSCH inequality}. \\\\
+If we choose a orientation such that:
+\[\vec{n}_A\cdot\vec{n}_B = \vec{n}_A'\cdot\vec{n}_B = \vec{n}_A'\cdot\vec{n}_B' = \cos(\theta) \hspace{1cm} \vec{n}_A\cdot\vec{n}_B' = cos(3\theta)\]
+We obtain:
+\[S = 3\cdot \cos(2\theta)-\cos(6\theta)\]
+it is possible to see that for $0\leq \theta \leq 90$ there are some values of S that violate the Bell's inequality, this show us the M.Q. prediction with:
+\[S = 2.697\pm 0.015 \hspace{1cm} \theta = \qty{22.5}{\degree}\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/15-/Grafico_85.pdf}
+\end{figure}
+
+One must also consider the \textbf{loop-hole problem}. In principle, there is always a possibility that the two measurement stations exchange information during the experiment. To suppress this possibility, the setup can be improved by adding two more photomultipliers and two acousto-optic devices, which change the refractive index of the crystal through sound waves driven by a transducer. The switching time is about $20\,\mathrm{ns}$, which is much smaller than the light travel time between the two stations, $\Delta t \ll L/c$, where $L$ is the distance between the polarizers.\\\\
+Other possible loopholes are:
+\begin{itemize}
+    \item \textbf{Freedom-of-choice loophole:} the orientation settings of the analyzers must be chosen independently of the properties of the particle pair.\\
+    \item \textbf{Detection loophole:} only a subset of the emitted pairs is detected, so one could argue that the recorded events are not representative of the whole ensemble. This loophole is closed only when the detection efficiency is sufficiently high, typically around $\eta \approx 83\%$ in the standard CHSH scenario.
+\end{itemize}
+A fully loophole-free experimental demonstration was achieved in 2015 using advanced quantum technologies.\\\\
+Bell's result does not show that faster-than-light signals exist, but rather that no theory based on \textbf{local hidden variables} can reproduce all the quantum predictions. In a local hidden-variable model, each photon in an entangled pair is assumed to carry predetermined local properties before the measurement is performed. Bell derived an inequality that any such theory must satisfy, and experiments have repeatedly violated this inequality. 
+This means that the state of the system is not fully encoded in pre-existing local properties before the measurement.

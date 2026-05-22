@@ -1,0 +1,113 @@
+\documentclass[11pt, a4paper]{article} % magari cambiare in report per mettere i capitoli
+% Margini
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, centering, head=25.22153pt]{geometry}
+% Interlinea
+\linespread{1.0}
+
+\title{\textbf{QUANTUM PHOTONICS}}
+\author{Antony Riccio}
+\date{A.A. 2025/2026}
+
+%-----------------------------------------------------------------------------------
+% Pacchetti
+\usepackage{braket}
+\usepackage{fancyhdr} %per abbellire lo stile della pagina. metto dentro anche le linee in alto alla pagina
+\usepackage{mathrsfs}
+\usepackage{amsmath} % AMS Math Package
+\usepackage{cancel} % linea di elisione su termini
+\usepackage[version=4]{mhchem} % per scrivere formule chimiche \ce{H2O}
+\usepackage{siunitx} % per scrivere le unità di misura: \SI{273.15}{\kelvin}
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{amssymb}
+%\usepackage{physics}
+\usepackage{verbatim} %begin comment
+\usepackage{caption} %caption
+\usepackage{comment}
+\usepackage{derivative} % il comando pdv apre due graffe per numeratore e denominatore
+\usepackage{epigraph} %serve per le citazioni
+\usepackage{quoting}
+\usepackage{dirtytalk}
+\quotingsetup{font=small} %tutti e tre utilizzati per inserire la quote a inizio tesi
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % applicazione regole di scrittura per la lingua inglese 
+\usepackage[utf8]{inputenc} % codifica UTF-8
+%\usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
+\usepackage{graphicx} % inserimento di immagini
+\usepackage{csquotes} % per le citazioni "in blocco"
+\usepackage[backend=biber, style=numeric, sorting=nyt]{biblatex} % bibliografia con pacchetto biblatex (https://ctan.org/pkg/biblatex?lang=en)
+\addbibresource{reference.bib}
+\usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
+\usepackage{float} % per il posizionamento delle immagini
+\usepackage[colorlinks=true, allcolors=black]{hyperref} %per link hypertext
+\usepackage[tableposition = top, figureposition = bottom, font = small]{caption}
+
+\usepackage{quantikz}
+
+%-----------------------------------------------------------------------------------
+
+\usepackage{fontspec}
+
+% CMU Sans Serif Demi Condensed
+\newfontfamily\calloutfont{CMU Sans Serif Demi Condensed}
+\newfontfamily\emoji{Apple Color Emoji}
+
+\input{fancy-settings.tex}
+
+%-----------------------------------------------------------------------------------
+
+\begin{document}
+
+\setmainfont{Libertinus Serif}
+
+% Frontespizio
+\input{sections/0-frontespizio.tex}
+
+% Pagina di revisione
+%\input{chapters/0.1-Revisione.tex}
+
+% Indice
+%\fontsize{14pt}{16pt}\selectfont % forse un po' grandino?
+\tableofcontents
+\thispagestyle{empty}
+
+\clearpage
+\setcounter{page}{1}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\newpage
+
+\input{sections/1-classical-model-of-light.tex}
+
+\input{sections/2-polarized-states.tex}
+
+\input{sections/3-spin-injection.tex}
+
+\input{sections/4-exp-with-polarizers.tex}
+
+\input{sections/5-cryptography.tex}
+
+\input{sections/6-stat-props-of-light.tex}
+
+\input{sections/7-photon-statistics.tex}
+
+\input{sections/8-photodetectors.tex}
+
+\input{sections/9-photon-counting.tex}
+
+\input{sections/10-photon-antibunching.tex}
+
+\input{sections/11-em-field-quantization.tex}
+
+\input{sections/12-vacuum-and-casimir.tex}
+
+\input{sections/13-coherent-states.tex}
+
+\input{sections/14-vacuum-states-detection.tex}
+
+\input{sections/15-quantum-entanglement.tex}
+
+\input{sections/16-optical-tests-qm.tex}
+
+\end{document} 

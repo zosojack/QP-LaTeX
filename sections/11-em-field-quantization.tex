@@ -1,0 +1,284 @@
+\section{Electro-magnetic field quantization}\label{sec:em-field-quantization}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/11-/Grafico_65.pdf}
+\end{figure}
+
+Suppose that:
+\begin{itemize}
+    \item the radiation field is confined in a one-dimensional cavity along the $z$-axis, with perfectly conducting walls at $z=0$ and $z=L$;
+    \item the boundary condition $\vec{E}=0$ at the walls implies standing waves;
+    \item the electric field is polarized along $\hat{x}$;
+    \item there are no charges, no currents, and no dielectric material in the cavity, so the field propagates in vacuum.
+\end{itemize}
+
+The Maxwell equations reduce to
+\[
+\begin{cases}
+\vec{\nabla}\times\vec{E}=-\dfrac{\partial\vec{B}}{\partial t}\\
+\vec{\nabla}\cdot\vec{E}=0\\
+\vec{\nabla}\times\vec{B}=\mu_0\epsilon_0\dfrac{\partial\vec{E}}{\partial t}\\
+\vec{\nabla}\cdot\vec{B}=0
+\end{cases}
+\]
+and the electric field of a single mode can be written as
+\[
+\vec{E}_x(z,t)=\,E_0\sin(kz)\sin(\omega t)\cdot \hat{x},
+\qquad
+k_m=\frac{m\pi}{L},
+\qquad
+\omega_m=ck_m=\frac{m\pi c}{L},
+\qquad m=1,2,3,\dots
+\]
+where the allowed frequencies are fixed by the boundary conditions of the cavity.
+The magnetic field has the form
+ \[\begin{split}
+        &\hspace{3cm}\vec{B}(\vec{r},t) = B_y(z,t) \cdot \hat{y}\\
+        &\vec{\nabla} \times \vec{B} = \mu_0\cdot \epsilon_0\cdot \frac{\partial \vec{E}}{\partial t} \implies -\frac{\partial B_y}{\partial t} = \mu_0\cdot \epsilon_0\cdot \frac{\partial E_x}{\partial t} \\
+        &\hspace{2cm}\implies B_y(z,t) = B_0 \cos(kz) \cos(\omega t)
+    \end{split} 
+    \]
+with $B_0=E_0/c$, so that the two fields satisfy Maxwell equations and are phase-shifted by $\pi/2$.
+
+If we define $V=LA$ as the effective cavity volume, the classical energy of a single mode is
+\[
+H=\frac12\int_V dV\left[\epsilon_0 E^2(\vec r,t)+\frac{1}{\mu_0}B^2(\vec r,t)\right]
+=\frac12\int_V dV\left[\epsilon_0 E_x^2(z,t)+\frac{1}{\mu_0}B_y^2(z,t)\right].
+\]
+Separating the electric and magnetic contributions, we obtain
+ \[\begin{split}
+        U_{el.} &= \frac{1}{2}\epsilon_0 A\cdot \int_0^L dz \cdot E_0^2\cdot sin^2(kz)\cdot sin^2(\omega t)\\
+        &= \frac{1}{4}\epsilon_0 A\cdot E_0^2\cdot sin^2(\omega t) \cdot \int_0^L dz \cdot [1-\cos(2kz)]\\
+        &=\frac{1}{4}\epsilon_0 A\cdot E_0^2\cdot sin^2(\omega t) \cdot \biggr(L-\frac{\sin(2kL)}{2k}\biggr)\\
+    \end{split}\]
+    The term $\sin(2kl)= 0$  for the boundary conditions, so we obtain:
+    \[U_{el.}=\frac{1}{4}\epsilon_0\cdot V\cdot E_0^2\cdot sin^2(\omega t)\]
+    For the magnetic term we have:
+    \[\begin{split}
+        U_{M} &= \frac{1}{2\mu_0} A\cdot \int_0^L dz \cdot B_0^2\cdot cos^2(kz)\cdot cos^2(\omega t)\\
+        &= \frac{1}{4\mu_0} A\cdot B_0^2\cdot cos^2(\omega t) \cdot \int_0^L dz \cdot [1+\cos(2kz)]\\
+        &=\frac{1}{4\mu_0} A\cdot B_0^2\cdot cos^2(\omega t) \cdot \biggr(L+\frac{\sin(2kL)}{2k}\biggr)\\
+        U_M  &= \frac{1}{4\mu_0}\cdot V\cdot B_0^2\cdot cos^2(\omega t)
+    \end{split}\]
+
+Therefore,
+  \[H = U_{el.}+U_M = \frac{V}{4}\biggr[\epsilon_0 \cdot E_0^2\cdot sin^2(\omega t)+\frac{1}{\mu_0}\cdot B_0^2\cdot cos^2(\omega t)\biggr]\]
+Energy is continuously exchanged between the electric and magnetic parts. This is formally analogous to the exchange between kinetic and potential energy in a harmonic oscillator:
+\[
+H=\frac{p^2}{2m}+\frac12 m\omega^2 x^2.
+\]
+The corresponding Schr\"odinger equation is
+\[
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac12 m\omega^2x^2\psi=E\psi,
+\]
+or equivalently
+\[
+\hat H\psi=E\psi,
+\qquad
+\hat H=\frac{1}{2m}\left[\hat p_x^2+m^2\omega^2\hat X^2\right].
+\]
+If we introduce the normalized variables
+\[
+\hat q=\sqrt{m}\,\hat X,
+\qquad
+\hat p=\frac{1}{\sqrt{m}}\hat p_x,
+\]
+then the Hamiltonian becomes
+\[
+\hat H=\frac12\left(\hat p^2+\omega^2\hat q^2\right).
+\]
+This shows that \textbf{a single electromagnetic mode is formally equivalent to a quantum harmonic oscillator, where the mode amplitudes play the role of canonical coordinate and momentum.}
+
+    If we use the correspondence rule we can replace classical variables with quantistic operators:
+    \begin{equation*}
+        \begin{cases}
+        \hat{q}(t) = \sqrt{\frac{\epsilon_0V}{2\omega^2}}\cdot E_0 \cdot \sin(\omega t)\\
+        \hat{p}(t) = \sqrt{\frac{V}{2\mu_0}}\cdot B_0 \cdot \cos(\omega t) =\sqrt{\frac{\epsilon_0V}{2}}\cdot E_0 \cdot \cos(\omega t) \\
+    \end{cases}
+    \end{equation*}
+    Where we use $B_0 = \frac{E_0}{c}$ and $c = \frac{1}{\sqrt{\epsilon_0\mu_0}}$.
+    If we extend this argument to all modes we can conclude that by studying the problem of an ideal resonant cavity, we have been led to the conjecture that \textbf{the radiation field can be viewed as a collector of quantized simple harmonic oscillator}.
+
+    To construct the Hilbert space of the state vectors related to the radiation field, we need to introduce \textbf{Annihilation and creation operators} $\hat{a}$ and $\hat{a}^+$.
+    \[\begin{split}
+        &\begin{cases}
+            \hat{q} =\sqrt{\frac{\hbar}{2m}}\cdot (\hat{a}+\hat{a}^+)\\
+            \hat{p} = -i\sqrt{\frac{\hbar \omega }{2}}\cdot (\hat{a}-\hat{a}^+)
+        \end{cases}\\\\
+        &\begin{cases}
+            \hat{a} =\frac{1}{\sqrt{2\hbar \omega}}\cdot (\omega \hat{q}+i\hat{p})\\
+            \hat{a}^+ = \frac{1}{\sqrt{2\hbar \omega}}\cdot (\omega\hat{q}-i\hat{p})
+        \end{cases}\\\\
+        &\begin{cases}
+            \hat{a} =\frac{1}{\sqrt{2\hbar \omega m}}\cdot (m\omega \hat{X}+i\hat{p}_x)\\
+            \hat{a}^+ = \frac{1}{\sqrt{2\hbar \omega m}}\cdot (m\omega\hat{X}-i\hat{p}_x)
+        \end{cases}\\
+    \end{split}\] 
+    \textbf{But these operators commute?}\\
+    \[\begin{split}
+        \hat{a}^+\hat{a} &= \frac{1}{2m\hbar \omega} \cdot (m\omega \hat{X}-i\hat{p})\cdot (m\omega \hat{X}+i\hat{p}) \\
+        &= \frac{1}{2m\hbar \omega} \cdot [\hat{p}^2+(m\omega \hat{X})^2+im\omega(\hat{X}\hat{p}-\hat{p}\hat{X})]\\
+        &=\frac{1}{\hbar \omega}\cdot \frac{1}{2m}\cdot[\hat{p}^2+(m\omega\hat{X})^2]+ \frac{i}{2\hbar}\cdot [\hat{X},\hat{p}]\\
+        &=\frac{1}{\hbar\omega}\cdot \hat{H} -\frac{1}{2} \hspace{1cm} [\hat{X},\hat{p}]= i\hbar\\\\
+        \implies &\hat{H} = \hbar \omega \cdot \biggr(\hat{a}^+ \hat{a}+\frac{1}{2}\biggr)
+    \end{split} \]
+    Similarly we can obtain:
+    \[\hat{a}\hat{a}^+ = \frac{1}{\hbar \omega}\cdot \hat{H} +\frac{1}{2} \implies [\hat{a},\hat{a}^+]=1\]
+    \\\\
+    The structure of the hilbert space is determined by the fact that $\hat{H}$ is a positive operator:
+    \[\braket{\psi|\hat{H}|\psi} \geq 0\]
+    For a generic wawefunction $\psi \in \mathcal{H}$.\\\\
+    \textbf{DIM:}\\\\
+    If we set $\ket{f}=\hat{a}\cdot \ket{\psi}$ and use $\braket{f|f}\geq 0$:
+    \[\begin{split}
+        \braket{\psi|\hat{H}|\psi}  &= \hbar \omega \cdot \braket{\psi|\hat{a}^+\hat{a}|\psi} +\frac{\hbar \omega}{2}\\
+        &=\hbar \omega \braket{f|f} + \frac{\hbar \omega}{2} \geq0\\
+    \end{split}\]
+    The eigenvalues of $\hat{H}$ are not negative!\\\\
+    Given that $[\hat{H},\hat{a}] = \hat{H}\hat{a}-\hat{a}\hat{H} \implies \hat{H}\hat{a} = [\hat{H},\hat{a}]+\hat{a\hat{H}}$, and if $\ket{u}$ is an eigenstate of $\hat{H}$ with eigenvalue $W$:
+    \[\hat{H}\hat{a}\cdot \ket{u} = [\hat{H},\hat{a}]\cdot \ket{u}+\hat{a}\hat{H}\cdot \ket{u} = [\hat{H},\hat{a}]\cdot \ket{u}+\hat{a}W\cdot \ket{u}\]
+    But: 
+    \[[\hat{H},\hat{a}] = \hbar \omega [\hat{a}^+\hat{a}, \hat{a}]+[\frac{\hbar \omega }2{,\hat{a}}]\]
+    The second term is zero, while the first one can be rewrite as:
+    \[\begin{split}
+        [\hat{a}^+\hat{a},\hat{a}] &= \hat{a}^+\hat{a}\hat{a}- \hat{a}\hat{a}^+\hat{a} \\
+        &=\hat{a}^+\hat{a}\hat{a}-\hat{a}^+\hat{a}\hat{a}+\hat{a}^+\hat{a}\hat{a}- \hat{a}\hat{a}^+\hat{a}\\
+        &=\hat{a}^+(\hat{a}\hat{a}-\hat{a}\hat{a})+(\hat{a}^+\hat{a}-\hat{a}\hat{a}^+)\hat{a}\\
+        &=\hat{a}^+[\hat{a},\hat{a}]+[\hat{a}^+,\hat{a}]\hat{a}\\
+        &=\hat{a}^+\cdot 0 -1\cdot \hat{a}\\
+        \implies &[\hat{H},\hat{a}]= -\hbar \omega \hat{a}\\
+        \implies & \hat{H}\hat{a} \cdot \ket{u} = -\hbar \omega \hat{a}\cdot \ket{u}+ \hat{a}\hat{H}\cdot \ket{u}\\
+        &\hspace{1.3cm}=-\hbar \omega \hat{a}\cdot \ket{u}+ W\hat{a}\cdot \ket{u}\\
+        &\hspace{1.3cm}=(W-\hbar \omega) \hat{a}\cdot \ket{u}\\
+    \end{split}\]
+    $\hat{H}\hat{a}\cdot \ket{u}$ is also eigen state of $\hat{H}$ with eigen value $(W-\hbar\omega)$, which means that the operator $\hat{a}$ lowers the energy by a quantity $\hbar \omega$. If we repeat this process it would lead to negative energy, but this is not possible, the hamiltonian $\hat{H}$ have a lowest energy eigenstate $\ket{0}$ such that:
+    \[\begin{split}
+        &\hat{a}\cdot \ket{0} = 0\\
+        &\bra{0}\cdot \hat{a}^+ = 0\\
+        &\hat{H}\cdot \ket{0} = \hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2}\biggr) \cdot \ket{0} = \frac{\hbar \omega}{2}\cdot \ket{0}
+    \end{split}\]
+    Similarly we obtain:
+    \[\hat{H}\hat{a}^+\cdot \ket{u} = (W+\hbar\omega)\hat{a}^+\cdot \ket{u}\]
+    which means that $\hat{a}^+$ raise the energy by a quantity $\hbar \omega$.\\\\
+    Equations describing radiation and mechanical oscillators have the same form but for E.M. fields the important component are the quanta of excitation rather than the oscillators. Einstein suppose that the E.M. field is made of \textbf{discrete quanta}. So we can replace "quantum of excitation of E.M. field" with the term \textbf{"photon"} (physical objects in the same footing of massive particles). \\\\
+    The ground state of the radiation oscillator is refered to as \textbf{Vacuum States}, which doesn't contain photons.\\
+    The product $\hat{a}^+\hat{a}$ is called \textbf{Number Operator: $\hat{n} =\hat{a}^+\hat{a} $}
+    \[\begin{split}
+        \hat{H} \cdot \ket{n} = E_n \cdot \ket{n} = &\hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2}\biggr)\cdot \ket{n}\\
+        \implies &\hbar \omega \biggr(\hat{a}^+(\hat{a}^+\hat{a})+\frac{1}{2}\hat{a}^+\biggr)\cdot \ket{n} = E_n \hat{a}^+ \cdot \ket{n}\\
+        &\hbar \omega \biggr(\hat{a}^+(\hat{a}\hat{a}^+-1)+\frac{1}{2}\hat{a}^+\biggr)\cdot \ket{n} = E_n \hat{a}^+ \cdot \ket{n}\\
+        &\hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2}-1\biggr)\hat{a}^+\cdot \ket{n} = E_n \hat{a}^+ \cdot \ket{n}\\
+        &\hbar \omega \biggr(\hat{a}^+\hat{a}+\frac{1}{2}\biggr)\hat{a}^+\cdot \ket{n} = (E_n+\hbar \omega ) \hat{a}^+ \cdot \ket{n}\\
+        &\hat{H}\hat{a}^+\cdot \ket{n} = (E_n+\hbar\omega)\cdot \hat{a}^+ \cdot \ket{n}\\
+    \end{split}\]
+    This equation have as eigenstate $\hat{a}^+\cdot \ket{n}$ with eigen value $(E_n + \hbar \omega)$, so $\hat{a}^+$ is called \text{creation operator} because \textbf{it creates a photon of energy $\hbar\omega$}.\\
+    If we repeat by multiplying  for $\hat{a}$ we obtain:
+    \[\hat{H}\hat{a}\cdot \ket{n} = (E_n-\hbar \omega) \hat{a}^+\cdot \ket{n}\]
+    $\hat{a}$ is called \textbf{Hannihilation operator} because \textbf{it destroys a photon of energy $\hbar\omega$}.\\\\
+    Since $E_{n+1} = E_n+\hbar\omega$:
+    \[E_n = \hbar \omega \biggr(n+\frac{1}{2}\biggr) \hspace{0.5cm} n = 0,1,2,3,...\]
+    The eigenvectors of $\hat{n}$ are called \textbf{number states} $\ket{n}$:
+    \[\hat{n} \cdot \ket{n} = n\cdot \ket{n} \hspace{1cm} \braket{n|n'} = \delta_{n,n'}\]
+    \[\begin{split}
+        &\hat{a}\cdot \ket{n} =C_n \cdot \ket{n-1}\\
+        &(\bra{n}\cdot \hat{a}^+)(\hat{a}\cdot \ket{n}) =\\
+        &\braket{n|\hat{a}^+\hat{a}|n} = \braket{n|\hat{n}|n}=\\
+        &\braket{n|n|n} = n \cdot \braket{n|n} = n\\
+        \implies &n = \braket{n-1|C_n^*C_n|n-1} = |C_n|^2
+    \end{split}\]
+    So we obtain the rules:
+    \[\hat{a}\cdot \ket{n} = \sqrt{n}\cdot \ket{n-1} \hspace{1cm}\hat{a}^+\cdot \ket{n} = \sqrt{n+1}\cdot \ket{n+1}\]
+    The number state $\ket{n}$ can be build up from the ground state $\ket{0}$ by repeated action of the creation operator $\hat{a}^+$
+    \[\ket{n} = \frac{(\hat{a}^+)^n}{\sqrt{n!}}\cdot \ket{0}\]
+    The hilbert space $\mathcal{H}$ for a single cavity mode consists of all linear combinations of number states:
+    \[\ket{\psi} = \sum_n^{\infty} C_n \cdot \ket{n}\]
+    This space is called \textbf{Fock Space}, since the number states are orthogonal, we can express:
+    \[\ket{\psi} = \sum_n^{\infty}\ket{n}\braket{n|\psi}\]
+    Where we use the \textbf{projection operator} $\sum_{n}^{\infty} \ket{n}\bra{n} =\mathcal{I}$.\\
+    Observe that $\ket{n}$ is not a state of well defined electric field!
+    \[\begin{split}
+        &\hat{a}^+\hat{a} \to \vec{E},\vec{B} \to \hat{p},\hat{q}\\\\
+        &\hat{E}_x(z,t) = A_0 \cdot (\hat{a}+\hat{a}^+)\cdot \sin(kz)\\
+        &\hat{B}_y(z,t) = B_0 \cdot \frac{1}{i}\cdot (\hat{a}-\hat{a}^+)\cdot \cos(kz)
+    \end{split}\]
+    With $A_0$ and $B_0$ are constants.\\\\
+    \[\begin{split}
+        \braket{n|\hat{E}_x|n} &=A_0 \cdot \sin(kz) \cdot [\braket{n|\hat{a}|n}+\braket{n|\hat{a}^+|n}]\\
+        &=A_0 \cdot \sin(kz)\cdot  [\sqrt{n}\cdot\braket{n|n-1}+\sqrt{n+1}\braket{n|n+1}] = 0\\\\
+         \braket{n|(\hat{E}_x)^2|n} &=A_0 \cdot \sin(kz) \cdot [\braket{n|\hat{a}^2|n}+\braket{n|(\hat{a}^+)^2|n}+ \braket{n|\hat{a}\hat{a}^+|n}+\braket{n|\hat{a}^+\hat{a}|n}]\\
+        &=A_0 \cdot \sin(kz)\cdot  [0+0+\braket{n|1+\hat{a}^+\hat{a}|n}+\braket{n|\hat{a}^+\hat{a}|n}]\\
+        &=A_0 \cdot \sin(kz)\cdot  [2\braket{n|\hat{a}^+\hat{a}|n}+1 \cdot \braket{n|n}]\\
+        &= 2A_0\cdot \sin(kz)\cdot \biggr(n+\frac{1}{2}\biggr) \ne 0
+    \end{split}\]
+    The expectation value is zero, but the fluctuations in the electric field is not!
+    \[\begin{split}
+        &\braket{\Delta\hat{E}_x^2(z,t)} = \braket{\hat{E}_x^2}-\braket{\hat{E}_x}^2 =  \braket{\hat{E}_x^2} -0\\
+        &\sigma = \braket{\Delta\hat{E}_x(z,t)} = \sqrt{\braket{\hat{E}_x^2}} = \sqrt{2}\cdot A_0\cdot \sin(kz) \cdot \biggr(n+\frac{1}{2}\biggr)^{\frac{1}{2}}
+    \end{split} \]
+    Even for $n=0$, the field fluctuations are nonzero. These are the \textbf{vacuum fluctuations}, which reflect the fact that the vacuum is not empty but contains zero-point fluctuations of the electromagnetic field.\\\\
+    This is consistent with the uncertainty principle. Since
+    \[[\hat{n},\hat{E}_x] = A_0\cdot \sin(kz)\cdot (\hat{a}^+-\hat{a})\ne0\]
+    Hence $\Delta \hat{n}$ and $\Delta \hat{E}_x$ obey the inequality:
+    \[[\hat{A},\hat{B}] = \hat{c} \implies \Delta \hat{A}\cdot \Delta \hat{B} \geq\frac{1}{2}|\braket{\hat{c}}| \implies \Delta \hat{n}\Delta \hat{E_x} \geq \frac{1}{2}A_0 \cdot |\sin(kz)|\cdot |\hat{a}^+-\hat{a}|\]
+    Thus, if the field amplitude is well defined, the photon number becomes uncertain. This is why classical-like light is better described by coherent states rather than by number states.\\\\
+    
+\subsection{Quadrature operators}
+Given
+\[
+\hat{E}_x = A_0\left(\hat{a}e^{-i\omega t}+\hat{a}^\dagger e^{i\omega t}\right)\cdot sin(kz),
+\]
+we can introduce the quadrature operators
+\[
+\begin{cases}
+\hat{x}_1 = \dfrac{1}{2}\left(\hat{a}+\hat{a}^\dagger\right),\\[0.2cm]
+\hat{x}_2 = \dfrac{1}{2i}\left(\hat{a}-\hat{a}^\dagger\right),
+\end{cases}
+\qquad
+[\hat{x}_1,\hat{x}_2]=\dfrac{i}{2}.
+\]
+Then the electric field can be written as
+\[
+\hat{E}_x = 2A_0\sin(kz)\left[\hat{x}_1\cos(\omega t)+\hat{x}_2\sin(\omega t)\right].
+\]
+The operators $\hat{x}_1$ and $\hat{x}_2$ are associated with the two field quadratures, i.e. the two independent amplitudes of the electromagnetic mode. In fact, they can be related to the canonical variables of the harmonic oscillator:
+\[
+\begin{cases}
+\hat{x}_1 = \sqrt{\dfrac{\omega}{2\hbar}}\,\hat{q}(t),\\[0.2cm]
+\hat{x}_2 = \sqrt{\dfrac{1}{2\hbar\omega}}\,\hat{p}(t).
+\end{cases}
+\]
+ We can calculate:
+    \[\begin{split}
+        &\Delta \hat{x}_1 \cdot \Delta \hat{x}_2 = \sqrt{\frac{\omega }{2\hbar}}\cdot \Delta\hat{q}(t)\cdot  \sqrt{\frac{1}{2\hbar \omega}}\cdot \Delta \hat{p}(t) = \frac{1}{2\hbar}\cdot \Delta\hat{q}(t) \cdot \Delta\hat{p}(t)\\
+        &\begin{cases}
+            \hat{q} = \sqrt{m}\cdot \hat{x}\\
+            \hat{p} =\sqrt{\frac{1}{m}}\cdot \hat{p}_x
+        \end{cases} \implies \Delta \hat{x}_1 \cdot \Delta \hat{x}_2 =\frac{1}{2\hbar}\cdot \cancel{\sqrt{m}}\cdot \cancel{\sqrt{\frac{1}{m}}}\cdot \Delta\hat{x} \cdot \Delta\hat{p}_x \geq \frac{1}{2\cancel{\hbar}} \cdot \frac{\cancel{\hbar}}{2}\\
+        & \Delta \hat{x}_1 \cdot \Delta \hat{x}_2 \geq \frac{1}{4}
+    \end{split} \]
+The field quadratures are thus subject to quantum uncertainty, which means that the amplitude and the direction of the electric field cannot be simultaneously known with arbitrary precision.\\\\
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/11-/Grafico_66.pdf}
+        \end{figure}
+
+    For the \textbf{Fock state:}
+    \[\begin{split}
+        \braket{n|\hat{x}_1|n} &= \braket{n|\hat{x}_2|n} =0\\\\
+        \braket{n|\hat{x}_1^2|n} &= \frac{1}{4}\cdot \braket{n| (\hat{a}^+)^2 + \hat{a}^2 + \hat{a}^+\hat{a}+\hat{a}\hat{a}^+|n}\\
+        &=\frac{1}{4}\cdot (0+0+\braket{n|1+2\hat{a}^+\hat{a}|n})\\
+        & = \frac{1}{4}\cdot (1+2n) = \braket{n|\hat{x}_2^2|n} 
+    \end{split}\]
+ This shows that the average value of each quadrature vanishes, but the fluctuations do not. In particular, for the vacuum state,
+        \textbf{the uncertainties in quadratures operators are the same and the vacuum state minimizes the uncertainty product:}
+        \[\braket{(\Delta \hat{x}_1)^2}_{vacuum} =\braket{(\Delta \hat{x}_2)^2}_{vacuum} = \frac{1}{4} \]
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{images_in_pdf/11-/Grafico_67.pdf}
+        \end{figure}
+
+States that satisfy
+\[
+\Delta \hat{x}_1\,\Delta \hat{x}_2=\frac{1}{4}
+\]
+are called \textbf{minimum-uncertainty states}. The vacuum is one example, but coherent states also belong to this class.

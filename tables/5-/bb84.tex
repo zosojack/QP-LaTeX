@@ -1,0 +1,25 @@
+\begin{table}[H]
+\label{tab:bb84}
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c||c|c|c||c|}
+\hline
+\multicolumn{3}{|c||}{\textbf{Alice (A)}} & 
+\multicolumn{3}{c||}{\textbf{Bob (B)}} & 
+\textbf{Basis} \\
+\textbf{Basis} & \textbf{State} & \textbf{Bit} &
+\textbf{Basis} & $D_1$ & $D_2$ &
+\textbf{Match} \\
+\hline
+$+$ & $\ket{H}$ & 0 & $+$ & 100\% & 0\% & Yes \\
+$+$ & $\ket{V}$ & 1 & $+$ & 0\% & 100\% & Yes \\
+$\times$ & $\ket{D_+}$ & 0 & $+$ & 50\% & 50\% & No \\
+$\times$ & $\ket{D_-}$ & 1 & $+$ & 50\% & 50\% & No \\
+$+$ & $\ket{H}$ & 0 & $\times$ & 50\% & 50\% & No \\
+$+$ & $\ket{V}$ & 1 & $\times$ & 50\% & 50\% & No \\
+$\times$ & $\ket{D_+}$ & 0 & $\times$ & 100\% & 0\% & Yes \\
+$\times$ & $\ket{D_-}$ & 1 & $\times$ & 0\% & 100\% & Yes \\
+\hline
+\end{tabular}
+\caption{BB84 quantum key distribution protocol: polarization states, measurement bases, and basis matching.}
+\end{table}

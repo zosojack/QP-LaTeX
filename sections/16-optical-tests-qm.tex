@@ -1,0 +1,618 @@
+\section{Optical tests of Quantum Mechanics}\label{sec:optical-tests-qm}
+We have a pump beam photon at frequency $\omega_p$ (high energy $\approx$ UV-visible) which excites a non-linear crystal and is converted into two photons (visible-IR), one in the signal $\omega_s$ and one into the IDLER beam $\omega_i$. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_86.pdf}
+\end{figure}
+
+We assume that the pump field is quantized and the interaction Hamiltonian have the form:
+\[\hat{H} \propto \chi^{(2)}\cdot \hat{a}_p\cdot \hat{a}_s^+\cdot \hat{a}_i^+ \]
+Where $\chi^{(2)}$ is the second order non-linear susceptibility and it cames from the polarization when we consider non-centrosymmetric crystals:
+\[\vec{P} = \epsilon_0 \cdot \chi \cdot \vec{E}+ \epsilon_0 \cdot \chi^{(2)}\cdot \vec{E}^2+...\]
+$\hat{a}_p$ is the hannilihilation operator of the pump beam, $\hat{a}_s^+$ is the creation operator for the signal and $\hat{a}_i^+$ is the creation operator for the IDLER.\\\\
+Initially we have a sigle photon state for the pump, a vacuum state for signal and IDLER, then we obtain through a \textbf{spontaneous process:}
+\[\hat{a}_p\cdot \hat{a}_s^+\cdot \hat{a}_i^+ \cdot \ket{1}_p\ket{0}_s\ket{0}_i = \ket{0}_p\ket{1}_s\ket{1}_i\]
+In order to obtain it we we need to satisfy some conditions called \textbf{Phase matching conditions}:
+\begin{itemize}
+    \item Conservaton of energy:
+    \[\hbar \omega_p = \hbar\omega_s+\hbar\omega_i\]
+    \item Conservation of momentum:
+    \[\hbar \vec{k}_p =\hbar \vec{k}_s+\hbar \vec{k}_i \]
+\end{itemize}
+Tipically we use a UV photon and obtain two IR photons, notice that to satisfy them also the direction of the beam is important.\\\\
+In the so called \textbf{Type II} crystals the polarizations of signal and IDLER photons are orthogonal. This is a way to generate entangled state:
+\[\ket{\psi} = \frac{1}{\sqrt{2}}\cdot \biggr[ \ket{H}_s\ket{V}_i+\ket{V}_s\ket{H}_i\biggr]\]
+In case instead of a \textbf{Type I} crystal the polarizations of signal and IDLER are the same, we don't obtain entangled photons, but it can be useful in order to have a indistinguishible photon source.\\\\
+\subsection{Interference experiments}
+We are interested in understanding what happen if our twin single photons are simultaneously incident at each input port of a B.S.\\\\
+We need to describe the B.S. with quantum mechanics: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_87.pdf}
+\end{figure}
+
+Let's consider a B.S. with two input ports $1$ and $0$ and two exit ports $2$ and $3$, for each we can associate a annihilation operator $\hat{a}_i$. \\\\
+If $r$ and $t$ are the complex reflectance and trasmittance of the beam splitter B.S., from the classical point of wiew we send an electric field $E_1$ which is trasmitted as $E_3$ and reflected as $E_2$:
+\[\begin{cases}
+    E_2 = r\cdot E_1\\
+    E_3 = t\cdot E_1
+\end{cases}\]
+Where $E_i = $ complex amplitude of the light field and for a $50:50$ B.S. we will obtain:
+\[\begin{cases}
+    |r| = |t| = \frac{1}{\sqrt{2}}\\
+    |r|^2 + |t|^2 =1
+\end{cases}\]
+According to quantum mechanics, we must consider the equivalent coefficients $r,t \to r',t'$ for the input port $0$ which correspond to a vacuum state:
+\[\begin{cases}
+       \hat{a}_2 = r\cdot\hat{a}_1+t'\cdot\hat{a}_0\\
+    \hat{a}_3 = t\cdot \hat{a}_1+r'\cdot \hat{a}_0
+\end{cases}\implies \begin{bmatrix}
+    \hat{a}_2\\
+    \hat{a}_3
+\end{bmatrix} = \begin{bmatrix}
+    t' &r\\
+    r' &t
+\end{bmatrix}\begin{bmatrix}
+    \hat{a}_0\\
+    \hat{a}_1
+    \end{bmatrix}\]
+For a $50:50$ B.S. reflected and trasmitted beams have the same amplitude, but they are different in phase:
+\[\begin{cases}
+    \hat{a}_2= \frac{1}{\sqrt{2}}\cdot ( \hat{a}_0+i\hat{a}_1)\\
+    \hat{a}_3= \frac{1}{\sqrt{2}}\cdot ( i\hat{a}_0+\hat{a}_1)
+\end{cases} \]
+Let's discuss the case when we have a single photon arriving at the input port $1$, the two initial states can be rewritten as function of the creation operators:
+\[\ket{0}_0\ket{1}_1 = \hat{a}_1^+\cdot \ket{0}_0\ket{0}_1 \]
+From previous equations and taking the dagger, we can rewrite:
+\[\begin{split}
+    \hat{a}_3^++i\hat{a}_2^+ &= \frac{1}{\sqrt{2}}[-i\hat{a}_0^++\hat{a}_1^++i(\hat{a}_0^+-i\hat{a}_1^+)] \\
+    &= \frac{1}{\sqrt{2}}[\cancel{-i\hat{a}_0^+}+\hat{a}_1^++\cancel{i\hat{a}_o^+}+\hat{a}_1^+] \\
+    &= \frac{1}{\sqrt{2}} \cdot 2\hat{a}_1^+\\
+    \implies \hat{a}_1^+ &= \frac{1}{\sqrt{2}}(\hat{a}_3^++i\hat{a}_2) 
+\end{split}\]
+Notice also that the act of B.S. on vacuum state on input port give as result: 
+\[\ket{0}_0\ket{0}_1 \to \ket{0}_2\ket{0}_3\]
+So we can substitute and obtain:
+\[\ket{0}_0\ket{1}_1 = \frac{1}{\sqrt{2}} (i\hat{a}_2^++\hat{a}_3^+) \cdot \ket{0}_2\ket{0}_3 = \frac{1}{\sqrt{2}}\cdot \biggr(i\ket{1}_2\ket{0}_3+ \ket{0}_2\ket{1}_3\biggr)\]
+\textbf{We obtained an entangled state of exit port $2$ and $3$, We have no coincidence counts! We can have 1 photon only in one arm and never be simultaneously in both arms.} When we measuring one of the two arms we collapsing the wave function and destroying the interference.\\\\
+Let's come back and study the case of twin single photons injected into two ports of the B.S.:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_88.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_89.pdf}
+\end{figure}
+
+The pump beam excites a nonlinear crystal, which emits pairs of photons, usually referred to as signal ($s$) and idler ($i$). After removing the pump, the two photons are reflected by mirrors and sent to the two input ports of a balanced beam splitter (BS). The output fields are then collected by two detectors connected to a coincidence circuit in order to perform the measurement.\\\\
+
+We send the states $\ket{1}_s$ and $\ket{1}_i$ into the BS. \textbf{What should we expect at the output ports?}\\\\
+As in the previous case, we can rewrite the initial state as
+\[
+\ket{1}_0\ket{1}_1 = \hat a_0^\dagger \hat a_1^\dagger \ket{0}_0\ket{0}_1,
+\]
+where the beam splitter transformation for the creation operators is
+\[
+\begin{cases}
+\hat a_0^\dagger = \frac{1}{\sqrt{2}}\left(\hat a_2^\dagger + i\hat a_3^\dagger\right),\\[0.2cm]
+\hat a_1^\dagger = \frac{1}{\sqrt{2}}\left(i\hat a_2^\dagger + \hat a_3^\dagger\right).
+\end{cases}
+\]
+Moreover, the vacuum is mapped as
+\[
+\ket{0}_0\ket{0}_1 \to \ket{0}_2\ket{0}_3.
+\]
+Therefore,
+\[\begin{split}
+    \implies \ket{1}_0\ket{1}_1 &= \frac{1}{\sqrt{2}}\frac{1}{\sqrt{2}}\biggr(\hat{a}_2^++i\hat{a}_3^+\biggr)\cdot \biggr(i\hat{a}_2^++\hat{a}_3^+\biggr)\cdot \ket{0}_2\ket{0}_3\\
+    &=\frac{i}{2}\biggr(\hat{a}_2^+\hat{a}_2^++\hat{a}_3^+\hat{a}_3^+\biggr )\ket{0}_2\ket{0}_3\\
+    &\propto i\cdot \biggr(\ket{2}_2\ket{0}_3+\ket{0}_2\ket{2}_3\biggr) = \ket{\psi}_{B.S.}
+\end{split}\]
+The disappearance of the central terms in the expansion is a direct consequence of both the bosonic nature of photons and the phase relations introduced by the beam splitter. The mixed terms $\hat a_2^\dagger \hat a_3^\dagger$ and $\hat a_3^\dagger \hat a_2^\dagger$ correspond to the configuration in which one photon exits each output port, i.e. the state $\ket{1}_2\ket{1}_3$. Since photons are bosons, the creation operators commute, $\hat a_2^\dagger \hat a_3^\dagger = \hat a_3^\dagger \hat a_2^\dagger$, and these two contributions cancel exactly due to their opposite relative phase. As a result, the coincidence term vanishes.\\\\
+This implies that both photons always leave the beam splitter through the same output port. This behavior cannot be understood within a classical picture based on independent trajectories, but arises from quantum interference between indistinguishable processes. In particular, there are two possible ways to obtain a coincidence event: both photons being transmitted or both being reflected. Since these processes are indistinguishable, their probability amplitudes must be summed before taking the modulus squared, leading to destructive interference and a vanishing coincidence probability.\\\\
+Defining the transmission and reflection amplitudes as
+\[
+A_T = \frac{1}{\sqrt{2}}, \qquad A_R = \frac{i}{\sqrt{2}},
+\]
+the coincidence amplitude is
+\[
+A_TA_T + A_RA_R = \frac{1}{2} + \frac{i^2}{2} = 0,
+\]
+and therefore
+\[
+P_{11} = \left|A_TA_T + A_RA_R\right|^2 = \biggr|\frac{1}{\sqrt{2}}\frac{1}{\sqrt{2}}+\frac{i}{\sqrt{2}}\frac{i}{\sqrt{2}}\biggr|^2 = 0
+\]
+In the ideal case, coincidences are completely suppressed, and the output state is a two-photon bunched state. This effect cannot be interpreted classically; it is a direct consequence of two-photon interference and bosonic symmetry.\\\\
+In 1982, Hong, Ou, and Mandel demonstrated two-photon interference using a type-I nonlinear crystal with the setup shown below. The pump beam excites the crystal and generates correlated photon pairs, conventionally called signal ($s$) and idler ($i$); the pump is then removed by a mirror or a suitable filter, while the two photons are spectrally selected with a B.S. and sent along two paths whose optical lengths can change by moving the position of the B.S. In this way, one introduces a relative delay
+\[
+\Delta\tau = \tau_s - \tau_i,
+\]
+between the two photons. The outputs of the beam splitter are detected by two photodetectors connected to a coincidence counter, so that the coincidence rate can be measured as a function of the relative delay. \\\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images_in_pdf/16-/Grafico_90.pdf}
+    \caption{Set-up.}
+    \label{fig:esempio}
+\end{figure}
+
+\begin{itemize}
+    \item When \(\Delta\tau = 0\), the two wave packets overlap at the beam splitter and, if the photons are indistinguishable, the coincidence rate ideally drops to zero: this is the Hong--Ou--Mandel effect. This does not mean that the photons simply travel through one arm or the other in a classical sense; rather, \textbf{the vanishing of coincidences is a genuine quantum interference effect arising from two indistinguishable two-photon amplitudes, namely the case in which both photons are transmitted and the case in which both are reflected.}\\
+    \item For large delays, \(|\Delta\tau| \gg \tau_c\), where the coherence time is of order \(\tau_c \sim 1/\Delta\omega\), the overlap between the two photons disappears, the interference term vanishes, and the coincidence rate returns to the classical level. For an ideal balanced beam splitter this corresponds to a normalized value of \(1/2\).\\\\
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images_in_pdf/16-/Grafico_91.pdf}
+    \caption{Set-up.}
+    \label{fig:esempio2}
+\end{figure}
+
+Notice that $\tau_c \approx ns$ which is difficult to measure by using time resolved detectors, \textbf{by using this interferometer we can measure precisely the width of the dip which provides a direct measure of the temporal coherence of the photon wave packets.}
+\newpage
+\subsection{Quantum Eraser}
+Suppose we consider the same system as before, but now we insert a half-wave plate along the idler arm. This changes the polarization of the idler photon and, therefore, introduces a polarization tag that can carry which-path information:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_92.pdf}
+\end{figure}
+
+\[
+\ket{\theta}_i = \cos(\theta)\ket{H}_i + \sin(\theta)\ket{V}_i,
+\qquad
+\ket{\theta_\perp}_i = -\sin(\theta)\ket{H}_i + \cos(\theta)\ket{V}_i .
+\]
+If the original polarization of the signal photon is horizontal $\ket{H}$, the input state is no longer simply \(\ket{H}_s\ket{H}_i\), but rather
+\[\ket{H}_s\ket{\theta}_i = \cos(\theta)\cdot\ket{H}_s\ket{H}_i + \sin(\theta)\cdot \ket{H}_s\ket{V}_i \]
+Using the same beam-splitter transformation as before, the output state is no longer the purely bunched two-photon state:
+\[\ket{0}_2\ket{2H}_3+\frac{i}{\sqrt{2}}\cdot \ket{2H}\ket{0}_3\]
+but instead becomes 
+\[\begin{split}
+    \ket{\psi(\theta)}_{output} &= \frac{i}{\sqrt{2}}\cdot \cos(\theta)\cdot (\ket{2H}_2\ket{0}_3+\ket{0}_2\ket{2H}_3)\\
+    &+\frac{1}{2}\cdot \sin(\theta)\cdot (\ket{H}_2\ket{V}_3-\ket{V}_2\ket{H}_3) \\
+    &+\frac{i}{2}\cdot \sin(\theta)\cdot (\ket{H,V}_2\ket{0}_3-\ket{0}_2\ket{H,V}_3)
+\end{split}\]
+When $\theta = \pi/2$, the idler photon becomes vertically polarized, while the signal photon remains horizontally polarized. The two photons are therefore orthogonal in polarization and become distinguishable. The output state can be written as
+\[
+\ket{\psi\!\left(\frac{\pi}{2}\right)}_{\text{output}}
+=
+\frac{1}{2}\left(\ket{H}_2\ket{V}_3-\ket{V}_2\ket{H}_3\right)
++
+\frac{i}{2}\left(\ket{H,V}_2\ket{0}_3-\ket{0}_2\ket{H,V}_3\right).
+\]
+The first term describes events in which the two photons exit through different output ports, leading to coincidence detections, while the second term corresponds to both photons exiting through the same output port with orthogonal polarizations. Since the photons are distinguishable, the two-photon interference responsible for the Hong--Ou--Mandel effect is no longer complete, and \textbf{coincidence counts reappear}. \\\\
+Physically, \textbf{the polarization degree of freedom carries which-path information}, allowing one in principle to distinguish the two photons, thereby reducing the destructive interference. \\\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_93.pdf}
+\end{figure}
+\textbf{However, the information is erased if both output beams are projected onto the same polarization basis by placing polarizers before the detectors} with $\theta_a$ and $\theta_b$. In that case, the coincidence probability becomes
+\[
+P = \left|\bra{\theta_a}\bra{\theta_b}\ket{\psi_{\text{output}}}\right|^2
+= \frac{1}{4}\sin^2(\theta_b-\theta_a),
+\]
+so that \(P\to 0\) when \(\theta_a=\theta_b\). \\
+This restores indistinguishability in the selected subensemble and is the essence of the quantum eraser.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_94.pdf}
+\end{figure}
+\subsection{Application of entanglement to interferometry}
+Classically, the measurement of the difference photocurrent in an interferometer exhibits a sinusoidal fringe pattern when a phase shift is introduced by an optical element in one arm. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_95.pdf}
+\end{figure}
+
+The accuracy of the phase measurement \(\Delta\theta\) is limited by photocurrent fluctuations, namely shot noise. For an input beam with mean photon number \(\bar n\), the standard quantum limit gives
+\[
+\Delta\theta \sim \frac{1}{\sqrt{\bar n}}.
+\]
+As in applications such as gravitational-wave detection, the phase sensitivity can be improved by using non-classical light. Consider now one photon entering each input port of the first beam splitter:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_96.pdf}
+\end{figure}
+After the first beam splitter, one obtains a path-entangled state (up to a convention-dependent phase),
+\[
+\frac{1}{\sqrt{2}}\left(\ket{2}_A\ket{0}_B+\ket{0}_A\ket{2}_B\right).
+\]
+Since a phase shifter is placed before the second beam splitter, the state becomes
+\[
+\frac{1}{\sqrt{2}}\left(\ket{2}_A\ket{0}_B+e^{2i\theta}\ket{0}_A\ket{2}_B\right),
+\]
+because both photons in the same arm acquire the phase shift. After the second beam splitter, the output state can be written as
+\[
+\ket{\psi}_{\text{output}}
+=
+\frac{1}{2\sqrt{2}}\left(1-e^{2i\theta}\right)\left(\ket{2}_A\ket{0}_B-\ket{0}_A\ket{2}_B\right)
++\frac{i}{2}\left(1+e^{2i\theta}\right)\ket{1}_A\ket{1}_B,
+\]
+up to an overall global phase and depending on the beam-splitter convention. It can be shown that the phase sensitivity of this ideal two-photon entangled state is
+\[
+\Delta\theta = \frac{1}{2},
+\]
+which is better than the shot-noise limit for a coherent state with the same mean photon number \(\bar n=2\), namely
+\[
+\Delta\theta \simeq \frac{1}{\sqrt{2}}.
+\]
+This means that the phase resolution is improved. In this sense, the advantage does not come from a classical coherent state, but from the entanglement generated inside the interferometer. The natural generalization to \(N\) photons is the NOON state
+\[
+\ket{\psi}=\frac{1}{\sqrt{2}}\left(\ket{N}_A\ket{0}_B+e^{i\phi_N}\ket{0}_A\ket{N}_B\right),
+\]
+which leads, in the ideal case, to the Heisenberg scaling
+\[
+\Delta\theta \sim \frac{1}{N}.
+\]
+These states are extremely useful, but also difficult to realize experimentally: a single beam splitter can generate the two-photon case, whereas larger-\(N\) NOON states require more elaborate schemes. Moreover, their detection generally demands photon-number-resolving detectors, which are technically demanding because they must distinguish different photon numbers with high efficiency and low noise.
+\newpage
+\subsection{Quantum teleportation}
+It is an application of entanglement where the key point is to transfer information and not matter. in fact we have a particle in a particulare quantum state that we want to teleportate to another particle at distant location. This need specific conditions:
+\begin{enumerate}
+    \item A classical communication channel.
+    \item Entanglement 
+\end{enumerate}
+We consider as basic unit of information \textbf{Q-bit}: that can be rappresented as a superposition of states $\ket{0}$ and $\ket{1}$. For a generic two-level system:
+\[\ket{\psi} = a\cdot \ket{0}+b\cdot \ket{1} \hspace{0.5cm} a,b \in \mathbb{C} \hspace{0.5cm} |a|^2+|b|^2 = 1\]
+Using spherical coordinates:
+\[\ket{\psi} = cos\biggr(\frac{\theta}{2}\biggr) \cdot \ket{0}+ e^{i\phi}\cdot sin\biggr(\frac{\theta}{2}\biggr) \cdot \ket{1} \hspace{0.5cm}0\leq \theta \leq \pi\hspace{0.5cm} 0\leq \phi\leq 2\pi\]
+A state can be rappresented on a unitary sphere called \textbf{Block Sphere} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_97.pdf}
+\end{figure}
+
+We will interprete $\ket{0}$ and $\ket{1}$ as polarized states $\ket{H}$ and $\ket{V}$. In classical optics we have a unitary sphere to rappresent polarized states called \textbf{poincarrè sphere}: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_98.pdf}
+\end{figure}
+
+2 bits became 2 Q-bits:
+\[00,01,10,11 \implies \ket{\psi} = a\cdot \ket{0}\ket{0}+ b\cdot \ket{0}\ket{1}+ c\cdot \ket{1}\ket{0}+ d\cdot \ket{1}\ket{1}\]
+A frequently used set of 2 Q-bits states are the \textbf{Bell states}, both entangled:
+\[\ket{\phi^{\pm}} = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}\ket{0}\pm \ket{1}\ket{1}\biggr)\hspace{1cm} \ket{\psi^{\pm}}=\frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}\ket{1}\pm \ket{1}\ket{0}\biggr)\]
+We need to remember two important things:
+\begin{enumerate}
+    \item Classical information channels implies that the information can't be faster than the speed of light velocity $C$.\\
+    \item We need to remember that there is the \textbf{No cloning theorem}.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_99.pdf}
+\end{figure}
+
+Suppose to send a photon to Alice as:
+\[\ket{\psi_i} =c_0\cdot \ket{0} +c_1 \cdot \ket{1}\]
+ She doesn't know $c_0$ and $c_1$, but she can communicate with Bob through a classical channel. Then we have a EPR source which send entangled pairs to Alice and Bob:
+\[\ket{\psi_{AB}} =\frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}_A\ket{0}_B+\ket{1}_A\ket{1}_B\biggr)\]
+We consider the 3-photon state as:
+\[\ket{\phi_{AB}} = \ket{\psi_{AB}}\cdot\ket{\psi_i} = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}_A\ket{0}_B+\ket{1}_A\ket{1}_B\biggr)\cdot \biggr(c_0\cdot \ket{0} +c_1 \cdot \ket{1}\biggr) \]
+If we consider the Bell states using Alice photon:
+\[\ket{\phi}^{\pm} = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}\ket{0}_A\pm\ket{1}\ket{1}_A\biggr) \hspace{1cm }\ket{\psi}^{\pm} = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}\ket{1}_A\pm\ket{1}\ket{0}_A\biggr) \]
+Using them we can rewrite as:
+\[\begin{split}
+    \ket{\phi_{AB}} = \frac{1}{\sqrt{2}}\cdot \biggr( &c_0\cdot \ket{0}\ket{0}_A\ket{0}_B +\\
+    &c_0\cdot \ket{0}\ket{1}_A\ket{1}_B +\\
+    &c_1\cdot \ket{1}\ket{0}_A\ket{0}_B + \\
+    &c_1\cdot \ket{1}\ket{1}_A\ket{1}_B \biggr)\\
+    =\frac{1}{\sqrt{2}}\cdot \biggr[\ket{\phi}^+\cdot\biggr(&c_0\cdot\ket{0}_B+c_1\cdot \ket{1}_B\biggr)+\\
+    \ket{\phi}^-\cdot\biggr(&c_0\cdot\ket{0}_B-c_1\cdot \ket{1}_B\biggr)+\\
+    \ket{\psi}^+\cdot\biggr(&c_0\cdot\ket{1}_B+c_1\cdot \ket{0}_B\biggr)+\\
+    \ket{\psi}^+\cdot\biggr(&c_0\cdot\ket{1}_B-c_1\cdot \ket{0}_B\biggr)\biggr]
+\end{split}\]
+Notice that Alice and Bob have sufficient information to write this expression. \\\\
+Now we want to see every possible scenarios after Alice performs a measurement on the Bell basis:
+\begin{enumerate}
+    \item \textbf{Alice obtains $\ket{\phi^+}$}: after projecting on the ket, Bob will obtain a copy of Alice photon:
+    \[c_0\cdot \ket{0}_B+c_1\cdot \ket{1}_B\]
+    Alice communicate to Bob through the classical channel the result and \textbf{Bob knows the state $\ket{\psi_i}$ without measuring the state, so we actually made the teleportation}.\\
+    \item \textbf{Alice obtains $\ket{\phi^-}$}: after projecting on the ket, Bob will obtain:
+    \[c_0\cdot \ket{0}_B-c_1\cdot \ket{1}_B\]
+    To resolve it Bob changes the sign by applying a unitary operation to photon 3, it is a polarization rotation by a half-wawe plate:
+    \[\ket{0}_B \to \ket{0}_B \hspace{1cm} \ket{1}_B \to -\ket{1}_B\]
+    \\
+    \item \textbf{Alice obtains $\ket{\psi^+}$}: after projecting on the ket, Bob will obtain:
+    \[c_0\cdot \ket{1}_B+c_1\cdot \ket{0}_B\]
+    To resolve it Bob changes the sign by applying a unitary operation to photon 3:
+    \[\ket{1}_B \to \ket{0}_B \hspace{1cm} \ket{0}_B \to \ket{1}_B\]
+    \\
+    \item \textbf{Alice obtains $\ket{\phi^-}$}: after projecting on the ket, Bob will obtain:
+    \[c_0\cdot \ket{1}_B-c_1\cdot \ket{0}_B\]
+    To resolve it Bob changes the sign by applying a unitary operation to photon 3:
+    \[\ket{1}_B \to \ket{0}_B \hspace{1cm} \ket{0}_B \to -\ket{1}_B\]
+\end{enumerate}
+These operations are matrices $2\times2 \implies\biggr\{ \mathbb{I}, \sigma_x,\sigma_y,\sigma_z\biggr\}$:
+\[q' = \begin{bmatrix}
+    c_0'\\
+    c_1'
+\end{bmatrix} \implies q = \begin{bmatrix}
+    c_0\\
+    c_1
+\end{bmatrix} = \hat{U}\cdot q'\]
+Notice that there is no violation of the no-cloning theorem, because the Bell-state measurement destroys the original state during the teleportation process.\\
+\subsection{Experimental setup of the Innsbruck group}
+The experiment starts with a UV pump beam exciting a nonlinear crystal, which acts as an EPR source and produces an entangled photon pair, labelled 2 and 3, in the Bell state
+\[
+\ket{\psi^-}_{2,3}=\frac{1}{\sqrt{2}}\left(\ket{H}_2\ket{V}_3-\ket{V}_2\ket{H}_3\right).
+\]
+In this state, the two photons do not have a definite polarization individually, but only as a joint system. A second UV pump beam, reflected by a mirror, generates another photon pair; one photon is used as a trigger to synchronize the experiment, while the other, photon 1, is prepared in an arbitrary polarization state,
+\[
+\ket{\psi}_1=c_0\ket{0}_B+c_1\ket{1}_B,
+\]
+which is the unknown state to be teleported. Alice then performs a Bell-state measurement on photons 1 and 2 by sending them to a beam splitter followed by two detectors.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_100.pdf}
+\end{figure}
+
+In this implementation, the Bell state \(\ket{\psi^-}_{1,2}\) is the easiest one to identify, because it is the only state that produces coincidence counts at the two detectors after the beam splitter, whereas the other Bell states are symmetric under exchange and therefore lead to bunching at the same output port. The reason is that \(\ket{\psi^-}_{1,2}\) is antisymmetric under particle exchange, so the two photons exit through different output ports, giving simultaneous clicks. If Alice detects \(\ket{\psi^-}_{1,2}\), then photon 3 is projected onto the same state that photon 1 initially carried, up to a known phase depending on the chosen convention,
+\[
+\ket{\psi}_3 \sim c_0\ket{0}_B+c_1\ket{1}_B.
+\]
+In this sense, the Bell-state measurement destroys the identity of photon 1 during the process, so the state is not copied but transferred to Bob's photon, in full agreement with the no-cloning theorem. The key point is that photons 2 and 3 were initially prepared in the entangled state \(\ket{\psi^-}_{2,3}\), so the measurement on photons 1 and 2 effectively teleports the quantum information from photon 1 to photon 3. Bob can then verify the success of the teleportation by analyzing the polarization of his photon with a polarizing beam splitter set at \(+45^\circ\) and \(-45^\circ\), and by measuring the corresponding coincidence counts at detectors \(D_3\) and \(D_4\).
+\subsection{Entanglement swapping}
+At this stage we only know how to create entanglement between photons generated by the same source. \textbf{Can entanglement also be distributed between particles that come from different sources and have never interacted?}\\
+The answer is yes: this is the idea of entanglement swapping. A Bell-state measurement on two photons can transfer entanglement to the remaining two photons, even if they are far apart and originate from independent sources.\\\\
+We consider two different EPR sources emitting the entangled pairs \((1,2)\) and \((3,4)\). The four-photon state is
+\[
+\ket{\psi}_{1,2,3,4}
+=
+\frac{1}{2}
+\left(\ket{H}_1\ket{V}_2-\ket{V}_1\ket{H}_2\right)
+\cdot \left(\ket{H}_3\ket{V}_4-\ket{V}_3\ket{H}_4\right).
+\]
+The first factor describes the entanglement between photons 1 and 2, while the second factor describes the entanglement between photons 3 and 4. Their product means that there is initially no entanglement between the two pairs.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_101.pdf}
+\end{figure}
+
+The Bell states of photons 2 and 3 are
+\[
+\ket{\psi^{\pm}}_{2,3}=\frac{1}{\sqrt{2}}\left(\ket{H}_2\ket{V}_3\pm\ket{V}_2\ket{H}_3\right),
+\]
+\[
+\ket{\phi^{\pm}}_{2,3}=\frac{1}{\sqrt{2}}\left(\ket{H}_2\ket{H}_3\pm\ket{V}_2\ket{V}_3\right).
+\]
+Using these definitions, the initial four-photon state can be rewritten as
+\[
+\ket{\psi}_{1,2,3,4} = \frac{1}{2}\cdot \biggr(\ket{\psi^+}_{1,4}\ket{\psi^+}_{2,3}+\ket{\psi^-}_{1,4}\ket{\psi^-}_{2,3}+\ket{\phi^+}_{1,4}\ket{\phi^+}_{2,3}+\ket{\phi^-}_{1,4}\ket{\phi^-}_{2,3}\biggr)
+\]
+Therefore, a Bell-state measurement on photons 2 and 3 projects photons 1 and 4 onto the corresponding Bell state. In particular, if photons 2 and 3 are found in the state \(\ket{\psi^-}_{2,3}\), then photons 1 and 4 are projected onto \(\ket{\psi^-}_{1,4}\). This means that entanglement has been swapped: photons 1 and 4 become entangled even though they never interacted directly.
+
+Notice that we need to fulfill specific conditions:
+\begin{itemize}
+    \item They come from different sources
+    \item They never interacted 
+    \item The entangled state of 1 and 4 is exactly the same of the entangled state 2 and 3 
+\end{itemize}
+
+Experimentally, one looks for coincidences between the detectors \(D_1^+\) and \(D_4\), or between \(D_1^-\) and \(D_4\), conditioned on the detection of \(\ket{\psi^-}_{2,3}\). Photon 1 is analyzed along the \(+45^\circ\) and \(-45^\circ\) bases, while photon 4 is analyzed at a variable polarization angle \(\theta\). If entanglement swapping occurs, the coincidence rate for one analyzer setting reaches a minimum while the complementary setting reaches a maximum, exactly as expected for an entangled Bell pair.\\
+\begin{itemize}
+    \item $D_1^+-D_4$ coincidence rate for  $\theta =+ 45^\circ\implies $ is Min
+    \item $D_1^--D_4$ coincidence rate for  $\theta =+ 45^\circ\implies $ is Max 
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_102.pdf}
+\end{figure}
+
+In this way, entanglement is not created by direct interaction between photons 1 and 4, but is heralded by the Bell-state measurement performed on photons 2 and 3.
+Notice that there is no violation of the no-cloning theorem, because in the process of performing the Bell state measurement, the original state is itself destroyed.
+
+
+\subsection{Quantum networks}
+This idea can be extended to the propagation of entanglement across many nodes. If the same scheme is replicated for \(N\) sources, the entanglement can be distributed step by step so that the first photon becomes eventually entangled with the last one. In this way, entanglement is not simply transmitted, but propagated through a network, and this can be exploited for quantum communication tasks such as entanglement-based quantum key distribution or the connection of distant quantum processors. Quantum information is generated, processed, and stored locally in quantum nodes, while the nodes are linked by quantum channels that transport quantum states from site to site with high fidelity and distribute entanglement over the whole network. The natural extension of this idea is the quantum internet.\\\\
+In a classical communication link, losses due to absorption, scattering, and other imperfections are usually compensated by repeaters or amplifiers, which restore the signal by copying the same information. In quantum communication this is impossible, because quantum states cannot be cloned. For this reason, one needs radically new hardware, namely quantum repeaters, in order to build a quantum internet. In their simplest form, quantum repeaters rely on entanglement swapping:
+\begin{itemize}
+    \item The repeater first generates entanglement with two neighboring nodes, whose distance from the repeater must be short enough to allow efficient transmission through a telecom channel.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{images_in_pdf/16-/Grafico_103.pdf}
+    \end{figure}
+
+
+    \item The repeater then stores the quantum state for the time needed to establish entanglement with the next nodes in the network. This requires a quantum memory, which can be implemented, for instance, using long-lived spin degrees of freedom such as nuclear spins.
+    \item To transmit information through a quantum network without losing coherence, a major direction of research focuses on spin--photon interfaces. These interfaces allow a quantum memory to herald the arrival of a photon and to store the associated quantum state. In this way, photon losses during transmission can be mitigated, and the stored state can later be retrieved on demand by emitting a photon carrying the same quantum information.\\\\
+    A single-photon detector converts the arrival of a photon into an electrical signal, but the actual implementation of a spin--photon interface requires a much more specialized device. In semiconductor heterostructures, such as Si/Ge platforms, a two-dimensional electron gas can be formed and locally confined by electrostatic gates, creating quantum dots with single-electron control. These structures make it possible to manipulate electron spins, to store quantum information, and, in principle, to interface spin qubits with photons for teleportation, entanglement distribution, or quantum networking. However, such devices are technologically very demanding, and the realization of efficient single-photon sources and robust spin--photon interfaces remains a major experimental challenge.
+\end{itemize}
+\subsection{Quantum computing with photons}
+For a general state, we can write: 
+\[\ket{\psi} = a \cdot \ket{0}+b\cdot \ket{1} \hspace{1cm} |a|^2+|b|^2 = 1\]
+We can define \textbf{quantum-register} as a collection of q-bits, for example a 3-qbit register is the state
+\[\ket{1}\ket{0}\ket{1} = \ket{101} = \ket{5}\]
+It rapresents $5$ in binary rappresentation: $(5)_{10} = (101)_2$ (the first is in base $10$, the second on in base $2$). If the first q-bit is itself in a superposition:
+\[\frac{1}{\sqrt{2}}\cdot\biggr(\ket{0}+\ket{1}\biggr)\]
+The register would be:
+\[\frac{1}{\sqrt{2}}\cdot\biggr(\ket{0}+\ket{1}\biggr) \cdot \ket{0}\ket{1} = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{001}+\ket{101}\biggr) = \frac{1}{\sqrt{2}}\cdot \biggr(\ket{1}+\ket{5}\biggr)\]
+We obtain a simultaneous rappresentation of two numbers. What happens when all the q-bits are in a superposition state?
+\[\frac{1}{\sqrt{2}}\cdot\biggr(\ket{0}+\ket{1}\biggr)\cdot \frac{1}{\sqrt{2}}\cdot\biggr(\ket{0}+\ket{1}\biggr)\cdot \frac{1}{\sqrt{2}}\cdot\biggr(\ket{0}+\ket{1}\biggr) \]
+\[ = \frac{1}{\sqrt{2^3}}\cdot \biggr(\ket{000}+\ket{001}+\ket{010}+\ket{011}+\ket{100}+\ket{101}+\ket{110}+\ket{111}\biggr)\]
+\[= \frac{1}{\sqrt{2^3}}\cdot \biggr(\ket{0}+\ket{1}+\ket{2}+\ket{3}+\ket{4}+\ket{5}+\ket{6}+\ket{7}\biggr)\]
+It rappresents $8$ decimal numbers, this let us understand that quantum operations scale drastically computing power. The most general quantum computing register is indeed:
+\[\ket{\psi_N} = \sum_{n=0}^{2^N-1} c_n \cdot \ket{n}\]
+\textbf{Quantum parallelism:} in a quantum register, information is encoded in the amplitudes of a state vector, whose description grows exponentially with the number of qubits, since an $N$-qubit system lives in a Hilbert space of dimension $2^N$. This is the origin of the potential advantage over classical bits, whose description scales only linearly with $N$. The challenge is therefore to exploit this parallelism while preserving the quantum information and preventing decoherence. A quantum computer consists of a set of $N$ qubits whose state is manipulated by unitary operators, which are called \textbf{quantum gates}; a sequence of such gates forms a \textbf{quantum circuit}. Through quantum interference, some amplitudes can be enhanced while others are canceled, and the goal is to combine these basic operations in a useful way, giving rise to \textbf{quantum algorithms}. In a classical computer, a register stores bits of data and logic gates act on them; in the quantum case, the register is a state vector, and the circuit acts on qubits that may play the role of \textbf{control} and \textbf{target} qubits. More generally, a quantum computer is any device that uses quantum effects to perform a computational task. The computation is described by a unitary transformation $U$, obtained as the product of elementary quantum logic operations, where unitary means
+\[
+\hat{U}^\dagger \hat{U} = \hat{U}\hat{U}^\dagger = \mathbb{I},
+\]
+for example, the time-evolution operator
+\[
+\hat{U}(t)=e^{-\frac{i}{\hbar}t\hat{H}}.
+\]
+Since unitary transformations are invertible, quantum computation is, in principle, reversible. A unitary operation evolves the quantum register while preserving the normalization of the state vector, and therefore the quantum information stored in its amplitudes. 
+
+The final step of a quantum computation is measurement, which extracts the result but is not unitary, since it projects the state onto one outcome and destroys the other components of the superposition. As a consequence, the result is probabilistic and the algorithm must often be repeated many times to obtain reliable statistics. For this reason, quantum algorithms must be designed so that the amplitudes corresponding to incorrect answers interfere destructively, while the correct answer is amplified.
+
+Finally, interaction with the environment leads to decoherence, which is also non-unitary and tends to destroy superposition and entanglement. This is why an important part of quantum computing research is devoted to error-correction and other protocols that protect quantum information from loss.\\\\
+\textbf{Quantum logic gates}
+\begin{enumerate}
+    \item \textbf{Hadamar gate:} create a superposition of the basis states
+    \[\hat{H} = \frac{1}{\sqrt{2}}\cdot \biggr[\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1}\biggr] = \frac{1}{\sqrt{2}}\cdot \begin{bmatrix}
+        1 & 1\\ 1 &-1
+    \end{bmatrix}\]
+    When applied to either state $\ket{0}$ or $\ket{1}$ leads to an equal superposition of both states. It turns superposition states into basis states $\frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}+\ket{1}\biggr)$
+    \[\frac{1}{\sqrt{2}}\cdot \hat{H}\cdot \begin{bmatrix}
+        1\\1 
+    \end{bmatrix} =  \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}\cdot \begin{bmatrix}
+        1 & 1\\ 1 &-1
+    \end{bmatrix}\cdot \begin{bmatrix}
+        1\\1 
+    \end{bmatrix} = \frac{1}{2}\cdot \begin{bmatrix}
+        2\\0
+    \end{bmatrix} = \begin{bmatrix}
+        1\\0
+    \end{bmatrix}\]
+    So it changes the amplitude of the q-bit which means changing the position of q-bit on the block sphere:
+    \begin{itemize}
+        \item Rotation of $\pi$ about z-axis
+        \item Rotation of $\frac{\pi}{2}$ about the y-axis
+    \end{itemize}
+    \item \textbf{X-gate:} is a not-gate, which means it swiches $\ket{0}$ with $\ket{1}$:
+    \[\hat{X} = \ket{1}\bra{0}+\ket{0}\bra{1} = \begin{bmatrix}
+        0 &1\\1&0
+    \end{bmatrix}\]
+    It corresponds to a rotation of $\pi$ about the x-axis
+    \item \textbf{Z-gate:} flips the sign of $\ket{1}$, leaving $\ket{0}$ unchanged
+    \[\hat{Z} = \ket{0}\bra{0}-\ket{1}\bra{1} = \begin{bmatrix}
+        1 &0\\0&-1
+    \end{bmatrix}\]
+    It corresponds to a rotation of $\pi$ about the z-axis
+    \item \textbf{Y-gate:} change $\ket{0}\to i\cdot \ket{1}$ and $\ket{1} \to -i\cdot \ket{0}$
+    \[\hat{Y} = i\cdot \ket{1}\bra{0}-i\cdot\ket{0}\bra{1} = \begin{bmatrix}
+        o &-i\\i&0
+    \end{bmatrix}\]
+    It corresponds to a rotation of $\pi$ about the y-axis
+\end{enumerate}
+These gates can be generalized as:
+\[\hat{R}_{\phi} = \ket{0}\bra{0}+e^{i\phi}\cdot \ket{1}\bra{1}\]
+The gates which operates on two or more q-bits are called \textbf{controlled operations}. Suppose to have a 2 input q-bits one is control and the other is target, the gate has no effect on the control q-bit, but performs a unitary operation on the target q-bit conditionally on the state of the control q-bit.
+\textbf{C-not gate:} (controlled-not)
+\[\hat{C} = \ket{00}\bra{00}+\ket{01}\bra{01}+\ket{10}\bra{11}+\ket{11}\bra{10} = \begin{bmatrix}
+    1&0&0&0\\ 0&1&0&0\\0&0&0&1\\0&0&1&0
+\end{bmatrix}\]
+If the control state is $\ket{0}$ the target state remains unchanged, while if the control state is $\ket{1}$ the target state flips $\ket{0}\to \ket{1}$. 
+This gate can be written in a symbolic form as:
+\[
+\begin{quantikz}
+\lstick{$\ket{c}$} & \ctrl{1} & \rstick{$\ket{c}$} \\
+\lstick{$\ket{t}$} & \targ{}  & \rstick{$\ket{t \oplus c}$}
+\end{quantikz}
+\]
+Where $\oplus$ is addition modulo $2$.\\\\
+\textbf{How can we implement this with optical schemes?}\\\\
+Quantum information is encoded onto modes occupied by single photons, which are manipulated using linear optical components such as B.S., phase shifters,...\\\\
+Let's start with \textbf{Hadamard gate}: we consider the \textbf{Dual rail realization} through a B.S., 
+\[\begin{cases}
+    \hat{a}' = \frac{1}{\sqrt{2}}\cdot (\hat{a}+\hat{b})\\
+    \hat{b}' = \frac{1}{\sqrt{2}}\cdot (\hat{a}-\hat{b})
+\end{cases} \implies \begin{cases}
+    \hat{a} = \frac{1}{\sqrt{2}}\cdot (\hat{a}'+\hat{b}')\\
+    \hat{b} = \frac{1}{\sqrt{2}}\cdot (\hat{a}'-\hat{b}')
+\end{cases}\]
+The computational state $\ket{0}$ and $\ket{1}$ are given by the product states:
+\[\ket{0} = \ket{0}_a\ket{1}_b\hspace{1cm} \ket{1} = \ket{1}_a\ket{0}_b\]
+Notice that the vacuum state or single photon state are not the computational basis, only their product give us the gate basis.\\
+The B.S. transformation act as:
+\[\begin{split}
+    \hat{U}_{B.S.} \cdot \ket{0} &=\hat{U}_{B.S.} \cdot \ket{0}_a\ket{1}_b \\
+    &= \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}_{a'}\ket{1}_{b'} +\ket{1}_{a'}\ket{0}_{b'}\biggr)\\
+    &= \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}+\ket{1}\biggr)\\\\
+    \hat{U}_{B.S.} \cdot \ket{1} &=\hat{U}_{B.S.} \cdot \ket{1}_a\ket{0}_b \\
+     &= \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}_{a'}\ket{1}_{b'} -\ket{1}_{a'}\ket{0}_{b'}\biggr)\\
+    &= \frac{1}{\sqrt{2}}\cdot \biggr(\ket{0}-\ket{1}\biggr)\\
+\end{split} \]
+Let's implement a \textbf{Linear optical C-not:} 
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{images_in_png/Grafico_104.jpeg}
+    \end{figure}
+
+The control q-bit approaches a polarizing beam splitter which produce Horizzontal (trasmitted) and a Vertical (reflected) component. The target q-bit approaches another polarizing beam splitter which produce Horizzontal and a Vertical component too. The trasmitted component of the control q-bit goes to a B.S. with a reflctivity of $\frac{1}{3}$ then follows a path ot another polarizing beam splitter and give us only a single output, the same happens for the trasmitted part of the target q-bit. The both reflected component instead mixed up in a B.S. with same reflectivity, the upper one goes to polarizing beam splitter and then to the output of control q-bit, while the lower one goes to another polarizing beam splitter. Now we add only for the target q-bit before the firts polarizing beam splitter and after the second one a half-wawe plate which acts as hadamard gates.
+
+We use the \textbf{Dual rail logic:} we consider only the single photon occupation and vacuum state of either horizontal control state $C_H$ and vertical control state $C_V$. For example if the control q-bit is  a horzzontal state or vertical state, it splits as:
+\[\ket{H}_C \implies  \begin{cases}
+    \ket{1}_{C_H}\\
+    \ket{0}_{C_V}
+\end{cases} = \ket{0}\]
+\[\ket{V}_C \implies  \begin{cases}
+    \ket{0}_{C_H}\\
+    \ket{1}_{C_V}
+\end{cases} = \ket{1}\]
+The same interpretation is valid for the target q-bit.
+\textbf{First case:} let's suppose have both horizzontaly polarized photons as input $\ket{H}_C$, $\ket{H}_t$. The target q-bit passes through the half wawe-plate which act as Hadamard transformation:
+\[\ket{H}_C\ket{H}_t \to \frac{1}{\sqrt{2}}\cdot \ket{H}_C \cdot \biggr( \ket{H}_t+\ket{V}_t\biggr)
+\]
+In this system we consider only events where photons arrive both at the target and control outputs (click outputs simultaneously), this is called \textbf{post-selection:} discarding all outcomes that do not satisfy the chosen criteria.
+
+\begin{itemize}
+    \item The control q-bit takes the top path and is reflect off by the first B.S.
+    \item The target q-bit is a superposition, so it can follow the top path and get reflect off by the second B.S or chose the botton path and get reflected by the third B.S.
+\end{itemize}
+Overall the amplitude of the succesfull components is reduced by: $\frac{1}{\sqrt{3}}\cdot \frac{1}{\sqrt{3}}= \frac{1}{3}$\\
+The output state is:
+\[\frac{1}{3}\cdot \frac{1}{\sqrt{2}} \cdot \ket{H}_C \cdot \biggr( \ket{H}_t+\ket{V}_t\biggr) \]
+But we have a second half wawe plate: $\frac{1}{\sqrt{2}}  \cdot \biggr( \ket{H}_t+\ket{V}_t\biggr)\to \ket{H}_t$
+\[Output = \frac{1}{3}\cdot \ket{H}_C\cdot \ket{H}_t \]
+We obtain the same state with a different amplitude.
+
+\textbf{Second case:} the same occurs when we consider as input state $\ket{H}_C\ket{V}_t$
+
+\textbf{Third case:} we consider as input state $\ket{V}_C\ket{H}_t$.\\
+The target q-bit passes through the half wawe-plate which act as Hadamard transformation:
+\[\ket{V}_C\ket{H}_t \to \frac{1}{\sqrt{2}}\cdot \ket{V}_C \cdot \biggr( \ket{H}_t+\ket{V}_t\biggr)
+\]
+\begin{itemize}
+    \item The control q-bit takes the middle path and target q-bit the bottom path, they get reflect off by the second and the thirs B.S. The amplitude output is reduced by $\frac{1}{3}$
+    \item The control q-bit takes the bottom path and target q-bits takes the upper path, both go through the second B.S.\\
+    We can have two scenarious:
+    \begin{enumerate}
+        \item Both photons are reflected and the amplitude is reduced by $\frac{1}{3}$
+        \item Both photons are trasmitted and the amplitude is multiply by $-\frac{2}{3}$
+    \end{enumerate}
+    If the photons are instinguishable , we sum the total amplitude $\frac{1}{3}-\frac{2}{3} = -\frac{1}{3}$. After the second half wawe plate we obtain:
+    \[\frac{1}{3}\cdot\frac{1}{\sqrt{2}}\ket{V}_C\cdot \biggr(\ket{H}_t-\ket{V}_t\biggr) \to \frac{1}{3}\ket{V}_t\ket{V}_t\]
+    The minus sign happens because we need to have the case where both photons are exiting at different output ports. (da capire...).\\
+\end{itemize}
+Overall the probability of succesfull 
+\[\frac{1}{3}\cdot \frac{1}{3} = \frac{1}{9}\]
+Is very low, we lost a large amount of photon also because of post-selection, for this reason there are more realization that try to make more efficient this system.\\ 
+Another way is use generic entangled state called \textbf{cluster state}.
+
+\subsection{Boson sampling}
+Boson sampling is a sampling problem based on indistinguishable photons propagating through a large linear-optical network. In the occupation-number encoding of the photonic modes, one injects \(N\) single photons into a device with \(M\) modes, with \(M \gg N\) in order to reduce the probability of collisions, i.e. the occurrence of more than one photon in the same output mode. The photons are mixed by beam splitters and phase shifters, and the output modes are measured by photon detectors. The goal is to predict how the photons are distributed at the output of the interferometer. Because of multi-particle interference, the resulting probability distribution is extremely complex and is believed to be intractable for classical computers.
+
+We can define a \textbf{boson sampler} as a large multi-path interferometer. In the Heisenberg picture, the output mode operators are related to the input ones by
+\[
+\hat{b}_j=\sum_{k=1}^{M} U_{jk}\hat{a}_k,
+\]
+where \(\hat{a}_k\) denotes the input mode operator and \(U_{jk}\) is the unitary matrix describing the optical network. Since real devices are not perfect, losses may occur; for this reason, one often uses \textbf{post-selection} and keeps only the events in which all \(N\) photons are detected at the output.
+
+For collision-free events, the probability of a given output pattern is determined by the \textbf{permanent} of a suitable submatrix of \(U\). For example, if \(N=2\) and \(M=4\), and we are interested in the output configuration where a single photon is detected at first and third output modes:
+\[
+\vec{n}=(1,0,1,0),
+\]
+the corresponding probability is obtained from the \(2\times 2\) submatrix of \(U\) formed by selecting the input and output modes occupied by the photons. In the collision-free case,
+\[
+P(\vec{n})=\biggr[ P_{er}([U]_{1_{M\times\vec{n}}})^2\biggr]
+\]
+where \(U_{1_{M\times\vec{n}}}\) is the submatrix obtaining by selecting the first $M$ coloms and $\vec{n}$ rows of $U$. The permanent of a \(2\times 2\) matrix is
+\[
+\operatorname{Per}\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}=ad+bc.
+\]
+The main difficulty is that the permanent is much harder to compute than the determinant: in general, its exact classical evaluation scales exponentially with the matrix size and is a \(\#P\)-hard problem. A second difficulty is that the number of possible output configurations grows very rapidly with \(M\) and \(N\). In the collision-free regime, the number of output patterns scales as
+\[
+\binom{M}{N}=\frac{M!}{N!(M-N)!},
+\]
+which becomes enormous already for moderately large systems. For this reason, large boson-sampling devices are very difficult to simulate or fully characterize classically.\\\\
+\subsection{Decoherence and error correction}
+A quantum system is never perfectly isolated, because it must interact with the environment and with external control fields in order to be manipulated and measured. As a consequence, decoherence becomes one of the main limitations for quantum computation. The dominant sources of noise are thermal fluctuations, coupling to phonons, fluctuating electromagnetic fields, charge noise, and other uncontrolled interactions, all of which can destroy phase coherence and reduce the visibility of quantum interference. In practice, both relaxation and dephasing processes limit the number of operations that can be performed before the state is lost. \\\\
+A rough estimate of the available computational depth is
+\[M = \frac{T_{\text{Dephasing}}}{T_{\text{gate}}}\]
+where \(T_{\text{Dephasing}}\) is the dephasing time and \(T_{\text{gate}}\) is the duration of a single gate operation.\\\\
+To overcome these limitations, one introduces \textbf{quantum error correction}. A simple parity check on the data qubits does not work directly, because measuring the qubits would collapse the quantum state and destroy the information we want to protect. \\
+Instead, one encodes the logical information into a larger entangled register  and uses auxiliary \textbf{ancilla} qubits to extract an error syndrome without measuring the logical state itself or use directly a second register called "sacrifical" register to check the fidelity of data. The syndrome can then be processed by a correction algorithm.\\
+If this procedure is implemented consistently, one obtains \textbf{fault-tolerant quantum computing}. The price to pay is a large overhead: more physical qubits, more gates, and a reduction in speed due to the extra correction steps. This overhead is one of the major challenges in scaling quantum computers.\\\\
+The current generation of devices is usually described as belonging to the \textbf{Noisy Intermediate-Scale Quantum (NISQ)} era: quantum processors already exist, but they are not yet large or clean enough to support fully fault-tolerant computation or to guarantee a universal quantum advantage for arbitrary tasks. A further practical difficulty is that many quantum platforms require a large number of optical or electronic components that must be precisely aligned and stabilized. For this reason, integrated photonic chips and semiconductor-based architectures are being actively developed as a route toward scalable quantum technologies.

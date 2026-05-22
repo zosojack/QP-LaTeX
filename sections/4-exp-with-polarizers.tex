@@ -1,0 +1,70 @@
+\section{Experiments with polarizers}\label{sec:exp-with-polarizers}
+
+\subsection{Wire polarizers}\label{subsec:wire-polarizers}
+In this subsection we discuss \textbf{wire polarizers}, which are optical components that transmit only the component of light polarized along a preferred direction, their \textbf{transmission axis}, while absorbing or suppressing the orthogonal component.
+
+Suppose we have a wave propagating along the $z$-axis and consider a superposition of two linearly polarized waves:
+\begin{equation*}
+\begin{cases}
+    \vec{E}_1(z,t) = (E_{0x},0,0)\cos(kz-\omega t+\phi_1)\\
+    \vec{E}_2(z,t) = (0,E_{0y},0)\cos(kz-\omega t+\phi_2)
+\end{cases}
+\end{equation*}
+
+where $\vec{E}_1$ is parallel to the $x$-direction and $\vec{E}_2$ is parallel to the $y$-direction. The total field amplitude can then be written as
+\begin{equation}\label{eqn:4-field-amplitude}
+    \vec{E}_0 = E_{0x} \hat{x} + E_{0y} \hat{y}
+\end{equation}
+
+If the light is incident on a polarizer whose optical axis is aligned with the $x$-direction, then the $x$-component is fully transmitted, while the $y$-component is blocked. In other terms:
+\[
+I_{\text{incoming}} \propto |\vec{E}_0|^2
+\Rightarrow
+I_{\text{transmitted}} \propto E_{0x}^2
+\]
+More generally, if $\theta$ is the angle between the incoming polarization direction and the transmission axis, the transmitted intensity follows \textbf{Malus' law}:
+\begin{equation}\label{eqn:malus-law}
+I_{\text{transmitted}} = I_{\text{in}} \cos^2(\theta).
+\end{equation}
+
+Now suppose that, instead of a laser, we use a discharge lamp as the light source. In this case, the atoms in the lamp emit independently, so the outgoing light is an incoherent mixture of many polarization states with the same frequency. As a result, the light is not polarized overall. If such light passes through a polarizer, the transmitted beam becomes linearly polarized along the transmission axis, while the orthogonal component is removed.
+
+\question{What happens if we send linearly polarized light, reduced to the single-photon level, through the polarizer? }{Suppose a detector is placed after the polarizer and we send $N$ photons:
+\begin{itemize}
+    \item If $\theta = 0^\circ$, all the photons pass through the polarizer.
+    \item If $\theta = 90^\circ$, no photons are transmitted.
+    \item For a generic angle $\theta$, the expected number of transmitted photons is $N\cos^2\theta$, while the remaining $N\sin^2\theta$ are not transmitted.
+\end{itemize}}
+
+If we observe the photons one by one, we find that each photon either passes through the polarizer or is absorbed. The outcome for each individual photon is probabilistic. Over many trials, the result of fraction of transmitted photons becomes more precise as $N$ increases.
+
+\calloutinfo{For any single photon arriving at the polarizer, we cannot predict in advance whether it will be transmitted or not. We can only assign a probability to each outcome. This is a genuinely statistical result, and it has no direct classical analogue.}
+
+One possible classical interpretation would be to assume the existence of \textbf{hidden variables:} in that picture, the polarization state would not be fully specified by the polarization vector $\vec{e}_{\theta,\phi}$ alone, but would also depend on an additional variable $\epsilon$ that could take the values $0$ or $1$, determining in advance whether the photon is transmitted or absorbed. We will return to this idea later. % TODO: inserire ref al paragrafo sulle disuguaglianze di Bell
+
+\subsection{Beam splitters and random number generators}\label{subsec:4-BS-and-RNG}
+
+Now consider a $50{:}50$ beam splitter (BS). In an ideal balanced beam splitter, each incoming photon has the same probability of being detected in output $D_1$ or in output $D_2$. The actual output event for each photon is random.
+This property makes single-photon beam splitters a useful physical source of randomness. In practice, optical quantum random number generators are widely used because they exploit intrinsic quantum randomness rather than algorithmic pseudo-randomness.
+Random numbers have many applications:
+\begin{enumerate}
+    \item \textbf{Cryptography}, where randomness is essential for secure keys and protocols.
+    \item \textbf{Scientific simulations}, especially Monte Carlo methods for complex systems.
+    \item \textbf{Lotteries and gambling}, where fairness requires unbiased random outcomes.
+    \item \textbf{Internet of Things and digital security}, where random keys are used to protect sensitive data.
+\end{enumerate}
+We can distinguish two main classes of random number generators:
+\begin{itemize}
+    \item \textbf{Software generators:} these are algorithms that take an initial value, called a seed, and produce a sequence of numbers by iteration. Since the sequence is deterministic and eventually periodic, these are usually called \emph{pseudo-random} number generators. They are inexpensive and useful in many numerical applications, but they are not truly random.
+    \item \textbf{Generators based on physical processes:} these use a physical source of randomness.
+    \begin{itemize}
+        \item \textbf{Classical physical processes:} examples include coin tossing or dice rolling. In principle, classical dynamics is deterministic, but in practice the outcome is unpredictable because the initial conditions are not known with sufficient accuracy.
+        \item \textbf{Quantum physical processes:} in this case randomness is intrinsic.
+        \begin{enumerate}
+            \item \textbf{Radioactive decay:} the decay time of a nucleus is fundamentally random, although this kind of source is not always practical or scalable for commercial devices.
+            \item \textbf{Optical quantum processes:} these are already used in commercial quantum random number generators. For example, a single-photon source sent through a $50{:}50$ beam splitter produces a click in $D_1$ or $D_2$ with equal probability. One may assign the value $1$ when $D_1$ clicks and $0$ when $D_2$ clicks.
+            \item \textbf{Vacuum fluctuations of the electromagnetic field:} these can also be exploited as a source of quantum randomness.
+            \item \textbf{Photon-number fluctuations in light sources:} these are known as shot noise. Suppose to take a light source as a LED that goes on a matrix of detectors, each one recieve a different amount of photons, as a random process. We measure the number of photons for each pixel and compute the average number. We impose to zero each pixel with number of photons below the average and reconstruct an image of fluctuations of photon numbers. Then we use apposite convertors to extract sequence of random numbers.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}

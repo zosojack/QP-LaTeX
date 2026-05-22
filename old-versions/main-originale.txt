@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{anyfontsize}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{quantikz}
+\usepackage{hyperref}
+\usepackage{dirtytalk}
+\usepackage{siunitx}
+
+\usepackage[english]{babel} % applicazione regole di scrittura per la lingua italiana 
+\usepackage[utf8]{inputenc} % codifica UTF-8
+\usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
+\ifoot[]{}
+\cfoot[]{}
+\ofoot[\pagemark]{\pagemark}
+\pagestyle{scrplain}
+\usepackage{mathptmx} % font Times New Roman (simile)
+\usepackage{csquotes} % per le citazioni "in blocco"
+
+\usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
+
+\usepackage[most]{tcolorbox}
+
+% Definizione del comando
+\newcommand{\question}[2]{%
+    \begin{tcolorbox}[colback=blue!3!white, colframe=blue!90!black, title=\textbf{Question: #1}]
+        #2
+    \end{tcolorbox}
+}
+
+
+\title{Quantum photonics}
+\author{ariccio}
+\date{October 2025}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\input{sections/1-classical-model-of-light.tex}
+
+\input{sections/2-polarized-states.tex}
+
+\input{sections/3-spin-injection.tex}
+
+\input{sections/4-exp-with-polarizers.tex}
+
+\input{sections/5-cryptography.tex}
+
+\input{sections/6-stat-props-of-light.tex}
+
+\input{sections/7-photon-statistics.tex}
+
+\input{sections/8-photodetectors.tex}
+
+\input{sections/9-photon-counting.tex}
+
+\input{sections/10-photon-antibunching.tex}
+
+\input{sections/11-em-field-quantization.tex}
+
+\input{sections/12-vacuum-and-casimir.tex}
+
+\input{sections/13-coherent-states.tex}
+
+\input{sections/14-vacuum-states-detection.tex}
+
+\input{sections/15-quantum-entanglement.tex}
+
+\input{sections/16-optical-tests-qm.tex}
+
+\end{document} 
