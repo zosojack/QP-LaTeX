@@ -6,28 +6,28 @@ In this subsection we discuss \textbf{wire polarizers}, which are optical compon
 Suppose we have a wave propagating along the $z$-axis and consider a superposition of two linearly polarized waves:
 \begin{equation*}
 \begin{cases}
-    \vec{E}_1(z,t) = (E_{0x},0,0)\cos(kz-\omega t+\phi_1)\\
-    \vec{E}_2(z,t) = (0,E_{0y},0)\cos(kz-\omega t+\phi_2)
+    \vec{E}_1(z,t) = (E_{0,x},0,0)\cos(kz-\omega t+\phi_1)\\
+    \vec{E}_2(z,t) = (0,E_{0,y},0)\cos(kz-\omega t+\phi_2)
 \end{cases}
 \end{equation*}
 
 where $\vec{E}_1$ is parallel to the $x$-direction and $\vec{E}_2$ is parallel to the $y$-direction. The total field amplitude can then be written as
 \begin{equation}\label{eqn:4-field-amplitude}
-    \vec{E}_0 = E_{0x} \hat{x} + E_{0y} \hat{y}
+    \vec{E}_0 = E_{0,x} \hat{x} + E_{0,y} \hat{y}
 \end{equation}
 
 If the light is incident on a polarizer whose optical axis is aligned with the $x$-direction, then the $x$-component is fully transmitted, while the $y$-component is blocked. In other terms:
 \[
 I_{\text{incoming}} \propto |\vec{E}_0|^2
-\Rightarrow
-I_{\text{transmitted}} \propto E_{0x}^2
+\longrightarrow
+I_{\text{transmitted}} \propto E_{0,x}^2
 \]
 More generally, if $\theta$ is the angle between the incoming polarization direction and the transmission axis, the transmitted intensity follows \textbf{Malus' law}:
 \begin{equation}\label{eqn:malus-law}
 I_{\text{transmitted}} = I_{\text{in}} \cos^2(\theta).
 \end{equation}
 
-Now suppose that, instead of a laser, we use a discharge lamp as the light source. In this case, the atoms in the lamp emit independently, so the outgoing light is an incoherent mixture of many polarization states with the same frequency. As a result, the light is not polarized overall. If such light passes through a polarizer, the transmitted beam becomes linearly polarized along the transmission axis, while the orthogonal component is removed.
+Now suppose that, instead of a laser, we use a discharge lamp as the light source. In this case, the atoms in the lamp emit independently, so the outgoing light is an \textbf{incoherent mixture} of many polarization states with the same frequency. As a result, the light is not polarized overall. If such light passes through a polarizer, \textbf{the transmitted beam becomes linearly polarized along the transmission axis}, while the orthogonal component is removed.
 
 \question{What happens if we send linearly polarized light, reduced to the single-photon level, through the polarizer? }{Suppose a detector is placed after the polarizer and we send $N$ photons:
 \begin{itemize}
@@ -45,12 +45,12 @@ One possible classical interpretation would be to assume the existence of \textb
 \subsection{Beam splitters and random number generators}\label{subsec:4-BS-and-RNG}
 
 Now consider a $50{:}50$ beam splitter (BS). In an ideal balanced beam splitter, each incoming photon has the same probability of being detected in output $D_1$ or in output $D_2$. The actual output event for each photon is random.
-This property makes single-photon beam splitters a useful physical source of randomness. In practice, optical quantum random number generators are widely used because they exploit intrinsic quantum randomness rather than algorithmic pseudo-randomness.
+\hl{This property makes single-photon beam splitters a useful \emph{physical source of randomness}}. In practice, optical quantum random number generators are widely used because they exploit intrinsic quantum randomness rather than algorithmic pseudo-randomness.
 Random numbers have many applications:
 \begin{enumerate}
-    \item \textbf{Cryptography}, where randomness is essential for secure keys and protocols.
-    \item \textbf{Scientific simulations}, especially Monte Carlo methods for complex systems.
-    \item \textbf{Lotteries and gambling}, where fairness requires unbiased random outcomes.
+    \item \textbf{Cryptography}, where randomness is essential for secure keys and protocols;
+    \item \textbf{Scientific simulations}, especially Monte Carlo methods for complex systems;
+    \item \textbf{Lotteries and gambling}, where fairness requires unbiased random outcomes;e
     \item \textbf{Internet of Things and digital security}, where random keys are used to protect sensitive data.
 \end{enumerate}
 We can distinguish two main classes of random number generators:

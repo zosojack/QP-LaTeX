@@ -71,6 +71,10 @@
 % vettori colonna
 \newcommand{\vectorTwo}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 
+% coefficienti trasmissione e riflessione
+\newcommand{\tran}{\textsc{T}}
+\newcommand{\refl}{\textsc{R}}
+
 %===================================================================================
 \usepackage{fontawesome5}
 
@@ -86,9 +90,9 @@
 }
 
 % Callout generico
-\definecolor{calloutcolor}{RGB}{220,159,81} % cambiarlo
+\definecolor{calloutcolor}{RGB}{116,54,135} 
 \newcommand{\callout}[2]{%
-    \begin{tcolorbox}[colback=calloutcolor!3!white, colframe=calloutcolor!99!black, title={\calloutfont #1}]
+    \begin{tcolorbox}[colback=calloutcolor!4!white, colframe=calloutcolor!95!black, title={\calloutfont #1}]
         #2
     \end{tcolorbox}
 }
@@ -113,4 +117,8 @@
         #1
     \end{tcolorbox}
 }
+
+% EVIDENZIAZIONE
+\usepackage{soul}
+\sethlcolor{calloutinfocolor!25!white}
 %-----------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 In this section we study coherence and optical fluctuations within the classical theory, and then highlight phenomena that cannot be fully explained in classical terms.
 \subsection{Young experiment and Mach-Zehnder interferometer}\label{subsec:1-young-exp}
 Suppose we have a monochromatic beam of light incident on an opaque screen with two small holes, $A$ and $B$. After passing through the holes, the light diffracts and, at a sufficiently large distance, an interference pattern is observed on a photographic plate.
-\begin{figure}[H]       
+\begin{figure}[H]\label{1-young}       
     \centering            
     \includegraphics[width=0.8\textwidth]{images_in_pdf/1-/Grafico_1.pdf} 
 \end{figure}
@@ -15,7 +15,7 @@ Now suppose we close one of the two holes, so that we obtain the diffraction pat
     \includegraphics[width=0.8\textwidth]{images_in_pdf/1-/Grafico_2.pdf} 
 \end{figure}
 
-If we assume that $50\%$ of the photons go through $A$ and the remaining $50\%$ go through $B$, then we would expect the observed distribution to be the sum of the two single-slit diffraction patterns. However, this is not what happens in the double-slit experiment: \textbf{the presence of both slits together produces an interference pattern that cannot be reproduced by simply adding the two single-slit intensities.} In classical language, one would say that the alternatives $A$ and $B$ are not sufficient to describe the phenomenon. In quantum mechanics, \textbf{the correct description is a coherent superposition of the two paths rather than a classical mixture.}
+If we assume that $50\%$ of the photons go through $A$ and the remaining $50\%$ go through $B$, then we would expect the observed distribution to be the sum of the two single-slit diffraction patterns. However, this is not what happens in the double-slit experiment: \hl{the presence of both slits together produces an \textbf{interference pattern} that cannot be reproduced by simply adding the two single-slit intensities.} In classical language, one would say that the alternatives $A$ and $B$ are not sufficient to describe the phenomenon. In quantum mechanics, \hl{the correct description is a coherent \textbf{superposition} of the two paths rather than a classical mixture.}
 
 We now modify the experiment by introducing a Mach-Zehnder interferometer, which is composed of:
 \begin{itemize}
@@ -23,7 +23,7 @@ We now modify the experiment by introducing a Mach-Zehnder interferometer, which
     \item two normal mirrors, $S_2$ and $S_3$;
     \item two detectors, $D_1$ and $D_2$.
 \end{itemize}
-\begin{figure}[H]       
+\begin{figure}[H]\label{1-mach-zehnder}   
     \centering            
     \includegraphics[width=0.8\textwidth]{images_in_pdf/1-/Grafico_3.pdf} 
 \end{figure}
@@ -80,14 +80,14 @@ where $\lambda_0$ is the wavelength in vacuum. Even a small change in phase is e
 
 \calloutwarn{In the quantum description, the photon cannot be assigned a definite classical trajectory through path $A$ or path $B$. Instead, the state is described by a coherent superposition of the two paths, which is what gives rise to interference.}
 
-
-Returning to the Young experiment, suppose we place two detectors after the two slits $A$ and $B$: \textbf{should they click together?}
+\question{Returning to the Young experiment, suppose we place two detectors after the two slits $A$ and $B$: \textbf{should they click together?}}{%
 \begin{figure}[H]       
     \centering            
     \includegraphics[width=0.5\textwidth]{images_in_pdf/1-/Grafico_4.pdf} 
 \end{figure}
 
-The answer is no. A single photon cannot be split into two independent detection events. Repeating the experiment many times, one finds that each photon is detected by one detector only and, on average, the counts are distributed according to the measurement probabilities $50 \%$  clicks on $D_1$ and  $50 \%$ clicks on $D_2$. \textbf{The presence of detectors reveals which path the photon takes, and this information eliminates the interference pattern. In other words, the act of measurement destroys the coherence between the two possible paths, so they can no longer interfere.}
+The answer is no. A single photon cannot be split into two independent detection events. Repeating the experiment many times, one finds that each photon is detected by one detector only and, on average, the counts are distributed according to the measurement probabilities $50 \%$  clicks on $D_1$ and  $50 \%$ clicks on $D_2$. \textbf{The presence of detectors reveals which path the photon takes, and this information eliminates the interference pattern}. In other words, \textbf{the act of measurement destroys the coherence} between the two possible paths, so they can no longer interfere.%
+}
 
 So to summarize:
 \begin{enumerate}
