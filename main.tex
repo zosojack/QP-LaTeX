@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article} % magari cambiare in report per mettere i capitoli
+\documentclass[11pt, a4paper]{report} % magari cambiare in report per mettere i capitoli
 % Margini
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, centering, head=25.22153pt]{geometry}
 % Interlinea
@@ -9,41 +9,45 @@
 \date{A.A. 2025/2026}
 
 %-----------------------------------------------------------------------------------
-% Pacchetti
-\usepackage{braket}
-\usepackage{fancyhdr} %per abbellire lo stile della pagina. metto dentro anche le linee in alto alla pagina
-\usepackage{mathrsfs}
-\usepackage{amsmath} % AMS Math Package
-\usepackage{cancel} % linea di elisione su termini
-\usepackage[version=4]{mhchem} % per scrivere formule chimiche \ce{H2O}
-\usepackage{siunitx} % per scrivere le unità di misura: \SI{273.15}{\kelvin}
-\usepackage{amsthm} % Theorem Formatting
-\usepackage{booktabs}
-\usepackage{caption}
+% Lingua e Codifica (Sempre per primi)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % Prima di babel
+\usepackage[english]{babel} % Gestisce la lingua
+\usepackage{csquotes}       % Consigliato con babel e biblatex
+
+% Pacchetti Matematici e Scientifici
+\usepackage{amsmath}  % Caricato prima di amsthm eamssymb
 \usepackage{amssymb}
-%\usepackage{physics}
-\usepackage{verbatim} %begin comment
-\usepackage{caption} %caption
-\usepackage{comment}
-\usepackage{derivative} % il comando pdv apre due graffe per numeratore e denominatore
-\usepackage{epigraph} %serve per le citazioni
+\usepackage{amsthm}  
+\usepackage{mathrsfs}
+\usepackage{braket}
+\usepackage{cancel} 
+\usepackage[version=4]{mhchem} 
+\usepackage{siunitx} 
+\usepackage{derivative} 
+\usepackage{quantikz}
+
+% Grafica e Layout
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{fancyhdr} 
+\usepackage{titlesec} % Gestisce la formattazione dei titoli dopo babel
+
+% Testo, Citazioni ed Epigrafi
+\usepackage{epigraph} 
 \usepackage{quoting}
 \usepackage{dirtytalk}
-\quotingsetup{font=small} %tutti e tre utilizzati per inserire la quote a inizio tesi
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel} % applicazione regole di scrittura per la lingua inglese 
-\usepackage[utf8]{inputenc} % codifica UTF-8
-%\usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
-\usepackage{graphicx} % inserimento di immagini
-\usepackage{csquotes} % per le citazioni "in blocco"
-\usepackage[backend=biber, style=numeric, sorting=nyt]{biblatex} % bibliografia con pacchetto biblatex (https://ctan.org/pkg/biblatex?lang=en)
-\addbibresource{reference.bib}
-\usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
-\usepackage{float} % per il posizionamento delle immagini
-\usepackage[colorlinks=true, allcolors=black]{hyperref} %per link hypertext
+\quotingsetup{font=small} 
+\usepackage{comment} % Nota: sostituisce 'verbatim'
+
+% Tabelle e Didascalie
+\usepackage{booktabs}
 \usepackage[tableposition = top, figureposition = bottom, font = small]{caption}
 
-\usepackage{quantikz}
+% Bibliografia e Link (Sempre alla fine!)
+\usepackage[backend=biber, style=numeric, sorting=nyt]{biblatex} 
+\addbibresource{reference.bib}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
 
 %-----------------------------------------------------------------------------------
 
