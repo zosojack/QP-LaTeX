@@ -83,6 +83,7 @@
 
 % CALLOUTS
 \usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable}
 
 % Domanda
 \definecolor{questioncolor}{RGB}{72,121,247}
@@ -95,28 +96,28 @@
 % Callout generico
 \definecolor{calloutcolor}{RGB}{116,54,135} 
 \newcommand{\callout}[2]{%
-    \begin{tcolorbox}[colback=calloutcolor!4!white, colframe=calloutcolor!95!black, title={\calloutfont #1}]
+    \begin{tcolorbox}[breakable, colback=calloutcolor!4!white, colframe=calloutcolor!95!black, title={\calloutfont #1}]
         #2
     \end{tcolorbox}
 }
 % Callout avvertimento
 \definecolor{calloutwarncolor}{RGB}{220,159,81}
 \newcommand{\calloutwarn}[1]{%
-    \begin{tcolorbox}[colback=calloutwarncolor!3!white, colframe=calloutwarncolor!99!black, title={\faExclamationTriangle}]
+    \begin{tcolorbox}[breakable, colback=calloutwarncolor!3!white, colframe=calloutwarncolor!99!black, title={\faExclamationTriangle}]
         #1
     \end{tcolorbox}
 }
 % Callout errore
 \definecolor{callouterrorcolor}{RGB}{185,55,43}
 \newcommand{\callouterror}[1]{%
-    \begin{tcolorbox}[colback=callouterrorcolor!3!white, colframe=callouterrorcolor!99!black, title={\faTimesCircle}]
+    \begin{tcolorbox}[breakable, colback=callouterrorcolor!3!white, colframe=callouterrorcolor!99!black, title={\faTimesCircle}]
         #1
     \end{tcolorbox}
 }
 % Callout informazione
 \definecolor{calloutinfocolor}{RGB}{155,191,57}
 \newcommand{\calloutinfo}[1]{%
-    \begin{tcolorbox}[colback=calloutinfocolor!3!white, colframe=calloutinfocolor!99!black, title={\faInfoCircle}]
+    \begin{tcolorbox}[breakable, colback=calloutinfocolor!3!white, colframe=calloutinfocolor!99!black, title={\faInfoCircle}]
         #1
     \end{tcolorbox}
 }

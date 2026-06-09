@@ -1,14 +1,24 @@
 \section{Vacuum field and Casimir Force}\label{sec:vacuum-and-casimir}
-        The vacuum field is present everywhere, even in complete absence of matter or real radiation, and it can produce observable effects. A famous manifestation is the attractive \textbf{Casimir force} between two conducting plates placed in vacuum. The physical origin of the effect is the modification of the vacuum mode structure by the cavity boundaries.
+
+\calloutinfo{%
+The vacuum field is present everywhere, even in complete absence of matter or real radiation, and it can produce observable effects. A famous manifestation is the attractive \textbf{Casimir force} between two conducting plates placed in vacuum. The physical origin of the effect is the modification of the vacuum mode structure by the cavity boundaries.
+}
+
 We suppose that:
 \begin{enumerate}
     \item Outside the cavity, the vacuum energy is that of free space, with a continuous spectrum of modes.
-     \[E_{free} = \frac{\pi \hbar c}{L} \cdot \int_0^{\infty} m \cdot dm \]
+     \[E_\text{free} = \frac{\pi \hbar c}{L} \, \int_0^{\infty} m \, dm \]
     \item Inside the cavity, the boundary conditions discretize the allowed modes, so that the vacuum energy becomes a sum over standing-wave modes.
-    \[E_{cavity} = \sum_m \hbar \omega_m = \frac{\pi\hbar c}{L} \sum_m m\]
+    \[E_\text{cavity} = \sum_m \hbar \omega_m = \frac{\pi\hbar c}{L} \sum_m m\]
 \end{enumerate}
+
 Since both contributions are divergent separately, only their difference is physically meaningful after regularization. For two perfectly conducting parallel plates separated by a distance $L$, we can calculate:
-\[\Delta E= E_{cavity}-E_{free} = \frac{\pi \hbar c}{L}\cdot \biggr(\sum_mm-\int m \cdot dm  \biggr) =  -\frac{\pi\hbar c}{12}\cdot \frac{1}{L}\]
+\[
+\Delta E= E_\text{cavity}-E_\text{free} = 
+\frac{\pi \hbar c}{L}\, 
+\bigl(\sum_mm-\int m \, dm  \bigr) = 
+ -\frac{\pi\hbar c}{12}\, \frac{1}{L}\]
+
 The \textbf{energy decreases with the length $L$ of the cavity which means we have an attractive force:}
 \[F = -\frac{\partial\Delta E}{\partial L} = -\frac{\pi \hbar c}{12L^2}\]
 If we consider all the possible polarizations:
@@ -21,11 +31,15 @@ so for an area $A=1\,\mathrm{cm}^2$ the force is of order
 \[
 F\sim 10^{-7}\,\mathrm{N}.
 \]
-This is why flat parallel-plate geometries are difficult to use in precision measurements, and curved surfaces are often preferred experimentally.\\\\
-\textbf{Photon localizability:} observe that photons arise as quantum excitations of the electromagnetic field, but they are also particle-like entities. This raises an important conceptual issue.\\\\
+This is why flat parallel-plate geometries are difficult to use in precision measurements, and curved surfaces are often preferred experimentally.
+
+\subsubsection{Photon localizability}
+
+Observe that photons arise as quantum excitations of the electromagnetic field, but they are also particle-like entities. This raises an important conceptual issue.
+
 \begin{itemize}
-    \item \textbf{Classical particles:} a state is fully described by instantaneous position and momentum.\\
-    \item \textbf{Non-relativistic quantum particles:} the operators $\hat{x}$ and $\hat{p}$ do not commute, and the state is described by a wavefunction $\psi(\vec{x})=\langle \vec{x}|\psi\rangle$, which gives the probability amplitude for a position measurement.\\
+    \item \textbf{Classical particles:} a state is fully described by instantaneous position and momentum.
+    \item \textbf{Non-relativistic quantum particles:} the operators $\hat{x}$ and $\hat{p}$ do not commute, and the state is described by a wavefunction $\psi(\vec{x})=\langle \vec{x}|\psi\rangle$, which gives the probability amplitude for a position measurement.
     \item For a photon, however, the situation is different: because it is a massless spin-1 particle with gauge constraints and transversality conditions, there is no fully satisfactory position operator with all the usual properties expected for a localized particle.
 \end{itemize}
     The properties one would like for a photon position operator are:
@@ -33,5 +47,9 @@ This is why flat parallel-plate geometries are difficult to use in precision mea
     \item $[\hat{x},\hat{y}]=0$;
     \item $\hat{x}$ should transform as a vector under rotations.
 \end{itemize}
-In practice, these requirements cannot be satisfied simultaneously for the photon in the same way as for massive particles. Therefore, one cannot construct a true position-space wavefunction for the photon in the usual Schr\"odinger sense.\\\\
-In classical theory, Maxwell equations do not contain any particle concept. In quantum theory, photons are the quanta of the electromagnetic field and  relativistic particles by virtue of their vanishing mass, the correct description requires quantum electrodynamics rather than a single-particle Schr\"odinger equation.
+
+\calloutwarn{%
+In practice, these requirements cannot be satisfied simultaneously for the photon in the same way as for massive particles. Therefore, one cannot construct a true position-space wavefunction for the photon in the usual Schrödinger sense.
+    
+In classical theory, Maxwell equations do not contain any particle concept. In quantum theory, photons are the quanta of the electromagnetic field and  relativistic particles by virtue of their vanishing mass, the correct description requires quantum electrodynamics rather than a single-particle Schrödinger equation.
+}
