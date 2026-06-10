@@ -440,13 +440,40 @@ we can introduce the dimensionless \textbf{quadrature operators} defined at $t=0
 \hat{x}_1 = \dfrac{1}{2}\left(\hat{a}+\hat{a}^\dagger\right),\\[1.5ex]
 \hat{x}_2 = \dfrac{1}{2i}\left(\hat{a}-\hat{a}^\dagger\right),
 \end{cases}
-\qquad \implies \qquad [\hat{x}_1,\hat{x}_2]=\dfrac{i}{2}.
+\hspace{1.5ex} \implies \hspace{1.5ex} 
+[\hat{x}_1,\hat{x}_2]=\dfrac{i}{2}.
 \end{equation}
 
 By expanding the exponentials via Euler's formula, the time-dependent electric field can be elegantly expressed as:
 \begin{equation}\label{eqn:11-electric-field-quadrature-operators}
 \hat{E}_x(z,t) = 2A_0\sin(kz) \bigl[ \hat{x}_1\cos(\omega t) + \hat{x}_2\sin(\omega t) \bigr].
 \end{equation}
+\vspace{0.5ex}
+
+\callout{Derivation of Equation~\eqref{eqn:11-electric-field-quadrature-operators}}{%
+\begin{proof}
+Starting from the Eqn.~\ref{eqn:11-single-mode-field-time}, using the Euler's relations in \eqref{eqn:3-euler-formula} and finally recognizing the definitions of the quadrature operators in \eqref{eqn:11-quadrature-operators}, we can rewrite the electric field as:
+\begin{equation}
+\begin{split}
+    \hat{E}_x(z,t) &= 
+    A_0\left(
+        \hat{a}e^{-i\omega t}+\hat{a}^\dagger e^{i\omega t}
+    \right) \sin(kz) = \\[1ex]
+    &= A_0\left[
+        \hat{a}\left(\cos(\omega t) - i\sin(\omega t)\right) +
+        \hat{a}^\dagger\left(\cos(\omega t) + i\sin(\omega t)\right)
+    \right] \sin(kz) = \\[1ex]
+    &= A_0\left[
+        \left(\hat{a} + \hat{a}^\dagger\right)\cos(\omega t) - \frac{1}{i}
+        \left(\hat{a}^\dagger - \hat{a}\right)i\sin(\omega t)
+    \right] \sin(kz)  \equiv \\[1ex]
+    &\equiv 2A_0\sin(kz) \left[
+        \hat{x}_1 \cos(\omega t) + \hat{x}_2 \sin(\omega t)
+    \right]
+\end{split}
+\end{equation}
+\end{proof}
+}
 
 The operators $\hat{x}_1$ and $\hat{x}_2$ correspond to the two field quadratures, representing the two independent out-of-phase amplitudes of the electromagnetic mode. They are directly related to the standard canonical position and momentum operators $(\hat{q}, \hat{p})$ of the mechanical analogue oscillator:
 \begin{equation}\label{eqn:11-quadrature-operators-canonical-variables}
@@ -458,7 +485,7 @@ The operators $\hat{x}_1$ and $\hat{x}_2$ correspond to the two field quadrature
 
 We can now evaluate the product of their quantum uncertainties. By explicit substitution of the scaling factors, the mass $m$ and frequency $\omega$ cancel out perfectly:
 \begin{align}
-    \Delta \hat{x}_1 \, \Delta \hat{x}_2 &= \sqrt{\frac{m\omega }{2\hbar}}\, \Delta\hat{q} \cdot \sqrt{\frac{1}{2m\hbar \omega}}\, \Delta \hat{p} \nonumber \\
+    \Delta \hat{x}_1 \, \Delta \hat{x}_2 &= \sqrt{\frac{m\omega }{2\hbar}}\, \Delta\hat{q} \, \sqrt{\frac{1}{2m\hbar \omega}}\, \Delta \hat{p} = \nonumber \\
     &= \frac{1}{2\hbar}\, \Delta\hat{q} \, \Delta\hat{p}. \label{eqn:11-quadrature-uncertainty-derivation}
 \end{align}
 
@@ -468,7 +495,7 @@ By invoking the fundamental Heisenberg uncertainty relation for canonical coordi
 \end{equation}
 \hspace{1ex}
 \calloutinfo{%
-This is the physical insight of Equation~\eqref{eqn:11-quadrature-uncertainty-final} to be remembered: the field quadratures are strictly subject to a minimum-uncertainty relation. This implies that the \textbf{amplitude and the phase} (and consequently, the field direction in the complex amplitude plane) \textbf{cannot be simultaneously known} with arbitrary precision. Any attempt to squeeze the noise in one quadrature will inevitably amplify the fluctuations in the orthogonal one.
+This is the physical insight of Equation~\eqref{eqn:11-quadrature-uncertainty-final} to be remembered: the field quadratures are strictly subject to a minimum-uncertainty relation. This implies that the \textbf{amplitude and the phase} (and subsequently, the field direction in the complex amplitude plane) \textbf{cannot be simultaneously known} with arbitrary precision. Any attempt to squeeze the noise in one quadrature will inevitably amplify the fluctuations in the orthogonal one.
 }
 
 \begin{figure}[H]
@@ -476,15 +503,38 @@ This is the physical insight of Equation~\eqref{eqn:11-quadrature-uncertainty-fi
     \includegraphics[width=0.6\linewidth]{images_in_pdf/11-/Grafico_66.pdf}
 \end{figure}
 
-For the \textbf{number state:}
-\begin{equation}\label{eqn:11-number-state-quadratures}
+The expectation values of the quadrature operators on the \textbf{number state} are:
+\begin{equation}\label{eqn:11-number-state-quadratures-expectation-values}
+    \braket{n|\hat{x}_1|n} = \braket{n|\hat{x}_2|n} =0
+\end{equation}
+
+\callout{Proof for $\hat{x}_1$}{%
+\begin{proof}
+To perform the calculation, it is just needed to remember the definition of the quadrature operator $\hat{x}_1$ in Eqn.~\ref{eqn:11-quadrature-operators}:
+\begin{equation}
 \begin{split}
-    \braket{n|\hat{x}_1|n} &= \braket{n|\hat{x}_2|n} =0\\\\
-    \braket{n|\hat{x}_1^2|n} &= \frac{1}{4}\, \braket{n| (\hat{a}^\dagger)^2 + \hat{a}^2 + \hat{a}^\dagger\hat{a}+\hat{a}\hat{a}^\dagger|n}\\
-    &=\frac{1}{4}\, (0+0+\braket{n|1+2\hat{a}^\dagger\hat{a}|n})\\
-    & = \frac{1}{4}\, (1+2n) = \braket{n|\hat{x}_2^2|n} 
+    \bra{n}\hat{x}_1\ket{n} &=
+    \bra{n} \frac12 \left(\hat{a}+\hat{a}^\dagger\right) \ket{n} = \\[0.5ex]
+    &= \frac12 \left[
+        \bra{n}\hat{a}\ket{n} + \bra{n}\hat{a}^\dagger\ket{n}
+    \right] = \\[0.5ex]
+    &= \frac12 \left[
+        \sqrt{n}\braket{n|n-1} + \sqrt{n+1}\braket{n|n+1}
+    \right] = 0 + 0 = 0
 \end{split}
 \end{equation}
+\end{proof}
+}
+
+while the uncertainties are:
+\begin{equation}\label{eqn:11-number-state-quadratures-uncertainties}
+\begin{split}
+    \bra{n} \hat{x}_1^2 \ket{n} &= \frac{1}{4}\, \bra{n} (\hat{a}^\dagger)^2 + \hat{a}^2 + \hat{a}^\dagger\hat{a}+\hat{a}\hat{a}^\dagger \ket{n} = \\[0.5ex]
+    &=\frac{1}{4}\, (0+0+\bra{n} 1+2\hat{a}^\dagger\hat{a} \ket{n}) = \\[0.5ex]
+    & = \frac{1}{4}\, (1+2n) = \bra{n} \hat{x}_2^2 \ket{n} 
+\end{split}
+\end{equation}
+
 
 This again shows that the average value of each quadrature vanishes, but the fluctuations do not. In particular, for the vacuum state, \hl{the uncertainties in quadratures operators are the same and the vacuum state, having $n=0$, minimizes the uncertainty product:}
 \begin{equation}\label{eqn:11-vacuum-state-quadrature-uncertainties}

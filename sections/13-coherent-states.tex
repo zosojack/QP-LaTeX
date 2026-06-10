@@ -15,7 +15,7 @@ We already learned the relationship between the quadrature operators and the cre
 \end{cases}
 \end{equation}
 
-This allows us to write the Hamiltonian in terms of the quadrature operators:
+We are then allowed to write the Hamiltonian in terms of the quadrature operators:
 \begin{equation}\label{eqn:13-hamiltonian-quadratures}
 \hat{H} = \hbar \omega \left(\hat{a}^\dagger \hat{a}+\frac{1}{2}\right) =
 \hbar \omega \left(\hat{x}_1^2+\hat{x}_2^2\right).
@@ -37,12 +37,12 @@ with uncertainty
 
 and we can write the Hamiltonian eigenvalue equation both in terms of the number operator and the quadrature operators:
 \begin{equation}\label{eqn:13-hamiltonian-eigenvalue-equation}
-\hat{H}\, \ket{n} = \hbar \omega \left(\hat{a}^\dagger \hat{a}+\frac{1}{2} \right)\, \ket{n} =\hbar \omega \bigl(n+\frac{1}{2}\bigr) = \hbar \omega (\hat{x}_1^2+\hat{x}_2^2)\, \ket{n}
+\hat{H}\, \ket{n} = \hbar \omega \left(\hat{a}^\dagger \hat{a}+\frac{1}{2} \right)\, \ket{n} =\hbar \omega \bigl(n+\frac{1}{2}\bigr) = \hbar \omega \left(\hat{x}_1^2+\hat{x}_2^2\right)\, \ket{n}
 \end{equation}
 
 simplifying:
 \begin{equation}
-(\hat{x}_1^2+\hat{x}_2^2)\, \ket{n} = \left(n+\frac{1}{2}\right) \, \ket{n}
+\left(\hat{x}_1^2+\hat{x}_2^2\right)\, \ket{n} = \left(n+\frac{1}{2}\right) \, \ket{n}
 \end{equation}
 \vspace{1ex}
 
@@ -260,8 +260,8 @@ We recall the operator:
 Let us consider the time evolution of a quantum state for not interacting field:
 \[\begin{split}
     &\ket{\alpha} \to \ket{\alpha e^{-i\omega t}}\\
-    \implies &\braket{\alpha e^{-i\omega t}|\hat{x}_1|\alpha e^{-i\omega t}} = \alpha\,  \cos(\omega t)\\
-    \implies &\braket{\alpha e^{-i\omega t}|\hat{x}_2|\alpha e^{-i\omega t}} = -\alpha\,  \sin(\omega t)\\
+    \implies &\bra{\alpha e^{-i\omega t}} \hat{x}_1 \ket{\alpha e^{-i\omega t}} = \alpha\,  \cos(\omega t)\\
+    \implies &\bra{\alpha e^{-i\omega t}} \hat{x}_2 \ket{\alpha e^{-i\omega t}} = -\alpha\,  \sin(\omega t)\\
 \end{split}\]
 In the phasor diagram that means a clockwise rotation of the circle. 
 \begin{figure}[H]
@@ -269,7 +269,7 @@ In the phasor diagram that means a clockwise rotation of the circle.
         \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_72.pdf}
     \end{figure}
 
-\[  \braket{\alpha e^{-i\omega t}|\hat{E}_x|\alpha e^{-i\omega t}} = 2A_0\,  \sin(\omega t) \, \braket{\hat{x}_1} = 2A_0\,  \sin(\omega t) \, \alpha \, \cos(\omega t) \]
+\[  \bra{\alpha e^{-i\omega t}} \hat{E}_x \ket{\alpha e^{-i\omega t}} = 2A_0\,  \sin(\omega t) \, \braket{\hat{x}_1} = 2A_0\,  \sin(\omega t) \, \alpha \, \cos(\omega t) \]
 The time evolution is the projection of the $\braket{\hat{x}_1}$ axis as a function of the time.
 \begin{figure}[H]
     \centering
@@ -309,30 +309,42 @@ Where we define the \textbf{squeezing operator}:
 \end{equation}
 
 We can compute:
-\[\begin{split}
-    &\braket{\alpha,\epsilon|\hat{a}|\alpha,\epsilon} = \alpha\\\\
-    &\braket{\alpha,\epsilon|\hat{a}^2|\alpha,\epsilon} = \alpha^2-cosh(r_s)\, sinh(r_s)\, e^{2i\theta_s}\\\\
-    &\braket{\alpha,\epsilon|\hat{a}^\dagger \hat{a}|\alpha,\epsilon} = |\alpha|^2+sinh^2(r_s)
-\end{split}\]
+\begin{align}\label{eqn:13-squeezed-state-expectation-values}
+    &\bra{\alpha,\epsilon} \hat{a} \ket{\alpha,\epsilon} = \alpha\\[0.5ex]
+    &\bra{\alpha,\epsilon} \hat{a}^2 \ket{\alpha,\epsilon} = \alpha^2-\cosh(r_s)\, \sinh(r_s)\, e^{2i\theta_s}\\[0.5ex]
+    &\bra{\alpha,\epsilon} \hat{a}^\dagger \hat{a} \ket{\alpha,\epsilon} = |\alpha|^2+\sinh^2(r_s)
+\end{align}
+
 The coherent state are obtained for $r_s \to 0$, while the vacuum states are obtained for $\alpha \to 0$.
 
 We can define the rotated quadrature operators for vacuum state:
-\[\begin{bmatrix}
-    \hat{y}_1\\
+\begin{equation}\label{eqn:13-rotated-quadrature-operator-squeezed}
+\left(
+\begin{matrix}
+    \hat{y}_1\\[0.5ex]
     \hat{y_2}
-\end{bmatrix} = \begin{bmatrix}
-    cos (\frac{\theta}{2})\hspace{0.7cm}\sin(\frac{\theta}{2})\\
-    -\sin(\frac{\theta}{2}) \hspace{0.7cm} \cos(\frac{\theta}{2})
-\end{bmatrix} \, \begin{bmatrix}
-    \hat{x}_1\\
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+    \cos (\tfrac{\theta}{2}) &\sin(\tfrac{\theta}{2})\\[0.5ex]
+    -\sin(\tfrac{\theta}{2}) &\cos(\tfrac{\theta}{2})
+\end{matrix} 
+\right)
+\, 
+\left(
+\begin{matrix}
+    \hat{x}_1\\[0.5ex]
     \hat{x}_2
-\end{bmatrix} \]
+\end{matrix}
+\right)
+\end{equation}
 
 Or:
 \[\hat{y}_1+i\hat{y}_2 = (\hat{x}_1+\hat{x}_2)\, e^{-i\frac{\theta}{2}}\]
 The variances should be:
 \[\begin{cases}
-    \Delta \hat{y}_1^2 = \frac{1}{4}e^{-2r_s}\\
+    \Delta \hat{y}_1^2 = \frac{1}{4}e^{-2r_s}\\[0.5ex]
     \Delta \hat{y}_2^2 = \frac{1}{4}e^{+2r_s}
 \end{cases}\]
 
@@ -341,7 +353,7 @@ The variances should be:
     \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_75.pdf}
 \end{figure}
 
-For a generic squeeze state$\ket{\alpha,\epsilon}$, we have:
+For a generic squeeze state $\ket{\alpha,\epsilon}$, we have:
 \[\braket{\hat{y}_1+i\hat{y}_2} = \alpha e^{-i\frac{\theta}{2}}\]
 \begin{figure}[H]
         \centering
@@ -359,18 +371,62 @@ Where:
     \item $\hat{a},\hat{a}^\dagger =$ operators at $t=0$. 
 \end{itemize}
 
-If we set $X = \omega t$ in terms of quadrature operators
-\[\hat{E}(x)= 2A_0\, \sin(kz) [\hat{x}_1\, \cos(x) + \hat{x}_2 \, \sin(x)] \]
-From $[\hat{x}_1,\hat{x}_2] = \frac{i}{2}$ we obtain:
-\[[\hat{E}(x=0) ,\hat{E}(x)] = i A_0^2 \, sin^2(kz)\, \sin(x)\]
-Operators at different phases don't commute!
+If we set $x = \omega t$ and look at the Equation~\ref{eqn:11-electric-field-quadrature-operators}:
+\begin{equation*}
+\hat{E}(x)= 2A_0\, \sin(kz) [\hat{x}_1\, \cos(x) + \hat{x}_2 \, \sin(x)]
+\end{equation*}
 
-If the uncertainty in the field fo $x=0$ is:
+From the fact that:
+\begin{equation}\label{eqn:13-commutation-relation-quadratures}
+\bigl[\hat{x}_1,\hat{x}_2\bigr] = \frac{i}{2}
+\end{equation}
+
+ we obtain:
+\begin{equation}\label{eqn:13-commutation-relation-electric-field}
+\left[\hat{E}(x=0) ,\hat{E}(x)\right] = i A_0^2 \, \sin^2(kz)\, \sin(x)
+\end{equation}
+
+\hl{Operators at different phases don't commute!}
+
+\callout{Proof of the commutation relation between $\hat{E}(x=0)$ and $\hat{E}(x)$.}{%
+\begin{proof}
+Let's start by evaluating the field at $x=0$:
+\begin{equation}\label{eqn:13-electric-field-x0}
+\hat{E}(x=0) = 2 A_0 \sin(kz)\, \hat{x}_1
+\end{equation}
+
+Next, we compute the actual commutator:
+\begin{equation}\label{eqn:13-electric-field-commutator-proof}
+\begin{split}
+\left[
+    \hat{E}(0), \hat{E}(x)
+\right] &= 
+\left(2 A_0\, \sin(kz)\right)^2 
+\bigl[
+    \hat{x}_1, \hat{x}_1 \cos(x) + \hat{x}_2 \sin(x)
+\bigr] = \\[0.5ex]
+&= 4 A_0^2 \, \sin^2(kz)
+\bigl[
+    \hat{x}_1, \hat{x}_2 \sin(x)
+\bigr] = \\[0.5ex]
+&= 4 A_0^2 \, \sin^2(kz) \sin(x) \bigl[
+    \hat{x}_1, \hat{x}_2
+\bigr]
+\end{split}
+\end{equation}
+
+where we have used the fact that $\hat{x}_1$ commutes with itself and that $\sin(x)$ is a scalar factor. Substituting the commutation relation in Eqn.~\ref{eqn:13-commutation-relation-quadratures} into the above expression, the result is proven.
+\end{proof}
+}
+
+If the uncertainty in the field at $x=0$ is:
 \[\Delta \hat{E}(0) < \frac{1}{\sqrt{2}}A_0\,|\sin(kz)\, \sin(x)|\]
 Then at some other phases we must have:
 \[\Delta \hat{E}(x) > \frac{1}{\sqrt{2}} A_0\, |\sin(kz)\, \sin(x)|\]
 
-Squeeze light contains phase-dependent noise that is reduced below that of the vacuum for some phases and enhanced above that of the vacuum for others.
+\calloutinfo{%
+    Squeeze light contains phase-dependent noise that is reduced below that of the vacuum for some phases and enhanced above that of the vacuum for others.
+}
 
 Distribution of noise in the $\vec{E}$ for squeezed states is:
 \begin{figure}[H]
