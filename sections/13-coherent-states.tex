@@ -1,5 +1,6 @@
 \section{Coherent states}\label{sec:coherent-states}
 
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 \subsection{Summary of quadrature operators}
 
 \hl{A coherent state is a linear superposition of number states} and this provides the closest approximation of a radiation by a laser. 
@@ -9,7 +10,7 @@ We already learned the relationship between the quadrature operators and the cre
 \begin{cases}
     \hat{x}_1 = \frac{1}{2}\, (\hat{a}+\hat{a}^\dagger ) \\
     \hat{x}_2 = \frac{i}{2}\, (\hat{a}-\hat{a}^\dagger ) 
-\end{cases} \implies \hspace{2ex} \begin{cases}
+\end{cases} \iff \hspace{2ex} \begin{cases}
     \hat{a} \hspace{0.23cm} = \hat{x}_1+i\hat{x}_2\\
     \hat{a}^\dagger  = \hat{x}_1-i\hat{x}_2
 \end{cases}
@@ -21,7 +22,7 @@ We are then allowed to write the Hamiltonian in terms of the quadrature operator
 \hbar \omega \left(\hat{x}_1^2+\hat{x}_2^2\right).
 \end{equation}
 
-We want to relay on photon number state, the basis can be used for black body radiation and chaotic light too. Remember that we have:
+We want to rely on photon number state, the basis can be used for black body radiation and chaotic light too. Remember that we have:
 \begin{equation}\label{eqn:13-number-operator-eigenvalue-equation}
 \hat{n}\,\ket{n} = n\, \ket{n},
 \end{equation}
@@ -46,64 +47,100 @@ simplifying:
 \end{equation}
 \vspace{1ex}
 
-Since the expectation values of the quadrature operators are zero $\braket{n|\hat{x}_1|n} = \braket{n|\hat{x}_2|n} = 0$, if we define the rotated quadrature operator as:
+A crucial property of any number state $\ket{n}$ is that the expectation values of the standard quadratures vanish: $\braket{n|\hat{x}_1|n} = \braket{n|\hat{x}_2|n} = 0$. Consequently, if we define a generalized rotated quadrature operator as:
 \begin{equation}\label{eqn:13-rotated-quadrature-operator}
 X_\theta = \cos(\theta)\, \hat{x}_1+\sin(\theta) \, \hat{x}_2
 \end{equation}
 
-it will also have zero expectation value $\braket{n|X|n} = 0$ for any phase $\theta$. This means that the average value of the electric field is zero in a number state, and the phase is completely undefined.
+its expectation value remains zero ($\braket{n|X_\theta|n} = 0$) for any phase angle $\theta$. This mathematically implies that the average electric field of a Fock state is identically zero, meaning its classical phase is completely undefined and random.
 
-A photon number state $\ket{n}$ represents an exotic state of light in sharp contrast with a classical electromagnetic wave of stable amplitude and phase. While a Fock state possesses a perfectly sharp energy (and photon number), it does not possess a classical phase analogue. In fact, a state $\ket{n}$ has a completely random phase, whereas a state with a well-defined phase must exhibit a completely broad photon number distribution. This highlights that quantum phase and photon number are complementary observables, obeying a fundamental uncertainty relation similar to position and momentum.
+This highlights a fundamental quantum complementarity: \hl{a Fock state possesses a perfectly sharp energy and photon number ($\braket{\Delta n^2} = 0$), but lacks any classical phase analogue}. Conversely, a state with a well-defined classical phase must exhibit a broad photon number distribution, obeying a fundamental uncertainty relation similar to position and momentum.
 
-The vacuum state $\ket{0}$ for a single mode of frequency $\omega$ acts as the effective ground state of the system when thermal fluctuations are negligible, namely when the thermal energy is much smaller than the quantum excitation energy:
+\hl{The vacuum state $\ket{0}$ acts as the effective ground state of the system when thermal fluctuations are negligible compared to the quantum excitation energy}, namely when:
 \begin{equation}\label{eqn:13-vacuum-thermal-condition}
 k_B T \ll \hbar \omega.
 \end{equation}
 
-While the first excited state $\ket{1}$ (a single photon) can be generated experimentally via atomic cascade emissions or through spontaneous parametric down-conversion (SPDC), higher excited states $\ket{2}, \ket{3}, \dots$ become increasingly challenging to prepare in the laboratory.
+While the single-photon state $\ket{1}$ can be generated experimentally via atomic cascade emissions or through spontaneous parametric down-conversion (SPDC), preparing higher excited Fock states ($\ket{2}$, $\ket{3}$, $\dots$) becomes increasingly challenging in the laboratory. 
 
-\subsubsection{Coherent States Formalism}
+\calloutinfo{%
+Because Fock states are highly non-classical, macroscopically fragile, and lack a defined phase, they cannot describe the continuous, stable wave emitted by a standard laser. This limitation strongly motivates the introduction of \textbf{coherent states}, which balance number and phase uncertainties to properly mimic classical radiation.
+}
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+\subsection{Coherent States Formalism}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Displacement operator}
 
 A single-mode laser light operating well above threshold possesses a well-defined, stable phase. Such classical-like radiation cannot be described by a single Fock state, but corresponds to a specific linear superposition known as a \textbf{coherent state}, denoted as $\ket{\alpha}$.
 
 Classically, we can visualize a mode being excited by an external source that shifts the electric field from zero to a finite classical amplitude $\vec{E} \propto |\alpha| \neq 0$, which in turn drives the magnetic field, generating a self-propagating harmonic wave. In the quantum framework, this process is modeled by displacing the vacuum state away from the origin of the phase space to induce an oscillating expectation value for the field.
 
-To formalize this, we introduce the unitary \textbf{displacement operator} $\hat{D}(\alpha)$, which shifts the vacuum state by a complex amplitude $\alpha \in \mathbb{C}$:
+To formalize this, we introduce the \hl{unitary \textbf{displacement operator} $\hat{D}(\alpha)$}, which shifts the vacuum state by a complex amplitude $\alpha \in \mathbb{C}$:
 \begin{equation}\label{eqn:13-displacement-operator-definition}
 \ket{\alpha} = \hat{D}(\alpha) \ket{0}.
 \end{equation}
 
-The displacement operator is generated by the creation and annihilation operators:
+The displacement operator features the exponentiation of the ladder operators:
 \begin{equation}\label{eqn:13-displacement-operator-exponential}
-\hat{D}(\alpha) = e^{\alpha \hat{a}^\dagger  - \alpha^* \hat{a}}.
+\hat{D}(\alpha) = e^{\alpha \hat{a}^\dagger  - \alpha^\star \hat{a}}.
 \end{equation}
 
 From its definition and the Baker-Campbell-Hausdorff lemma, $\hat{D}(\alpha)$ satisfies the following fundamental properties:
 \begin{align}
-\hat{D}^\dagger (\alpha) &= \hat{D}^{-1}(\alpha) = \hat{D}(-\alpha), \label{eqn:13-displacement-property-1} \\
-\hat{D}^\dagger (\alpha) \hat{a} \hat{D}(\alpha) &= \hat{a} + \alpha, \label{eqn:13-displacement-property-2} \\
-\hat{D}^\dagger (\alpha) \hat{a}^\dagger  \hat{D}(\alpha) &= \hat{a}^\dagger  + \alpha^*. \label{eqn:13-displacement-property-3}
+\Rnum{1}&.\hspace{1ex} \hat{D}^\dagger (\alpha) = \hat{D}^{-1}(\alpha) = \hat{D}(-\alpha), \label{eqn:13-displacement-property-1} \\
+\Rnum{2}&.\hspace{1ex} \hat{D}^\dagger (\alpha) \hat{a} \hat{D}(\alpha) = \hat{a} + \alpha, \label{eqn:13-displacement-property-2} \\
+\Rnum{3}&.\hspace{1ex} \hat{D}^\dagger (\alpha) \hat{a}^\dagger  \hat{D}(\alpha) = \hat{a}^\dagger  + \alpha^\star. \label{eqn:13-displacement-property-3}
 \end{align}
 
-A crucial property of the coherent state $\ket{\alpha}$ is that it is a right eigenstate of the annihilation operator $\hat{a}$. This can be proven by inserting the identity operator $\mathbb{I} = \hat{D}(\alpha)\hat{D}^\dagger (\alpha)$:
+\callout{Proof of the displacement operator properties.}{%
+\begin{proof}
+Property \Rnum{1}.
+\item For the adjoint of $\hat{D}(\alpha)$, we have:
+\begin{equation}\label{eqn:13-displacement-property-1-adjoint-proof}
+\begin{split}
+    \left(\hat{D}(\alpha)\right)^\dagger &= 
+    \left(e^{\alpha \hat{a}^\dagger  - \alpha^\star \hat{a}}\right)^\dagger = \\
+    &= e^{\alpha^\star\hat{a}} - \alpha\hat{a}^\dagger \equiv D(-\alpha),
+\end{split}
+\end{equation}
+
+while for its inverse, suppose $\hat{D}^{-1}(\alpha)$ can be expressed as $e^{x}$:
+\begin{equation}\label{eqn:13-displacement-property-1-inverse-proof}
+\begin{split}
+    \hat{D}^{-1}(\alpha)\hat{D}(\alpha) \musteq
+    \identity \iff x + \alpha \hat{a}^\dagger  - \alpha^\star \hat{a} = 0 \\
+    \implies \hat{D}^{-1}(\alpha) = e^{-\alpha \hat{a}^\dagger  + \alpha^\star \hat{a}} \equiv \hat{D}(-\alpha)
+\end{split}
+\end{equation}
+
+\end{proof}
+}
+\vspace{1ex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Mean photon number of a coherent state}
+
+\hl{A key feature of the coherent state $\ket{\alpha}$ is that it is a right eigenstate of the annihilation operator $\hat{a}$}. This can be proven by applying $\hat{D}^\dagger(\alpha)\hat{a}$ to $\ket{\alpha}$ and using the property \Rnum{2} of the displacement operator (Eqn.~\ref{eqn:13-displacement-property-2}):
 \begin{align}
-\hat{D}^\dagger (\alpha) \hat{a} \ket{\alpha} &= \hat{D}^\dagger (\alpha) \hat{a} \hat{D}(\alpha) \ket{0} \nonumber \\
-&= (\hat{a} + \alpha) \ket{0} = 0 + \alpha \ket{0}. \label{eqn:13-proof-eigenvalue-step1}
+\hat{D}^\dagger (\alpha) \hat{a} \ket{\alpha} &= \hat{D}^\dagger (\alpha) \hat{a} \left(\hat{D}(\alpha) \ket{0}\right) = \nonumber \\[0.5ex]
+&= (\hat{a} + \alpha) \ket{0} = 0 + \alpha \ket{0}; \label{eqn:13-proof-eigenvalue-step1}
 \end{align}
 
-Multiplying both sides from the left by $\hat{D}(\alpha)$, we immediately find:
-\begin{equation}\label{eqn:13-coherent-eigenvalue}
+multiplying both sides from the left by $\hat{D}(\alpha)$, we immediately find:
+\begin{equation}\label{eqn:13-annihilation-coherent-eigenvalue}
 \hat{a} \ket{\alpha} = \alpha \ket{\alpha}.
 \end{equation}
 
-Using this eigenvalue relation, the expectation value for the photon number operator $\hat{n} = \hat{a}^\dagger  \hat{a}$ in a coherent state is easily evaluated:
+Using this eigenvalue relation, the expectation value for the photon number operator $\hat{n} = \hat{a}^\dagger  \hat{a}$ in a coherent state (i.e. the mean number of photons) is easily evaluated:
 \begin{equation}\label{eqn:13-coherent-mean-photons}
-\braket{\alpha|\hat{n}|\alpha} = \braket{\alpha|\hat{a}^\dagger  \hat{a}|\alpha} = \alpha^* \alpha \braket{\alpha|\alpha} = |\alpha|^2 = \overline{n}.
+\braket{\alpha|\hat{n}|\alpha} = \braket{\alpha|\hat{a}^\dagger  \hat{a}|\alpha} = \alpha^\star \alpha \braket{\alpha|\alpha} = |\alpha|^2 \coloneqq \overline{n}.
 \end{equation}
 
-Here, $\overline{n}$ represents the mean photon number, matching the energy intensity of a classical field. However, unlike a number state, a coherent state does not contain a sharp number of photons. It is composed of an infinite superposition of Fock states:
-\begin{equation}\label{eqn:13-coherent-fock-expansion}
-\ket{\alpha} = \sum_{n=0}^{\infty} \ket{n} \braket{n|\alpha}.
+Here, $\overline{n}$ represents the mean photon number, matching the energy intensity of a classical field. However, unlike a number state, \hl{a coherent state does not contain an unequivocal number of photons, since it is composed of an infinite superposition of Fock states}:
+\begin{equation}\label{eqn:13-coherent-state-fock-expansion}
+\ket{\alpha} = \sum_{n=0}^{\infty} \braket{n|\alpha} \ket{n}.
 \end{equation}
 
 By projecting the eigenvalue equation onto $\bra{n}$ and using the property $\bra{n}\hat{a} = \sqrt{n+1}\bra{n+1}$, one finds the recurrence relation that yields the expansion coefficients:
@@ -111,9 +148,116 @@ By projecting the eigenvalue equation onto $\bra{n}$ and using the property $\br
 \braket{n|\alpha} = \frac{\alpha^n}{\sqrt{n!}} e^{-\frac{1}{2}|\alpha|^2} \quad \implies \quad \ket{\alpha} = e^{-\frac{1}{2}|\alpha|^2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket{n}.
 \end{equation}
 
-It is important to note that distinct coherent states are not orthogonal, as they are projections of shifted wave-packets that overlap in phase space:
+\callout{Derivation of coherent state's expansion on number states}{%
+We already know that coherent states are eigenstates of the annihilation operator $\hat{a}$; the problem is to find the expansion coefficients $\braket{n|\alpha} \coloneqq c_n$ that satisfy the eigenvalue equation (Eqn.~\ref{eqn:13-annihilation-coherent-eigenvalue}).
+\begin{proof}
+Let's start by re-writing the eigenvalue equation in terms of the number state basis:
+\begin{equation}\label{eqn:13-coherent-expansion-number-basis-1}
+\hat{a}\ket{\alpha} = \hat{a} \sum_{n=0}^{\infty} c_n \ket{n} \musteq \alpha \ket{\alpha} 
+\end{equation}
+
+$\hat{a}$ slides in the summation and acts on the number state as $\hat{a}\ket{n} = \sqrt{n}\ket{n-1}$:
+\begin{equation}\label{eqn:13-coherent-expansion-number-basis-2}
+\sum_{n=0}^{\infty} c_n \sqrt{n} \ket{n-1} \musteq \sum_{n=0}^{\infty}\alpha\, c_n \ket{n}
+\end{equation}
+
+since there does not exist a number state with negative index, we can re-index the left-hand side:
+\begin{equation}\label{eqn:13-coherent-expansion-number-basis-3}
+\sum_{n=0}^{\infty} c_{n+1} \sqrt{n+1} \ket{n} \musteq \sum_{n=0}^{\infty}\alpha\, c_n \ket{n}
+\end{equation}
+
+this leads to the recurrence relation for the coefficients:
+\begin{equation}\label{eqn:13-coherent-expansion-recurrence}
+c_{n+1} = \frac{\alpha\, c_n}{\sqrt{n+1}}.
+\end{equation}
+
+Iterating backwards this relation starting from $c_{n+1}$ gives:
+\begin{equation}\label{eqn:13-coherent-expansion-recurrence-iteration}
+\begin{split}
+    c_{n+1} &= \frac{\alpha}{\sqrt{n+1}} 
+    \frac{\alpha\, c_{n-1}}{\sqrt{n}} = \\[0.5ex]
+    &= \frac{\alpha}{\sqrt{n+1}} \frac{\alpha}{\sqrt{n}} 
+    \frac{\alpha\, c_{n-1}}{\sqrt{n-1}} = \\[0.5ex]
+    &= \dots = \frac{\alpha^{n+1}}{\sqrt{(n+1)!}} c_0
+\end{split}
+\end{equation}
+
+we can then write the coherent state expansion as:
+\begin{equation}\label{eqn:13-coherent-expansion-with-coefficients}
+\ket{\alpha} = c_0 \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket{n}.
+\end{equation}
+
+$c_0$ is determined applying the normalization condition, keeping in mind that number states are orthonormal ($\braket{n|m} = \delta_{nm}$):
+\begin{equation}\label{eqn:13-coherent-expansion-normalization}
+\braket{\alpha|\alpha} = 
+|c_0|^2 \sum_{n=0}^{\infty} \frac{|\alpha|^{2n}}{n!} =
+|c_0|^2 e^{|\alpha|^2}
+\musteq 1
+\iff
+c_0 = \sqrt{e^{-|\alpha|^2}}
+\end{equation}
+
+finally, putting everything together, we obtain the coherent state expansion on the number state basis:
+\begin{equation}\label{eqn:13-coherent-expansion-final}
+\ket{\alpha} = 
+e^{-\frac12 |\alpha|^2} 
+\sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket{n}.
+\end{equation}
+\end{proof}
+}
+
+Indeed, the probability $P(n)$ of detecting exactly $n$ photons in a coherent state field matches the photon number distribution:
+\begin{equation}\label{eqn:13-poisson-distribution}
+P(n) = |c_n|^2 = |\braket{n|\alpha}|^2 = 
+\left| 
+    e^{-\frac{1}{2}|\alpha|^2} \frac{\alpha^n}{\sqrt{n!}}
+\right|^2 =
+e^{-|\alpha|^2} \frac{|\alpha|^{2n}}{n!} =
+e^{-\overline{n}}\, \frac{\overline{n}^n}{n!}.
+\end{equation}
+
+where we used the result of Equation~\ref{eqn:13-coherent-mean-photons} ($|\alpha|^2 = \overline{n}$).
+ 
+\calloutinfo{%
+    This is exactly the form of a Poisson distribution with mean $\overline{n}$, confirming that the photon statistics of a coherent state is Poissonian. \textbf{The shot-noise in optical detection is a result of quantum nature of light}
+}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Photon number variance of a coherent state}
+
+To compute the variance of the photon number, $(\Delta n)^2 = \braket{\hat{n}^2} - \overline{n}^2$, we expand the operator $\hat{n}^2$ using the commutation relation $[\hat{a}, \hat{a}^\dagger ] = 1$ to put it into a \emph{normal-ordered} form:
+\begin{equation}\label{eqn:13-normal-ordering-n2}
+\hat{n}^2 = 
+\hat{a}^\dagger  \hat{a} \hat{a}^\dagger  \hat{a} = 
+\hat{a}^\dagger  
+\left( \hat{a}^\dagger  \hat{a} + 1 \right) \hat{a} =
+\hat{a}^\dagger  \hat{a}^\dagger \hat{a} \hat{a} + \hat{a}^\dagger \hat{a}.
+\end{equation}
+
+Taking the expectation value with respect to $\ket{\alpha}$ yields:
+\begin{equation}\label{eqn:13-n2-expectation}
+\braket{\alpha|\hat{n}^2|\alpha} = \braket{\alpha|\hat{a}^\dagger  \hat{a}^\dagger  \hat{a} \hat{a}|\alpha} + \braket{\alpha|\hat{a}^\dagger  \hat{a}|\alpha} = |\alpha|^4 + |\alpha|^2 = \overline{n}^2 + \overline{n}.
+\end{equation}
+
+Substituting this back into the variance definition, we obtain:
+\begin{equation}\label{eqn:13-photon-variance-final}
+(\Delta n)^2 = (\overline{n}^2 + \overline{n}) - \overline{n}^2 = \overline{n}.
+\end{equation}
+
+\hl{This identity, where the variance equals the mean $\bigl( (\Delta n)^2 = \overline{n} \bigr)$, is another signature of a quantum \textbf{Poissonian process}}.
+
+This confirms that photocounting statistics of ideal laser light are fully governed by a Poisson distribution with mean intensity $\overline{n}$.
+
+The fractional uncertainty in the number of photons in the coherent state is:
+\begin{equation}\label{eqn:13-photon-fractional-uncertainty}
+\frac{\Delta n}{\overline{n}} = \frac{\sqrt{\overline{n}}}{\overline{n}} =\frac{1}{\sqrt{\overline{n}}}
+\end{equation}
+as a matter of course, it decreases with increase in the number mean photon $\overline{n}$.
+
+\calloutwarn{%
+It is important to note that \textbf{distinct coherent states are not orthogonal}, as they are projections of shifted wave-packets that overlap in phase space:
 \begin{equation}\label{eqn:13-coherent-overlap}
-\braket{\alpha_1|\alpha_2} = e^{-\frac{1}{2}|\alpha_1|^2 - \frac{1}{2}|\alpha_2|^2} \sum_{n=0}^{\infty} \frac{(\alpha_1^* \alpha_2)^n}{n!} = e^{-\frac{1}{2}|\alpha_1|^2 - \frac{1}{2}|\alpha_2|^2 + \alpha_1^* \alpha_2}.
+\braket{\alpha_1|\alpha_2} = e^{-\frac{1}{2}|\alpha_1|^2 - \frac{1}{2}|\alpha_2|^2} \sum_{n=0}^{\infty} \frac{(\alpha_1^\star \alpha_2)^n}{n!} = e^{-\frac{1}{2}|\alpha_1|^2 - \frac{1}{2}|\alpha_2|^2 + \alpha_1^\star \alpha_2}.
 \end{equation}
 
 The physical overlap probability (the profile indistinguishability) is given by the absolute square:
@@ -122,32 +266,7 @@ The physical overlap probability (the profile indistinguishability) is given by 
 \end{equation}
 
 Hence, coherent states are only approximately orthogonal when their complex amplitudes are significantly different, i.e., when $|\alpha_1 - \alpha_2| \gg 1$.
-
-To compute the variance of the photon number, $(\Delta n)^2 = \braket{\hat{n}^2} - \overline{n}^2$, we expand the operator $\hat{n}^2$ using the commutation relation $[\hat{a}, \hat{a}^\dagger ] = 1$ to reorder it into a normal-ordered form:
-\begin{equation}\label{eqn:13-normal-ordering-n2}
-\hat{n}^2 = \hat{a}^\dagger  \hat{a} \hat{a}^\dagger  \hat{a} = \hat{a}^\dagger  ( \hat{a}^\dagger  \hat{a} + 1 ) \hat{a} = \hat{a}^\dagger  \hat{a}^\dagger  \hat{a} \hat{a} + \hat{a}^\dagger  \hat{a}.
-\end{equation}
-Taking the expectation value with respect to $\ket{\alpha}$ yields:
-\begin{equation}\label{eqn:13-n2-expectation}
-\braket{\alpha|\hat{n}^2|\alpha} = \braket{\alpha|\hat{a}^\dagger  \hat{a}^\dagger  \hat{a} \hat{a}|\alpha} + \braket{\alpha|\hat{a}^\dagger  \hat{a}|\alpha} = |\alpha|^4 + |\alpha|^2 = \overline{n}^2 + \overline{n}.
-\end{equation}
-Substituting this back into the variance definition, we obtain:
-\begin{equation}\label{eqn:13-photon-variance-final}
-(\Delta n)^2 = (\overline{n}^2 + \overline{n}) - \overline{n}^2 = \overline{n}.
-\end{equation}
-
-\hl{This identity, where the variance equals the mean ($(\Delta n)^2 = \overline{n}$), is the signature of a quantum \textbf{Poissonian process}}.
-
-Indeed, the probability $P(n)$ of detecting exactly $n$ photons in a coherent state field matches the photon number distribution:
-\begin{equation}\label{eqn:13-poisson-distribution}
-P(n) = |\braket{n|\alpha}|^2 = \left| e^{-\frac{1}{2}|\alpha|^2} \frac{\alpha^n}{\sqrt{n!}} \right|^2 = e^{-|\alpha|^2} \frac{(|\alpha|^2)^n}{n!} = e^{-\overline{n}} \frac{\overline{n}^n}{n!}.
-\end{equation}
-
-This confirms that photocounting statistics of ideal laser light are fully governed by a Poisson distribution with mean intensity $\overline{n}$.
-
-The fractional uncertainty in the number of photons in the coherent state is:
-\[\frac{\Delta n}{\overline{n}} = \frac{\sqrt{\overline{n}}}{\overline{n}} =\frac{1}{\sqrt{\overline{n}}}\]
-as a matter of course, it decreases with increase in the number mean photon $\overline{n}$.
+}
 
 \calloutinfo{%
 The coherent states $\ket{\alpha}$ are quantum states close to the classical ones:
@@ -159,12 +278,65 @@ The coherent states $\ket{\alpha}$ are quantum states close to the classical one
 \end{enumerate}
 }
 
+If we use:
+\begin{equation}\label{eqn:13-quadrature-operators-squares}
+\begin{cases}
+    \hat{x}_1^2 = \frac{1}{4}
+    \left(
+        \hat{a}^\dagger\hat{a}^\dagger+2\hat{a}^\dagger \hat{a}+\hat{a}\hat{a}+1
+    \right)\\[1ex]
+    \hat{x}_2^2 = \frac{1}{4}
+    \left(
+        -\hat{a}^\dagger\hat{a}^\dagger+2\hat{a}^\dagger \hat{a}-\hat{a}\hat{a}+1
+    \right)
+\end{cases}
+\end{equation}
+
+It can be proven that:
+\begin{equation}\label{eqn:13-coherent-quadrature-variances}
+(\Delta \hat{x}_1)^2 = (\Delta \hat{x}_2)^2 = \frac{1}{4}
+\end{equation}
+
+\callout{Derivation of the quadrature variances for a coherent state.}{%
+\begin{proof}
+Let's compute the variance for $\hat{x}_1$, remembering that its definition is found in Equation \ref{eqn:11-quadrature-operators}:
+\begin{equation}\label{eqn:13-coherent-x1-variance-proof}
+\begin{split}
+(\Delta\hat{x_1})^2 &= 
+\braket{\hat{x}_1^2} - \braket{\hat{x}_1}^2 = \\
+&= \bra{\alpha}\frac14 
+\left( 
+    \hat{a}^\dagger\hat{a}^\dagger +2\hat{a}^\dagger \hat{a}+\hat{a}\hat{a}+1
+\right) \ket{\alpha} -
+\bra{\alpha}\frac12 
+\left( 
+    \hat{a}^\dagger + \hat{a} 
+\right)\ket{\alpha}^2 = \\
+&= \frac14
+\left(
+    (\alpha^\star)^2 + 2|\alpha|^2 + \alpha^2 + 1
+\right) -
+\frac14
+\left(
+    (\alpha^\star)^2 + 2|\alpha|^2 + \alpha^2
+\right) = \\
+&= \frac14
+\end{split}
+\end{equation}
+
+The derivation for $\hat{x}_2$ is analogous.
+\end{proof}
+}
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+\subsection{Photon number-phase uncertainty (geometrical argument)}
+
 \callout{A coherent state can be represented with a phasor of length $|\alpha|$ and angle $\theta$.}{%
 Since
 \begin{equation}
 \begin{cases}
     \hat{x}_1 = \sqrt{\tfrac{m\omega}{2\hbar}}\, \hat{q} =
-    \frac{1}{2}(\hat{a}+\hat{a}^\dagger )\\
+    \tfrac{1}{2}(\hat{a}+\hat{a}^\dagger )\\[0.5ex]
     \hat{x}_2 = \sqrt{2m\hbar \omega}\, \hat{p} = 
     \tfrac{1}{2i}(\hat{a}-\hat{a}^\dagger )
 \end{cases}
@@ -174,27 +346,20 @@ we shall write:
 \begin{equation}\label{eqn:13-alpha-polar-form}
     \alpha = |\alpha|\, e^{i\theta}
 \end{equation}
+
 \begin{proof}
 \begin{equation}\label{eqn:13-alpha-polar-form-proof}
     \begin{split}
-    \braket{\alpha|\hat{x}_1|\alpha} = \frac{1}{2}\braket{\alpha|(\hat{a}^\dagger +\hat{a})|\alpha} = \frac{1}{2}(\alpha^*+\alpha) \\
-    &\hspace{2.35cm}= \Re(\alpha) = |\alpha|\, \cos(\theta)\\\\
-    \braket{\alpha|\hat{x}_2|\alpha} = \frac{1}{2}i\braket{\alpha|(\hat{a}^\dagger -\hat{a})|\alpha} = \frac{1}{2}(\alpha^*+\alpha) \\
-    &\hspace{2.35cm}= \Im(\alpha) = |\alpha|\, \sin(\theta)\\
+    \braket{\alpha|\hat{x}_1|\alpha} &= \frac{1}{2}\braket{\alpha|(\hat{a}^\dagger +\hat{a})|\alpha} = \frac{1}{2}(\alpha^\star+\alpha) = \\[0.5ex]
+    &= \Re(\alpha) = |\alpha|\, \cos(\theta)\\\\
+    \braket{\alpha|\hat{x}_2|\alpha} &= \frac{1}{2}i\braket{\alpha|(\hat{a}^\dagger -\hat{a})|\alpha} = \frac{1}{2}(\alpha^\star-\alpha) = \\[0.5ex]
+    &= \Im(\alpha) = |\alpha|\, \sin(\theta)
     \end{split}
 \end{equation}
 \end{proof}
 }
+
 \vspace{1ex}
-
-If we use:
-\[\begin{cases}
-    \hat{x}_1^2 = \frac{1}{4}(\hat{a}^\dagger \hat{a}+2\hat{a}^\dagger \hat{a}+\hat{a}\hat{a}+1)\\[1ex]
-    \hat{x}_2^2 = \frac{1}{4}(-\hat{a}^\dagger \hat{a}+2\hat{a}^\dagger \hat{a}-\hat{a}\hat{a}+1)
-\end{cases}\]
-
-It can be proven that:
-\[(\Delta \hat{x}_1)^2 = (\Delta \hat{x}_2)^2 = \frac{1}{4}\]
 
 In contrast to the variances for the number state, \hl{the coherent state is a \textbf{quadrature-minimum uncertainty state} for all mean photon numbers $\overline{n} =|\alpha|^2$}.
 The mean field amplitude associated with the coherent state is an arrow of length $|\alpha| = \sqrt{\overline{n}}$ inclined at an angle $\theta$ to the real axis.
@@ -205,23 +370,34 @@ The mean field amplitude associated with the coherent state is an arrow of lengt
 
 $|\alpha|^2$ and $\theta$ are uncertain, in contrast with the classical wave where these quantities are well known.
 
+\callouterror{%
 The length of the phasor is between $\alpha+\frac{1}{4}$ and $\alpha-\frac{1}{4}$:
-\[ 
+\begin{equation}\label{eqn:13-coherent-phasor-length-uncertainty}
 \begin{split}
-    \Delta n &= \bigl(\sqrt{\overline{n}}+\frac{1}{4}\bigr)^2-\bigl(\sqrt{\overline{n}}-\frac{1}{4}\bigr)^2 \\
-    &=\bigl(|\alpha|+\frac{1}{4}\bigr)^2-\bigl(|\alpha|-\frac{1}{4}\bigr)^2 \\
+    \Delta n &= \left(\sqrt{\overline{n}}+\frac{1}{4}\right)^2-\left(\sqrt{\overline{n}}-\frac{1}{4}\right)^2 = \\[0.5ex]
+    &=\left(|\alpha|+\frac{1}{4}\right)^2-\left(|\alpha|-\frac{1}{4}\right)^2 = \\[0.5ex]
     &= |\alpha| = \sqrt{\overline{n}}
 \end{split}
-\]
+\end{equation}
 
-\subsubsection{The shot-noise in optical detection is a result of quantum nature of light}
+QUELLA FORMULA PER DELTA N NON HA NESSUN SENSO, PER RICAVARE L'ERRORE SU N CONOSCENDO LA RELAZIONE CHE LO LEGA AD ALPHA SI DEVE FARE LA PROPAGAZIONE DELL'ERRORE!%
+}
 
-$\Delta \theta$ subtended by the diameter of the disk at origin. If $|\alpha| >> 1$ the arc rule gives:
-\[\Delta\theta \approx \frac{\text{uncertainty diameter}}{|\alpha|} =\frac{\frac{1}{2}}{|\alpha|} = \frac{1}{2\sqrt{\overline{n}}}\]
+
+$\Delta \theta$ subtended by the diameter of the disk at origin. If $|\alpha| \gg 1$ the arc rule gives:
+\begin{equation}\label{eqn:13-coherent-phase-uncertainty}
+\Delta\theta \approx \frac{\text{uncertainty diameter}}{|\alpha|} =\frac{\frac{1}{2}}{|\alpha|} = \frac{1}{2\sqrt{\overline{n}}}
+\end{equation}
+
 We can calculate:
-\[\Delta n \, \Delta \theta = \sqrt{\overline{n}}\, \frac{1}{2\sqrt{\overline{n}}} = \frac{1}{2}\]
+\begin{equation}\label{eqn:13-coherent-uncertainty-product}
+\Delta n \, \Delta \theta = \sqrt{\overline{n}}\, \frac{1}{2\sqrt{\overline{n}}} = \frac{1}{2}
+\end{equation}
 
-This is a form of an uncertainty relation, but obtained by geometrical argument. So $\frac{\Delta \overline{n}}{\overline{n}}$ and $\Delta \theta$ vary like $\frac{1}{\alpha}$. When $\overline{n}$ increases, the E.M. waves becomes better defined both in amplitude and phase and lead us to the classical wave limit.
+\hl{This is a form of an uncertainty relation, but obtained by geometrical argument}. So $\frac{\Delta \overline{n}}{\overline{n}}$ and $\Delta \theta$ vary like $\frac{1}{\alpha}$. When $\overline{n}$ increases, the E.M. waves becomes better defined both in amplitude and phase and lead us to the classical wave limit.
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Phasor diagrams in different quantum states}
 
 So what we see is:
 \begin{itemize}
@@ -243,7 +419,7 @@ So what we see is:
 
     $|\alpha |= 0$ and $\Delta \theta$ is large as possible $\Delta \theta = 2\pi$
     
-    \textbf{Number state $\ket{n}$}: 
+    \item \textbf{Number state $\ket{n}$}: 
     We have a circle of radius $n$.
     \begin{figure}[H]
         \centering
@@ -252,45 +428,72 @@ So what we see is:
 
     $\Delta n = 0$, we know the number of photons, $\Delta \theta = 2\pi$  is max 
 \end{itemize}
-We recall the operator:
-\[\begin{cases}
-    \hat{E}_x =A_0 (\hat{a}+\hat{a}^\dagger )\sin(kz)\\
-    \hat{x}_1 = \frac{1}{2}(\hat{a}+\hat{a}^\dagger ) 
-\end{cases} \implies\hat{E}_x = 2A_0\, \sin(kz) \, \hat{x}_1 \]
-Let us consider the time evolution of a quantum state for not interacting field:
-\[\begin{split}
-    &\ket{\alpha} \to \ket{\alpha e^{-i\omega t}}\\
-    \implies &\bra{\alpha e^{-i\omega t}} \hat{x}_1 \ket{\alpha e^{-i\omega t}} = \alpha\,  \cos(\omega t)\\
-    \implies &\bra{\alpha e^{-i\omega t}} \hat{x}_2 \ket{\alpha e^{-i\omega t}} = -\alpha\,  \sin(\omega t)\\
-\end{split}\]
-In the phasor diagram that means a clockwise rotation of the circle. 
+
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+\subsection{Time evolution of coherent states}
+
+To understand how coherent states bridge the gap between quantum mechanics and classical electromagnetic theory, we analyze their time evolution in a non-interacting field. We begin by recalling the relationship between the electric field operator $\hat{E}_x$ and the primary quadrature operator $\hat{x}_1$:
+\begin{equation}\label{eqn:13-electric-field-operator-x1-quadrature}
+\hat{E}_x = 2A_0\,\hat{x}_1\, \sin(kz), \qquad \text{where } \hat{x}_1 = \frac{1}{2}(\hat{a}+\hat{a}^\dagger).
+\end{equation}
+
+Under free time evolution, the complex amplitude $\alpha$ of a coherent state picks up a time-dependent phase factor governed by the mode frequency $\omega$, evolving according to $\ket{\alpha} \to \ket{\alpha e^{-i\omega t}}$. Assuming $\alpha$ is initially real for simplicity, the \hl{expectation values of the quadrature operators evolve as}:
+\begin{equation}\label{eqn:13-coherent-time-evolution}
+\begin{split}
+    \bra{\alpha e^{-i\omega t}} \hat{x}_1 \ket{\alpha e^{-i\omega t}} &= \alpha\,  \cos(\omega t), \\[0.3ex]
+    \bra{\alpha e^{-i\omega t}} \hat{x}_2 \ket{\alpha e^{-i\omega t}} &= -\alpha\,  \sin(\omega t).
+\end{split}
+\end{equation}
+
+In the phasor diagram, this dynamics corresponds to a rigid, clockwise rotation of the uncertainty circle around the origin at a constant angular frequency $\omega$.
 \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_72.pdf}
-    \end{figure}
+\end{figure}
 
-\[  \bra{\alpha e^{-i\omega t}} \hat{E}_x \ket{\alpha e^{-i\omega t}} = 2A_0\,  \sin(\omega t) \, \braket{\hat{x}_1} = 2A_0\,  \sin(\omega t) \, \alpha \, \cos(\omega t) \]
-The time evolution is the projection of the $\braket{\hat{x}_1}$ axis as a function of the time.
+By evaluating the expectation value of the electric field operator with respect to this time-evolving state, we map out its macroscopic behavior:
+\begin{equation}\label{eqn:13-coherent-field-time-evolution}
+\bra{\alpha e^{-i\omega t}} \hat{E}_x \ket{\alpha e^{-i\omega t}} = 2A_0\, \alpha \, \sin(kz) \, \cos(\omega t).
+\end{equation}
+
+Physically, \hl{the time-dependent variation of the field is determined by the continuous projection of the rotating quadrature $\braket{\hat{x}_1(t)}$ along the real axis}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_73.pdf}
 \end{figure}
 
-Notice that the greater is the field $\braket{\hat{E}_x} \propto \alpha$, more the field appears classical. Coherent state is the most classical of all the quantum states, the expectation value of field must be very different from the classical ones. In case of number state $\braket{\hat{E}_x} = $.  However we will see that there are states with expectation value different from zero, but the fluctuations are less than a coherent state in one part of the field. These kind of states are called $\textbf{SQUEEZED STATES}$.
+Equation~\ref{eqn:13-coherent-field-time-evolution} demonstrates that the quantum expectation value perfectly reproduces a classical, monochromatic standing wave pulsing at frequency $\omega$. Notice that the larger the field amplitude ($\overline{n} = |\alpha|^2 \gg 1$), the more classical the system appears. This is because the quantum noise floor (the radius of the uncertainty disk, which is always $1/2$) becomes completely negligible compared to the macroscopic length of the displacement vector $|\alpha|$. 
 
-\subsubsection{Squeezed states}
+In this sense, the coherent state is the most classical of all quantum states. This behavior stands in sharp contrast to a photon number state, where the average electric field is identically zero ($\braket{n|\hat{E}_x|n} = 0$) for any $n$, meaning no classical wave oscillations can ever be recovered. 
+
+\calloutinfo{%
+    However, while coherent states minimize the uncertainty product using perfectly symmetric, circular fluctuations ($\Delta x_1 = \Delta x_2 = 1/2$), there exist more general minimum-uncertainty states where the noise in one specific quadrature is squeezed below this vacuum limit at the expense of increased noise in the orthogonal variable. These highly non-classical states are known as \textbf{SQUEEZED STATES}.
+}
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+\subsection{Squeezed states}
 
 We have other minimum uncertainty states with: 
-\[\Delta x_1^2 < \frac{1}{4} \hspace{1cm} \text{or} \hspace{1cm} \Delta x_2^2 > \frac{1}{4}\]
+\begin{equation}\label{eqn:13-squeezed-condition-uncertainty}
+\Delta x_1^2 < \frac{1}{4} \hspace{1cm} \text{or} \hspace{1cm} \Delta x_2^2 < \frac{1}{4}
+\end{equation}
+
 This means that we have less noise in one of the quadrature operators, the circle is \textbf{squeezed} into an ellipse of the same area: 
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_74.pdf}
-    \end{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_74.pdf}
+\end{figure}
 
-While coherent state have poissonian photon number distribution and shot-noise, \textbf{the amplitude-squeezed light will have sub-poissonian statistics with a noise level below the shot-noise.}
+While coherent state have poissonian photon number distribution and shot-noise, \hl{the \textbf{amplitude-squeezed} light will have \textbf{sub-poissonian statistics} with a noise level below the shot-noise.}
 
-These states are represented by $(\alpha,\epsilon)$ with $\epsilon = r_s \, e^{i2\theta_s}$, where:
+These states are represented by 
+\begin{equation}\label{eqn:13-squeezed-state-definition}
+\ket{\alpha,\epsilon} \quad \text{with} \quad
+ \epsilon = r_s \, e^{i2\theta_s},
+\end{equation}
+
+where:
 \begin{itemize}
     \item $|\alpha|^2$ is the intensity of the state.
     \item $\theta_s$ is the orientation of the squeezing axis.
@@ -298,69 +501,77 @@ These states are represented by $(\alpha,\epsilon)$ with $\epsilon = r_s \, e^{i
 \end{itemize}
 
 We can generate a squeezed state starting from a vacuum state:
-\[ \ket{\alpha,\epsilon} = \hat{D}(\alpha) \, \hat{S}(\epsilon) \, \ket{0}\]
-Where we define the \textbf{squeezing operator}:
+\begin{equation}\label{eqn:13-squeezed-state-generation}
+\ket{\alpha,\epsilon} = \hat{D}(\alpha) \, \hat{S}(\epsilon) \, \ket{0}
+\end{equation}
+
+Where we defined the \textbf{squeezing operator}:
 \begin{equation}\label{eqn:13-squeezing-operator}
     \hat{S}(\epsilon) = 
     \exp{
-        \left(
-            \frac{1}{2}\epsilon^*\hat{a}^2-\frac{1}{2}\epsilon \hat{a}^\dagger 
-        \right)}
+    \left(
+        \frac{1}{2}\epsilon^\star\,\hat{a}^2 -
+        \frac{1}{2}\epsilon\,\hat{a}^\dagger 
+    \right)}
 \end{equation}
 
 We can compute:
 \begin{align}\label{eqn:13-squeezed-state-expectation-values}
-    &\bra{\alpha,\epsilon} \hat{a} \ket{\alpha,\epsilon} = \alpha\\[0.5ex]
-    &\bra{\alpha,\epsilon} \hat{a}^2 \ket{\alpha,\epsilon} = \alpha^2-\cosh(r_s)\, \sinh(r_s)\, e^{2i\theta_s}\\[0.5ex]
-    &\bra{\alpha,\epsilon} \hat{a}^\dagger \hat{a} \ket{\alpha,\epsilon} = |\alpha|^2+\sinh^2(r_s)
+    \Rnum{1}&.\hspace{1ex}
+    \bra{\alpha,\epsilon} \hat{a} \ket{\alpha,\epsilon} = \alpha\\[0.5ex]
+    \Rnum{2}&.\hspace{1ex}
+    \bra{\alpha,\epsilon} \hat{a}^2 \ket{\alpha,\epsilon} = \alpha^2-\cosh(r_s)\, \sinh(r_s)\, e^{2i\theta_s}\\[0.5ex]
+    \Rnum{3}&.\hspace{1ex}
+    \bra{\alpha,\epsilon} \hat{a}^\dagger \hat{a} \ket{\alpha,\epsilon} = |\alpha|^2+\sinh^2(r_s)
 \end{align}
 
-The coherent state are obtained for $r_s \to 0$, while the vacuum states are obtained for $\alpha \to 0$.
+\calloutinfo{%
+    The coherent state is obtained in the limit $r_s \to 0$, while the vacuum state is obtained for $\alpha \to 0$.
+}
 
-We can define the rotated quadrature operators for vacuum state:
+We can define the \textbf{rotated quadrature operators} for vacuum state:
 \begin{equation}\label{eqn:13-rotated-quadrature-operator-squeezed}
-\left(
-\begin{matrix}
+\begin{pmatrix}
     \hat{y}_1\\[0.5ex]
     \hat{y_2}
-\end{matrix}
-\right) = 
-\left(
-\begin{matrix}
+\end{pmatrix} = 
+\begin{pmatrix}
     \cos (\tfrac{\theta}{2}) &\sin(\tfrac{\theta}{2})\\[0.5ex]
     -\sin(\tfrac{\theta}{2}) &\cos(\tfrac{\theta}{2})
-\end{matrix} 
-\right)
+\end{pmatrix} 
 \, 
-\left(
-\begin{matrix}
+\begin{pmatrix}
     \hat{x}_1\\[0.5ex]
     \hat{x}_2
-\end{matrix}
-\right)
+\end{pmatrix}
 \end{equation}
 
-Or:
-\[\hat{y}_1+i\hat{y}_2 = (\hat{x}_1+\hat{x}_2)\, e^{-i\frac{\theta}{2}}\]
+Or, using Euler's formula:
+\begin{equation}\label{eqn:13-rotated-quadrature-operator-squeezed-euler}
+\hat{y}_1+i\hat{y}_2 = (\hat{x}_1+\hat{x}_2)\, e^{-i\frac{\theta}{2}}
+\end{equation}
+
 The variances should be:
-\[\begin{cases}
-    \Delta \hat{y}_1^2 = \frac{1}{4}e^{-2r_s}\\[0.5ex]
-    \Delta \hat{y}_2^2 = \frac{1}{4}e^{+2r_s}
-\end{cases}\]
+\begin{equation}\label{eqn:13-squeezed-state-rotated-quadrature-variances}
+\begin{cases}
+    \Delta \hat{y}_1^2 = \tfrac{1}{4}e^{-2r_s}\\[0.6ex]
+    \Delta \hat{y}_2^2 = \tfrac{1}{4}e^{+2r_s}
+\end{cases}
+\end{equation}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_75.pdf}
 \end{figure}
 
-For a generic squeeze state $\ket{\alpha,\epsilon}$, we have:
+For a generic squeezed state $\ket{\alpha,\epsilon}$, we have:
 \[\braket{\hat{y}_1+i\hat{y}_2} = \alpha e^{-i\frac{\theta}{2}}\]
 \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_76.pdf}
 \end{figure}
 
-Error ellipse is the same as for the squeeze vacuum, although displaced by $\alpha$. If we consider the single mode $\hat{E}$:
+Error ellipse is the same as for the squeezed vacuum, although displaced by $\alpha$. If we consider the single mode $\hat{E}$:
 \[
 \hat{E}(t) = A_0 \sin(kz)\bigl(\hat{a}e^{-i\omega t}+\hat{a}^\dagger e^{i\omega t}\bigr)
 \]
@@ -430,18 +641,22 @@ Then at some other phases we must have:
 
 Distribution of noise in the $\vec{E}$ for squeezed states is:
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_77.pdf}
-        \caption{}
-    \end{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_77.pdf}
+    \caption{Initially squeezed in $\hat{x}_1$ (\emph{phase squeezed})}
+\end{figure}
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_78.pdf}
-        \caption{}
-    \end{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images_in_pdf/13-/Grafico_78.pdf}
+    \caption{Initially squeezed in $\hat{x}_2$ (\emph{amplitude squeezed})}
+\end{figure}
 
 It can be shown that:
 
 \input{tables/13-/squeezed-states.tex}
 
-This means that $\Delta n_{A.S.} < \Delta n = \sqrt{\overline{n}}$ and $\Delta \theta_{P.S.} < \Delta \theta$, \textbf{the photon number fluctuation are sub-poissonian in a squeezed state.}
+\calloutinfo{%
+    This means that $\Delta n_{A.S.} < \Delta n = \sqrt{\overline{n}}$ and $\Delta \theta_{P.S.} < \Delta \theta$, \textbf{the photon number fluctuation are sub-poissonian in an amplitude squeezed state.}
+
+    On the other hand, in phase squeezed states, it is the phase uncertainty that is reduced relative to the coherent state.
+}

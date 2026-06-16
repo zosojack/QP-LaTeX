@@ -21,9 +21,11 @@
 \titlespacing{\chapter}{0pt}{-20pt}{30pt} % Margini e spaziatura
 \titleformat{\chapter}[display]
   {\normalfont\LARGE\bfseries} % Formattazione del testo
-  {Capitolo \thechapter} % "Capitolo #" allineato a sinistra
+  {Chapter \thechapter} % "Capitolo #" allineato a sinistra
   {20pt} % Spaziatura tra "Capitolo #" e il titolo
   {\Huge} % Nessun comando aggiuntivo per il titolo
+
+\titlespacing{\section}{0pt}{30pt}{10pt} % Aumento margine in alto per sezioni
 
 %-----------------------------------------------------------------------------------
 
@@ -54,6 +56,10 @@
 % preferisco la linea sotto alla freccia alta per i vettori, ! per ora lascio la freccia su !
 %\renewcommand{\vec}[1]{\underline{\hspace{-0.1em}#1\hspace{-0.05em}}}
 
+% per numeri romani
+\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1}} % Maiuscoli
+\newcommand{\rnum}[1]{\romannumeral #1}                        % Minuscoli
+
 % per i differenziali
 \renewcommand{\d}{\mathrm{d}}
 
@@ -67,6 +73,12 @@
 % il \Re è solo la R, a me piace di più Re
 \renewcommand{\Re}{\mathfrak{Re}}
 \renewcommand{\Im}{\mathfrak{Im}}
+
+% per la matrice identità
+\newcommand{\identity}{\mathds{1}}
+
+% per le imposizioni
+\newcommand{\musteq}{\stackrel{!}{=}}
 
 % vettori colonna
 \newcommand{\vectorTwo}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}

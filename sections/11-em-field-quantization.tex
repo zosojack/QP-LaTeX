@@ -441,10 +441,28 @@ we can introduce the dimensionless \textbf{quadrature operators} defined at $t=0
 \hat{x}_2 = \dfrac{1}{2i}\left(\hat{a}-\hat{a}^\dagger\right),
 \end{cases}
 \hspace{1.5ex} \implies \hspace{1.5ex} 
-[\hat{x}_1,\hat{x}_2]=\dfrac{i}{2}.
+\bigl[\hat{x}_1,\hat{x}_2\bigr]=\dfrac{i}{2}.
 \end{equation}
 
-By expanding the exponentials via Euler's formula, the time-dependent electric field can be elegantly expressed as:
+\callout{Commutator between quadrature operators}{%
+\begin{proof}
+    To perform the computation, it is just needed to remember the commutation relation between the ladder operators, $[\hat{a},\hat{a}^\dagger] = 1$ (Eqn.~\ref{eqn:11-commutation-annihilation-creation-operators}):
+
+\begin{equation}
+\begin{split}
+\bigl[\hat{x}_1,\hat{x}_2\bigr] &= \frac{1}{4i} 
+\left[
+    \hat{a} + \hat{a}^\dagger, \hat{a} - \hat{a}^\dagger
+\right] = \\[0.5ex]
+&= \frac{1}{4i} \left[\hat{a}, -\hat{a}^\dagger\right] + 
+\frac{1}{4i} \left[\hat{a}^\dagger, \hat{a}\right] = \\[0.5ex]
+&= \frac{1}{4i} \left(-1 - 1\right) = \frac{i}{2}
+\end{split}
+\end{equation}
+\end{proof}
+}
+
+By expanding the exponentials via Euler's formula, \hl{the time-dependent electric field can be elegantly expressed as}:
 \begin{equation}\label{eqn:11-electric-field-quadrature-operators}
 \hat{E}_x(z,t) = 2A_0\sin(kz) \bigl[ \hat{x}_1\cos(\omega t) + \hat{x}_2\sin(\omega t) \bigr].
 \end{equation}
@@ -485,7 +503,7 @@ The operators $\hat{x}_1$ and $\hat{x}_2$ correspond to the two field quadrature
 
 We can now evaluate the product of their quantum uncertainties. By explicit substitution of the scaling factors, the mass $m$ and frequency $\omega$ cancel out perfectly:
 \begin{align}
-    \Delta \hat{x}_1 \, \Delta \hat{x}_2 &= \sqrt{\frac{m\omega }{2\hbar}}\, \Delta\hat{q} \, \sqrt{\frac{1}{2m\hbar \omega}}\, \Delta \hat{p} = \nonumber \\
+    \Delta \hat{x}_1 \, \Delta \hat{x}_2 &= \sqrt{\frac{m\omega }{2\hbar}}\, \Delta\hat{q} \, \sqrt{\frac{1}{2m\hbar \omega}}\, \Delta \hat{p} = \nonumber \\[0.5ex]
     &= \frac{1}{2\hbar}\, \Delta\hat{q} \, \Delta\hat{p}. \label{eqn:11-quadrature-uncertainty-derivation}
 \end{align}
 
@@ -493,7 +511,7 @@ By invoking the fundamental Heisenberg uncertainty relation for canonical coordi
 \begin{equation}\label{eqn:11-quadrature-uncertainty-final}
     \Delta \hat{x}_1 \, \Delta \hat{x}_2 \geq \frac{1}{2\hbar} \left( \frac{\hbar}{2} \right) \implies \Delta \hat{x}_1 \, \Delta \hat{x}_2 \geq \frac{1}{4}.
 \end{equation}
-\hspace{1ex}
+
 \calloutinfo{%
 This is the physical insight of Equation~\eqref{eqn:11-quadrature-uncertainty-final} to be remembered: the field quadratures are strictly subject to a minimum-uncertainty relation. This implies that the \textbf{amplitude and the phase} (and subsequently, the field direction in the complex amplitude plane) \textbf{cannot be simultaneously known} with arbitrary precision. Any attempt to squeeze the noise in one quadrature will inevitably amplify the fluctuations in the orthogonal one.
 }
@@ -507,6 +525,8 @@ The expectation values of the quadrature operators on the \textbf{number state} 
 \begin{equation}\label{eqn:11-number-state-quadratures-expectation-values}
     \braket{n|\hat{x}_1|n} = \braket{n|\hat{x}_2|n} =0
 \end{equation}
+
+\vspace{0.25ex}
 
 \callout{Proof for $\hat{x}_1$}{%
 \begin{proof}
