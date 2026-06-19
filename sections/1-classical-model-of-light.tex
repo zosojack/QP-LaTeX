@@ -33,19 +33,25 @@ We now modify the experiment by introducing a Mach-Zehnder interferometer, which
 The beam is split at $S_1$ into two paths, reflected by $S_2$ and $S_3$, and finally recombined at $S_4$. If the interferometer is perfectly balanced, each arm carries half of the incident field amplitude and each detector receives $25\%$ of total radiation.
 \begin{itemize}
      \item Path A
-     \[S_1 \to S_2 \to S_4 \hspace{1.5cm}\frac{1}{2}\cdot  E_0 \cdot \cos(\omega t + \phi_1)\]
+     \[S_1 \to S_2 \to S_4 \hspace{1.5cm}\frac{1}{2}\,  E_0 \, \cos(\omega t + \phi_1)\]
      \item Path B
-     \[S_1 \to S_3 \to S_4 \hspace{1.5cm} \frac{1}{2} E_0 \cdot \cos(\omega t + \phi_2)\]
+     \[S_1 \to S_3 \to S_4 \hspace{1.5cm} \frac{1}{2} E_0 \, \cos(\omega t + \phi_2)\]
 \end{itemize}
 
 Denoting the phases accumulated along the two paths by $\phi_1$ and $\phi_2$, the two contributions at the output interfere and we measure the time average on a sufficiently long period of time:
 \begin{itemize}
 \item Intensity incident on $S_1$: 
-\[C \cdot E^2(x,t) \implies I = C \cdot E_0^2 \cdot \braket{\cos^2(\omega t)} \propto \frac{1}{2} E_0^2\]
+\[C \, E^2(x,t) \implies 
+I = C \, E_0^2 \, \braket{\cos^2(\omega t)} \propto \frac{1}{2} E_0^2
+\]
+
 Where $C$ is a normalization constant.
 \item Intensity incident on $D_1$:
-\[I_{D_1} = C \cdot E_0^2 \cdot \braket{[\cos(\omega t + \phi_1)+\cos(\omega t + \phi_2)]^2}
-= \frac{1}{2} I_0 \cdot \bigl(1+\cos(\Delta \phi)\bigr) \hspace{1cm} \Delta \phi = \phi_1-\phi_2\]
+\[I_{D_1} = C \, E_0^2 \, \braket{[\cos(\omega t + \phi_1)+\cos(\omega t + \phi_2)]^2}
+= \frac{1}{2} I_0 \, 
+\bigl(1+\cos(\Delta \phi)\bigr) 
+\hspace{2ex} 
+\Delta \phi = \phi_1-\phi_2\]
 \end{itemize}
 
 But the total intensity is given by:
@@ -54,7 +60,7 @@ But the total intensity is given by:
 So we obtain:
 \begin{equation}
 \begin{cases}
-    I_{D_1} = \frac{I_0}{2}\bigl(1+\cos\Delta\phi\bigr)\\
+    I_{D_1} = \frac{I_0}{2}\bigl(1+\cos\Delta\phi\bigr)\\[0.5ex]
     I_{D_2} = \frac{I_0}{2}\bigl(1-\cos\Delta\phi\bigr)
 \end{cases}
 \end{equation}
@@ -62,7 +68,7 @@ So we obtain:
 where $I_0$ is the input intensity. Equivalently,
 \begin{equation}
 \begin{cases}
-I_{D_1}=I_0\cos^2\!\left(\frac{\Delta\phi}{2}\right)\\
+I_{D_1}=I_0\cos^2\!\left(\frac{\Delta\phi}{2}\right)\\[0.5ex]
 I_{D_2}=I_0\sin^2\!\left(\frac{\Delta\phi}{2}\right)
 \end{cases}
 \end{equation}

@@ -6,7 +6,7 @@ In this subsection we discuss \textbf{wire polarizers}, which are optical compon
 Suppose we have a wave propagating along the $z$-axis and consider a superposition of two linearly polarized waves:
 \begin{equation*}
 \begin{cases}
-    \vec{E}_1(z,t) = (E_{0,x},0,0)\cos(kz-\omega t+\phi_1)\\
+    \vec{E}_1(z,t) = (E_{0,x},0,0)\cos(kz-\omega t+\phi_1)\\[0.5ex]
     \vec{E}_2(z,t) = (0,E_{0,y},0)\cos(kz-\omega t+\phi_2)
 \end{cases}
 \end{equation*}
@@ -22,6 +22,7 @@ I_{\text{incoming}} \propto |\vec{E}_0|^2
 \longrightarrow
 I_{\text{transmitted}} \propto E_{0,x}^2
 \]
+
 More generally, if $\theta$ is the angle between the incoming polarization direction and the transmission axis, the transmitted intensity follows \textbf{Malus' law}:
 \begin{equation}\label{eqn:malus-law}
 I_{\text{transmitted}} = I_{\text{in}} \cos^2(\theta).
@@ -32,7 +33,9 @@ Now suppose that, instead of a laser, we use a discharge lamp as the light sourc
 \question{What happens if we send linearly polarized light, reduced to the single-photon level, through the polarizer? }{Suppose a detector is placed after the polarizer and we send $N$ photons:
 \begin{itemize}
     \item If $\theta = 0^\circ$, all the photons pass through the polarizer.
+    
     \item If $\theta = 90^\circ$, no photons are transmitted.
+    
     \item For a generic angle $\theta$, the expected number of transmitted photons is $N\cos^2\theta$, while the remaining $N\sin^2\theta$ are not transmitted.
 \end{itemize}}
 
@@ -49,21 +52,29 @@ Now consider a $50{:}50$ beam splitter (BS). In an ideal balanced beam splitter,
 Random numbers have many applications:
 \begin{enumerate}
     \item \textbf{Cryptography}, where randomness is essential for secure keys and protocols;
+    
     \item \textbf{Scientific simulations}, especially Monte Carlo methods for complex systems;
+    
     \item \textbf{Lotteries and gambling}, where fairness requires unbiased random outcomes;e
+    
     \item \textbf{Internet of Things and digital security}, where random keys are used to protect sensitive data.
 \end{enumerate}
 We can distinguish two main classes of random number generators:
 \begin{itemize}
     \item \textbf{Software generators:} these are algorithms that take an initial value, called a seed, and produce a sequence of numbers by iteration. Since the sequence is deterministic and eventually periodic, these are usually called \emph{pseudo-random} number generators. They are inexpensive and useful in many numerical applications, but they are not truly random.
+    
     \item \textbf{Generators based on physical processes:} these use a physical source of randomness.
     \begin{itemize}
         \item \textbf{Classical physical processes:} examples include coin tossing or dice rolling. In principle, classical dynamics is deterministic, but in practice the outcome is unpredictable because the initial conditions are not known with sufficient accuracy.
+        
         \item \textbf{Quantum physical processes:} in this case randomness is intrinsic.
         \begin{enumerate}
             \item \textbf{Radioactive decay:} the decay time of a nucleus is fundamentally random, although this kind of source is not always practical or scalable for commercial devices.
+            
             \item \textbf{Optical quantum processes:} these are already used in commercial quantum random number generators. For example, a single-photon source sent through a $50{:}50$ beam splitter produces a click in $D_1$ or $D_2$ with equal probability. One may assign the value $1$ when $D_1$ clicks and $0$ when $D_2$ clicks.
+            
             \item \textbf{Vacuum fluctuations of the electromagnetic field:} these can also be exploited as a source of quantum randomness.
+            
             \item \textbf{Photon-number fluctuations in light sources:} these are known as shot noise. Suppose to take a light source as a LED that goes on a matrix of detectors, each one receive a different amount of photons, as a random process. We measure the number of photons for each pixel and compute the average number. We impose to zero each pixel with number of photons below the average and reconstruct an image of fluctuations of photon numbers. Then we use apposite convertors to extract sequence of random numbers.
         \end{enumerate}
     \end{itemize}

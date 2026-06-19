@@ -8,7 +8,9 @@ We can model classical light sources as a large number of atoms emitting indepen
 Observe that:
 \begin{itemize}
     \item A light source has a finite spectral width, meaning that its frequency is not perfectly constant. It also exhibits \textbf{intensity noise}, which implies that the amplitude of the light changes in time due to fluctuations in the number of emitting atoms and to random phase jumps in the field emitted by individual atoms. These features allow us to distinguish between classical and quantum light sources;
+    
     \item Studying line-shapes with spectroscopy also provides information about the energy levels of the emitting system;
+    
     \item Measuring the statistical properties of light gives access to temporal noise traces, which are relevant in quantum optics, as well as to coherence and correlation functions.
 \end{itemize}
 
@@ -28,16 +30,19 @@ L_c = c\,\tau_c.
 
 Suppose that:
 \begin{itemize}
-     \item The light source is a \textbf{gas discharge lamp}, where the atoms are excited and emit radiation. The emission is determined by the spread in atomic velocities (\emph{Doppler broadening}) and by random emission events. Such a source is called a \textbf{chaotic light source}, like thermal cavities and filament lamps.
+    \item The light source is a \textbf{gas discharge lamp}, where the atoms are excited and emit radiation. The emission is determined by the spread in atomic velocities (\emph{Doppler broadening}) and by random emission events. Such a source is called a \textbf{chaotic light source}, like thermal cavities and filament lamps.
+    
      \item We assume that \textbf{collision broadening dominates}, which causes elastic phase interruptions. Atoms emit trains of electromagnetic waves, but \hl{collisions shift the energy levels and interrupt the radiation emission}. After a collision, emission resumes with the same characteristics as before, but the phase is now unrelated to the previous one. 
      Let us assume that the collision time is short, so that we can neglect the radiation emitted during the collision itself.
-     \item Suppose to assume that the \textbf{polarization is fixed} and we can focus light in order to obtain a well defined collimated beam far away from the source. 
+     
+    \item Suppose to assume that the \textbf{polarization is fixed} and we can focus light in order to obtain a well defined collimated beam far away from the source. 
  \end{itemize}
+
 The total amplitude of the electric field, sum of the emission of each atom independent one to another, would be:
 \begin{equation}\label{eqn:6-total-field}
 \begin{split}
-E_{\text{tot}}(t) &= \sum_{i=1}^{N} E_i(t) = \\
-&= E_0 e^{-i\omega_0 t}\sum_{i=1}^{N} e^{i\phi_i(t)} = \\
+E_{\text{tot}}(t) &= \sum_{i=1}^{N} E_i(t) = \\[0.5ex]
+&= E_0 e^{-i\omega_0 t}\sum_{i=1}^{N} e^{i\phi_i(t)} = \\[0.5ex]
 &= E_0 e^{-i\omega_0 t}\, a(t)\, e^{i\phi(t)}
 \end{split}
 \end{equation}
@@ -50,16 +55,16 @@ Notice that at optical frequencies, $f\approx 10^{15}\,\text{Hz}$, the electric 
 We now introduce the \textbf{Poynting vector} for a wave propagating along the generic direction $\hat{k}$:
 \begin{equation}\label{eqn:6-generic-em-wave}
 \begin{cases}
-    \vec{E} = \vec{E}_0 \cos(\vec{k}\cdot\vec{r}-\omega t)\\
+    \vec{E} = \vec{E}_0 \cos(\vec{k}\cdot\vec{r}-\omega t)\\[0.5ex]
     \vec{B} = \vec{B}_0 \cos(\vec{k}\cdot\vec{r}-\omega t)
 \end{cases}
 \end{equation}
 \begin{equation}\label{eqn:6-poynting-vector}
 \begin{split}
-\vec{S}&=\frac{1}{\mu_0}\,\vec{E}\times\vec{B}=\\
+    \vec{S}&=\frac{1}{\mu_0}\,\vec{E}\times\vec{B}=\\[0.5ex]
     &=\varepsilon_0 c^2\,\vec{E}\times\vec{B}=
     \varepsilon_0 c^2\,\vec{E}_0\times\vec{B}_0\,
-    \cos^2(\vec{k}\cdot\vec{r}-\omega t)=\\
+    \cos^2(\vec{k}\cdot\vec{r}-\omega t)=\\[0.5ex]
     &=\varepsilon_0 c^2 E_0 B_0 \cos^2(\vec{k}\cdot\vec{r}-\omega t) \hat{k}
 \end{split}
 \end{equation}
@@ -143,6 +148,7 @@ Along the path $z_1$ we have $\Re[E(t)] = E_1(t)$, while along the path $z_2$ we
 \begin{equation}\label{eqn:6-delays}
     \Delta t_1 = \frac{z_1}{c}, \qquad \Delta t_2 = \frac{z_2}{c}
 \end{equation}
+
 if 
 \[
 t_1 = t - \frac{z_1}{c}, \qquad t_2 = t - \frac{z_2}{c}.
@@ -313,7 +319,7 @@ If we come back on M.Z. interferometer, where we stopped at Equation~\ref{eqn:6-
     \biggl[
         \langle |E(t_1)|^2\rangle_T + \langle |E(t_2)|^2\rangle_T + 
         2\,\Re \langle E^*(t_1)E(t_2)\rangle_T
-    \biggr] =\\
+    \biggr] =\\[0.75ex]
     &= \frac{1}{2}\varepsilon_0c\, |\refl|^2|\tran|^2\ 
     \langle |E(t)|^2\rangle\,
     \left[2+2\,\Re\frac{\langle E^*(t_1)E(t_2)\rangle}{\langle |E(t)|^2\rangle}\right]

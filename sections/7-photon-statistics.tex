@@ -203,9 +203,9 @@ By definition $\Delta n < \sqrt{\overline{n}}$, it has not a classical equivalen
 Suppose to have a light beam where every time interval between the photons is the same $\Delta x = c \Delta t$. In a time $T$ the photocount will be:
 \begin{equation}\label{eqn:7-sub-poissonian-photocounts}
 N = \mathrm{int} 
-\bigl(
-    \eta \cdot \frac{T}{\Delta t}
-\bigr)
+\left(
+    \eta \, \frac{T}{\Delta t}
+\right)
 \end{equation}
 \begin{figure}[H]
     \centering
@@ -293,13 +293,13 @@ If we define $P_n(t,\tau)$ as the probability that $n$ photocounts occur in the 
 \begin{split}
     a&.
     \begin{cases}
-    a_1.\ n \text{ events} \hspace{0.55cm} &t \to t+\tau\\
+    a_1.\ n \text{ events} \hspace{0.55cm} &t \to t+\tau\\[0.5ex]
     a_2.\ 0 \text{ events}              &t+\tau \to t+\tau+\d\tau
     \end{cases}
     \\[1ex]
     b&.
     \begin{cases}
-        b_1.\ n-1 \text{ events} &t \to t+\tau\\
+        b_1.\ n-1 \text{ events} &t \to t+\tau\\[0.5ex]
         b_2.\ 1 \text{ event}    &t+\tau \to t+\tau+\d\tau
     \end{cases}
 \end{split}
@@ -310,7 +310,7 @@ hence:
 \begin{alignedat}{3}
     a&.
     \begin{cases}
-        P(a_1) = P_n(t,\tau)\\
+        P(a_1) = P_n(t,\tau)\\[0.5ex]
         P(a_2) = 1 - p(t+\tau)\,\d\tau
     \end{cases}
     &&\implies\quad 
@@ -318,7 +318,7 @@ hence:
     \\[1ex]
     b&.
     \begin{cases}
-        P(b_1) = P_{n-1}(t,\tau)\\
+        P(b_1) = P_{n-1}(t,\tau)\\[0.5ex]
         P(b_2) = p(t+\tau)\,\d\tau
     \end{cases}
     &&\implies\quad 
@@ -330,8 +330,9 @@ The total probability is then
 \begin{equation}\label{eqn:7-photon-statistics-total-probability}
 \begin{split}
     P_n(t,\tau+d\tau) 
-    &= P(a) + P(b) = \\
-    &= P_n(t,\tau)\,[1-p(t+\tau)\,d\tau] + P_{n-1}(t,\tau)\,p(t+\tau)\,\d\tau = \\
+    &= P(a) + P(b) = \\[0.5ex]
+    &= P_n(t,\tau)\,[1-p(t+\tau)\,d\tau] + 
+    P_{n-1}(t,\tau)\,p(t+\tau)\,\d\tau = \\[0.5ex]
     &= P_n(t,\tau) - \eta I(t+\tau)P_n(t,\tau)\,\d\tau +
     \eta I(t+\tau)P_{n-1}(t,\tau)\,\d\tau,
 \end{split}
@@ -341,7 +342,7 @@ where in the last step we used the definition of $p(t)$ from Equation~\ref{eqn:7
 \begin{equation}\label{eqn:7-photon-statistics-differential-equation}
 \begin{split}
     \odv{P_n(t,\tau)}{\tau} &\equiv
-    \frac{P_n(t,\tau+d\tau) - P_n(t,\tau)}{\d\tau} =\\ 
+    \frac{P_n(t,\tau+d\tau) - P_n(t,\tau)}{\d\tau} =\\[0.5ex]
     &= \eta\,I(t+\tau)\,[P_{n-1}(t,\tau)-P_n(t,\tau)]
 \end{split}
 \end{equation}
@@ -434,26 +435,29 @@ We can calculate $P_n$ in the limit $d\tau \to 0$, starting from the differentia
 
 \hl{If $n=0$, then $P_{n-1}=0$}, just as we saw in the proof for $n=0$ in the previous box, we have:
 \begin{align}\label{eqn:7-photon-statistics-constant-intensity-n0}
-\odv{P_0}{\tau} &= -C\,P_0 ; \\
-\frac{\d P_0}{P_0} &= -C\,\d\tau; \nonumber\\
+\odv{P_0}{\tau} &= -C\,P_0 ; \\[0.5ex]
+\frac{\d P_0}{P_0} &= -C\,\d\tau; \nonumber\\[0.5ex]
 \int_{1}^{P_0(T)} \frac{\d P_0}{P_0} &= -C \int_{0}^{T} \d\tau;
-\hspace{2em} \tag*{n.b.: $P_0(0)=1$}\\
-\vspace{2ex} \ln{P_0(T)} &= -CT; \nonumber \\
+\hspace{2em} \tag*{n.b.: $P_0(0)=1$}\\[0.5ex]
+\vspace{2ex} \ln{P_0(T)} &= -CT; \nonumber \\[0.75ex]
 \vspace{2ex} P_0(T) &= e^{-CT}.
 \end{align}
 
 \hl{For $n\geq 1$}, multiplying both sides of the Eqn.~\ref{eqn:7-photon-statistics-constant-intensity-differential-equation} by $Ce^{CT}$, we can reverse the Leibniz rule for differentiation:
 \begin{equation}\label{eqn:7-photon-statistics-constant-intensity-recursive-step}
 \begin{split}
-    \odv{P_n}{\tau} e^{CT} + C\,P_n e^{CT} &= C\,P_{n-1} e^{CT};\\
-    \odv{(P_n e^{CT})}{\tau} &= C\,P_{n-1} e^{CT};
+    \odv{P_n}{\tau} e^{CT} + C\,P_n e^{CT} 
+    &= C\,P_{n-1} e^{CT};\\[0.5ex]
+    \odv{(P_n e^{CT})}{\tau} 
+    &= C\,P_{n-1} e^{CT};
 \end{split}
 \end{equation}
 
 then we can integrate both sides from $0$ to $T$:
 \begin{align}
 e^{CT} \int_{P_n(0)}^{P_n(T)} \d P_n &= 
-\int_0^T \d\tau\, C\,e^{C\tau}\,P_{n-1}(\tau); \tag*{n.b.: $P_n(0)=0$}\\
+\int_0^T \d\tau\, C\,e^{C\tau}\,P_{n-1}(\tau); 
+\tag*{n.b.: $P_n(0)=0$}\\[0.5ex]
 P_n(T) &= e^{-CT}\int_0^T \d\tau\, C\,e^{C\tau}\,P_{n-1}(\tau).
 \label{eqn:7-photon-statistics-constant-intensity-recursive-step-2}
 \end{align}
@@ -463,9 +467,9 @@ Then the \eqref{eqn:7-photon-statistics-constant-intensity-recursive-step-2} can
 \begin{split}
     P_1(T) &= e^{-CT}\int_0^T \d\tau\, C\,e^{C\tau}\,P_0(\tau)
     = e^{-CT} C\,\int_0^T \d\tau
-    = e^{-CT}\,CT;\\
+    = e^{-CT}\,CT;\\[0.5ex]
     P_2(T) &= e^{-CT}\int_0^T \d\tau\, C\,e^{C\tau}\,P_1(\tau)
-    = e^{-CT}\,\frac{(CT)^2}{2};\\
+    = e^{-CT}\,\frac{(CT)^2}{2};\\[0.5ex]
     &\ \ \vdots \\
     P_n(T) &= e^{-CT}\,\frac{(CT)^n}{n!}.
 \end{split}
@@ -566,6 +570,7 @@ We now connect the photodiode to a load resistor and measure the output voltage 
 \[
 V(t)=i(t)\,R_L.
 \]
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{images_in_pdf/7-/Grafico_32.pdf}
@@ -610,6 +615,7 @@ If we analyze the noise in the frequency domain by Fourier transforming the sign
 
     \item \textbf{High-frequency cut-off:} the noise spectrum eventually decreases to zero because of the finite \textbf{detection response time} $\tau_D$, which limits the bandwidth of the detector.
 \end{itemize}
+
 If we consider an ideal coherent light source, we know that the photon statistics are Poissonian, as proved in the \emph{classical stable wave example} (Sub-Section~\ref{subsubsec:7-photon-statistics-classical-stable-wave}). This is reflected in the number of photogenerated charges, for which
 \[
 (\Delta N)^2 = \langle N\rangle.

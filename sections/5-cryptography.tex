@@ -1,6 +1,10 @@
 % da spostare più avanti
 \section{Cryptography}\label{sec:5-cryptography}
 
+\calloutwarn{%
+    This document follows the chronological order in which the topics were presented during the lectures; even if this section about cryptography is presented here in the first chapter, we strongly recommend to return to it after having read the third chapter. In particular, after the brief introduction to quantum computing given in Section~\ref{subsec:17-quantum-computing-overview}. 
+}
+
 In modern cryptography, security is often based on practical computational constraints. A key example is \textbf{RSA encryption}, which relies on the difficulty of factoring large integers and is widely used in internet security. In RSA, the sender and receiver generate a \textbf{public key} and a \textbf{private key} respectively: the public key is shared openly and used to encrypt the message, while the private key is kept secret and used to decrypt it.
 
 \subsection{Classical key distribution}\label{subsec:5-classical-key-distribution}
@@ -167,13 +171,13 @@ The measurement operators associated with the two bases can be written as
 So that, for example, the action of $\hat{M}_+$ on the $+$ and $\times$ basis states is:
 \begin{equation}\label{5-measurement-operators-action}
 \begin{cases}
-\hat{M_+} \ket{H} = 1 \cdot \ket{H}\\
+\hat{M_+} \ket{H} = 1 \cdot \ket{H}\\[0.5ex]
 \hat{M_+} \ket{V} = -1 \cdot \ket{V}
 \end{cases}
 \hspace{1cm}
 \begin{cases}
 \hat{M_+} \ket{D_+} = 
-\tfrac{1}{\sqrt{2}} \left(\ket{H} -\ket{V}\right) \equiv \ket{D_-}\\ 
+\tfrac{1}{\sqrt{2}} \left(\ket{H} -\ket{V}\right) \equiv \ket{D_-}\\[0.5ex]
 \hat{M_+} \ket{D_-} = 
 \tfrac{1}{\sqrt{2}} \left(\ket{H} +\ket{V}\right) \equiv \ket{D_+}
 \end{cases}
@@ -200,10 +204,10 @@ If Alice reveals the first bit as $(+,0)$ then an intercept--resend attack by Ev
 \begin{equation}\label{5-eve-attack}
 A(+,0) \implies
 \begin{cases}
-E[P=50\%, +,0] \implies B[P=100\%, +,0] \implies P_{\text{tot}} = 50\% \\
+E[P=50\%, +,0] \implies B[P=100\%, +,0] \implies P_{\text{tot}} = 50\% \\[2ex]
 E[P=50\%, \times, (0,1)] \implies
 \begin{cases}
-B[P=50\%, +,0] \implies P_{\text{tot}} = 25\% \\
+B[P=50\%, +,0] \implies P_{\text{tot}} = 25\% \\[0.5ex]
 B[P=50\%, +,1] \implies P_{\text{tot}} = 25\%
 \end{cases}
 \end{cases}
@@ -215,14 +219,17 @@ P_{\text{detected}} = 25\%,
 \qquad
 P_{\text{undetected}} = 75\%.
 \]
+
 If Eve attacks $n$ independent bits, the probability of remaining undetected is
 \[
 P_{\text{undetected}} = \left(\frac{3}{4}\right)^n,
 \]
+
 so the \textbf{probability of detecting} Eve is
 \[
 P_{\text{detected}} = 1 - \left(\frac{3}{4}\right)^n.
 \]
+
 For sufficiently large $n$, this probability becomes very close to $1$.
 
 Eve's not the only source of error, others are:
@@ -239,13 +246,19 @@ All these will increase the number of discarded bits and a overall reduction of 
 \question{Which is the right number of bits?}{%
 This is given by \textbf{Shannon's Noisy Channel Coding Theorem:} 
 \begin{equation}\label{5-shannon}
-N_{needed} = N \cdot [-\epsilon\cdot log_2(\epsilon)-(1-\epsilon)\cdot log_2(1-\epsilon)]
+N_\text{needed} = N \, [-\epsilon\, \log_2(\epsilon)-(1-\epsilon)\, \log_2(1-\epsilon)]
 \end{equation}
+
 where $N =$ total number of bits and $\epsilon = $ error propagation, if 
-\[\epsilon \to + \infty \implies N_{needed} \to +\infty\] 
+\[
+\epsilon \to + \infty 
+\implies
+N_\text{needed} \to +\infty
+\] 
+
 which means that we need to make sure that:
 \begin{equation}\label{5-shanon-condition}
-    \epsilon << \epsilon_{Eve}
+    \epsilon << \epsilon_\text{Eve}
 \end{equation}
 }
 

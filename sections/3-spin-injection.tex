@@ -2,7 +2,7 @@
 
 \subsection{Introduction}
 
-In this section we discuss how light can be used to manipulate spins inside a solid--state material.
+In this section we discuss how light can be used to manipulate spins inside a solid-state material.
 
 We start by considering a semiconductor and the energy dispersion around the center of the Brillouin zone, $\Gamma \equiv (0,0,0)$, where the band structure is typically divided into two main parts:
 \begin{itemize}
@@ -18,14 +18,14 @@ Let us assume the following conditions:
     \item subsidiary minima at $k \neq 0$ can be neglected.
 \end{enumerate}
 
-\question{From the band structure alone, can we conclude that the material is magnetic?}{The answer is no, because in the absence of an external magnetic field the electronic states are spin degenerate. In particular, the conduction band states are doubly degenerate, corresponding to spin--up $(m_s=+1/2)$ and spin--down $(m_s=-1/2)$.}
+\question{From the band structure alone, can we conclude that the material is magnetic?}{The answer is no, because in the absence of an external magnetic field the electronic states are spin degenerate. In particular, the conduction band states are doubly degenerate, corresponding to spin-up $(m_s=+1/2)$ and spin-down $(m_s=-1/2)$.}
 
 \subsection{Optical spin orientation}
 
 \subsubsection{Light can carry angular momentum}
-A net spin population can be created by using circularly polarized light. This mechanism is widely exploited in quantum technologies, such as spin--photon interfaces, and in spintronics applications such as spin--LEDs and spin lasers.
+A net spin population can be created by using circularly polarized light. This mechanism is widely exploited in quantum technologies, such as spin-photon interfaces, and in spintronics applications such as spin-LEDs and spin lasers.
 
-\calloutinfo{Circularly polarized light carries angular momentum along the propagation direction. In particular, right-- and left--handed circular polarizations, usually denoted by $\sigma^+$ and $\sigma^-$, correspond to angular momentum $\pm \hbar$, respectively, depending on the handedness convention.}
+\calloutinfo{Circularly polarized light carries angular momentum along the propagation direction. In particular, right- and left-handed circular polarizations, usually denoted by $\sigma^+$ and $\sigma^-$, correspond to angular momentum $\pm \hbar$, respectively, depending on the handedness convention.}
 
 A circularly polarized electric field can be viewed as the superposition of two orthogonal components, $E_x$ and $E_y$, oscillating with a relative phase shift of $\lambda/4$.
 \begin{figure}[H]       
@@ -37,14 +37,17 @@ When a single electron absorbs circularly polarized light, the response is an ac
 \[
 P_1 = \odv{\varepsilon}{t}, \qquad P_2 = \tau \omega,
 \]
+
 where $\tau$ is the torque and $\omega$ the angular frequency. Since torque is the rate of change of angular momentum on average, one has
 \[
 P_1 = P_2 \implies \odv{\varepsilon}{t} = \omega \odv{L}{t},
 \]
+
 so that the absorbed angular momentum per quantum of energy is
 \[
 \varepsilon = \hbar \omega \implies L = \frac{\varepsilon}{\omega} = \hbar.
 \]
+
 Therefore, each circularly polarized photon carries angular momentum $\pm \hbar$, with the sign determined by the helicity.
 \begin{figure}[H]       
     \centering            
@@ -60,8 +63,9 @@ For this reason, we distinguish two \textbf{helicity states} of circularly polar
 \subsubsection{Transition rates}
 In the semiconductor:
 \begin{itemize}
-    \item The conduction band is $s$--like, so $\ell=0$ and the states are characterized by $j=\ell+s = 1/2$.
-    \item The valence band is $p$--like and, after including spin--orbit coupling, is described by the total angular momentum $j$, with $\ell-s \leq j \leq |\ell+s| \implies j = \frac{1}{2},\frac{3}{2}$: the states split into $j=3/2$ (HH and LH) and $j=1/2$ (SO).
+    \item The conduction band is $s$-like, so $\ell=0$ and the states are characterized by $j=\ell+s = 1/2$.
+    
+    \item The valence band is $p$-like and, after including spin-orbit coupling, is described by the total angular momentum $j$, with $\ell-s \leq j \leq |\ell+s| \implies j = \frac{1}{2},\frac{3}{2}$: the states split into $j=3/2$ (HH and LH) and $j=1/2$ (SO).
 \end{itemize} 
 The corresponding magnetic quantum number satisfies $-j \leq m_j \leq +j$ along the quantization axis, which is taken to be the propagation direction.
 \begin{figure}[H]       
@@ -80,16 +84,19 @@ where, in the electric dipole approximation,
 \qquad
 \vec{d} = -e\vec{r},
 \]
+
 with $\vec{r}=\hat{x}+\hat{y}+\hat{z}$ being the position vector of the electron and $\vec{E}_0$ the electric field amplitude.
 
 The wave function can be factorized into a radial part and an angular part,
 \[
 \psi_{n,\ell,m}(r,\theta,\phi) = R_{n,\ell}(r)\,Y_{\ell,m}(\theta,\phi),
 \]
+
 so that the matrix element is obtained by integrating over the full spatial coordinates.
 \[
 M = \int_0^{+\infty} \d{r} \cdot \int_0^{\pi} \d\theta \cdot \int_0^{2\pi} \d\phi \cdot \psi_f^*\cdot  \hat{H} \cdot \psi_i\cdot r^2 \sin^2(\theta)
 \]
+
 The dot product between the dipole operator and the electric field is proportional to:
 
 \begin{equation}
@@ -102,13 +109,14 @@ The dot product between the dipole operator and the electric field is proportion
 Then, in polar coordinates:
 \begin{equation}
 \begin{cases}
-    x=r\cos\phi\\
+    x=r\cos\phi\\[0.5ex]
     y=r\sin\phi
 \end{cases}
 \implies
 x \pm i y = r(\cos\phi \pm i \sin\phi) 
 \equiv r e^{\pm i\phi}
 \end{equation}
+
 The angular part of the matrix element is therefore proportional to:
 \[
 M_{\sigma^{\pm}} \propto \int_0^{2\pi} d\phi\cdot  Y_{\ell',m'}^*(\theta,\phi) \cdot e^{\pm i \phi} \cdot Y_{\ell,m}(\theta,\phi) \propto \int_0^{2\pi} d\phi\cdot  e^{-im'\phi} \cdot e^{\pm i \phi} \cdot e^{im\phi} \ne 0
@@ -122,6 +130,7 @@ which is nonzero only if the selection rule
 is satisfied. Since spin cannot change under electric dipole transitions, the condition on $m_\ell$ results in one on $m_j$; circularly polarized light couples only to specific transitions:
 \begin{itemize}
     \item $m_j' = m_j + 1, \Delta m_j = +1 \iff \sigma^+$ transition;
+    
     \item $m_j' = m_j - 1, \Delta m_j = -1 \iff \sigma^-$ transition.
 \end{itemize}
 For this reason, only a restricted set of optical transitions is allowed.
@@ -135,6 +144,7 @@ Using Fermi's golden rule, stating the transition rate is proportional to $|M|^2
 \[
 |M_{HH}|^2 = 3|M_{LH}|^2.
 \]
+
 This imbalance means that \hl{transitions involving heavy--hole states are favored over light--hole states}.
 \begin{figure}[H]       
     \centering            
@@ -185,6 +195,7 @@ While analytically modeling this $P_s(E)$ behavior away from the Brillouin zone 
 {(1\cdot n_{\uparrow} + 3\cdot n_{\downarrow}) + (3\cdot n_{\uparrow} + 1\cdot n_{\downarrow})}
 = 25\% = -\frac{P_s}{2},
 \]
+
 where $I^\pm$ denotes the intensity of the luminescence component with helicity $\sigma^\pm$.
 
 This shows that the maximum observable polarization in this simplified bulk picture is $25\%$, although experimentally the measured value is usually smaller.
@@ -197,21 +208,24 @@ The reduction is caused by spin-relaxation mechanisms acting between optical exc
 \[
 \rho_c = \frac{\rho_0}{1+\tau/\tau_s},
 \]
-where $\rho_0$ is the polarization in the absence of spin relaxation, $\tau$ is the carrier lifetime, and $\tau_s$ is the spin--relaxation time. Thus,
+
+where $\rho_0$ is the polarization in the absence of spin relaxation, $\tau$ is the carrier lifetime, and $\tau_s$ is the spin-relaxation time. Thus,
 \begin{itemize}
     \item if $\tau \gg \tau_s$, then $\rho_c \to 0$;
     \item if $\tau \ll \tau_s$, then $\rho_c \to \rho_0$.
 \end{itemize}
 The main spin-relaxation mechanisms are:
 \begin{enumerate}
-    \item \textbf{Dyakonov--Perel mechanism:} it occurs in crystals lacking inversion symmetry. Spin degeneracy is lifted by spin--orbit coupling, which acts as an effective magnetic field $\vec{B}_{\mathrm{eff}}$. The direction of this effective field changes randomly during scattering events, leading to spin depolarization through a sequence of random precessions. This mechanism does not occur in centrosymmetric materials such as Si or Ge.
-    \item \textbf{Elliott--Yafet mechanism:} it is important in narrow-gap semiconductors. Strong spin--orbit coupling mixes spin-up and spin-down components in the wave functions, so scattering events can cause spin flips and reduce the polarization.
-    \item \textbf{Bir--Aharonov--Picus mechanism:} it originates from exchange interaction between electrons and holes, which can induce electron spin flips.
+    \item \textbf{Dyakonov-Perel mechanism:} it occurs in crystals lacking inversion symmetry. Spin degeneracy is lifted by spin-orbit coupling, which acts as an effective magnetic field $\vec{B}_{\mathrm{eff}}$. The direction of this effective field changes randomly during scattering events, leading to spin depolarization through a sequence of random precessions. This mechanism does not occur in centrosymmetric materials such as Si or Ge.
+    \item \textbf{Elliott-Yafet mechanism:} it is important in narrow-gap semiconductors. Strong spin-orbit coupling mixes spin-up and spin-down components in the wave functions, so scattering events can cause spin flips and reduce the polarization.
+    \item \textbf{Bir-Aharonov-Picus mechanism:} it originates from exchange interaction between electrons and holes, which can induce electron spin flips.
 \end{enumerate}
 
-\subsection{Spin injection in low--dimensional structures}
+\subsection{Spin injection in low-dimensional structures}
 
-\question{How can we improve the spin polarization?}{The main limitation in the bulk case is that optical excitation generally involves both HH and LH states, which reduces the achievable polarization. A way to enhance the spin selectivity is to remove the HH--LH degeneracy using low--dimensional structures.}
+\question{How can we improve the spin polarization?}{%
+    The main limitation in the bulk case is that optical excitation generally involves both HH and LH states, which reduces the achievable polarization. A way to enhance the spin selectivity is to remove the HH-LH degeneracy using low-dimensional structures.
+}
 
 A particularly useful example is a quantum well made of alternating \ce{GaAs} and \ce{AlGaAs} layers, where the \ce{GaAs} thickness $t$ is chosen such that
 \[
@@ -250,6 +264,7 @@ In this way one can reach an electron polarization degree
 \[
 P_c = \pm 100\%,
 \]
+
 where the sign depends on the helicity $\sigma^\pm$.
 
 \hl{The key point is that the spin orientation is determined by the helicity of the light.}
@@ -261,6 +276,7 @@ Notice that the splitting of the valence sub-bands suppresses HH-LH mixing and a
 Suppose we send circularly polarized $\sigma^+$ light pulses propagating along the $z$-axis onto a \ce{GaAs} quantum well and then apply an external magnetic field along the $x$-axis, $\vec{B}_{\mathrm{ext}} = B_{\mathrm{ext}} \hat{x}$. 
 
 \calloutinfo{In this situation, the photoexcited spins undergo Larmor precession, so that the expectation value of the spin component along $z$, $\langle \hat{S}_z \rangle$, oscillates in time between positive and negative values. This effect is known as a \textbf{spin quantum beat}.}
+
 \begin{figure}[H]\label{fig:3-spin-quantum-beat}
     \centering            
     \includegraphics[width=0.8\textwidth]{images_in_pdf/3-/Grafico_17.pdf} 
@@ -309,7 +325,7 @@ where the time--evolution operator $U(t) = e^{-i\hat{H}_Z t/\hbar}$ was used. Th
 \left[
 \left(\ket{\uparrow_z}+\ket{\downarrow_z}\right)e^{i\omega_L t/2} +
 \left(\ket{\uparrow_z}-\ket{\downarrow_z}\right)e^{-i\omega_L t/2}
-\right]=\\
+\right]=\\[0.5ex]
 &=\frac{1}{2}
 \left[
 \ket{\uparrow_z}\left(e^{i\omega_L t/2} + e^{-i\omega_L t/2}\right) +
@@ -321,7 +337,7 @@ where the time--evolution operator $U(t) = e^{-i\hat{H}_Z t/\hbar}$ was used. Th
 here, we apply the Euler's formula:
 \begin{equation}\label{eqn:3-euler-formula}
 \begin{cases}
-\cos\alpha = \frac{e^{i\alpha} + e^{-i\alpha}}{2}\\
+\cos\alpha = \frac{e^{i\alpha} + e^{-i\alpha}}{2}\\[0.5ex]
 \sin\alpha = \frac{e^{i\alpha} - e^{-i\alpha}}{2i}
 \end{cases}
 \end{equation}
