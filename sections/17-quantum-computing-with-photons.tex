@@ -173,12 +173,18 @@ As said, all these gates can be thought as some rotations on the Bloch sphere; w
 The gates which operates on two or more qubits are called \textbf{controlled operations}. Suppose to have a 2 input q-bits one is control and the other is target, the gate has no effect on the control q-bit, but performs a unitary operation on the target q-bit conditionally on the state of the control q-bit.
 \textbf{C-NOT gate:} (controlled-not)
 \begin{equation}\label{eqn:16-cnot-gate}
-\hat{C} = \ket{00}\bra{00}+\ket{01}\bra{01}+\ket{10}\bra{11}+\ket{11}\bra{10} = \begin{pmatrix}
-    1&0&0&0\\ 0&1&0&0\\0&0&0&1\\0&0&1&0
+\hat{C} = 
+\ket{00}\bra{00} + \ket{01}\bra{01} +
+\ket{10}\bra{11} + \ket{11}\bra{10} = 
+\begin{pmatrix}
+    1&0&0&0\\ 
+    0&1&0&0\\
+    0&0&0&1\\
+    0&0&1&0
 \end{pmatrix}
 \end{equation}
 
-If the control state is $\ket{0}$ the target state remains unchanged, while if the control state is $\ket{1}$ the target state flips $\ket{0}\to \ket{1}$. 
+If the control state is $\ket{0}$ the target state remains unchanged, while if the control state is $\ket{1}$ the target state flips whatever its initial state is. 
 This gate can be written in a symbolic form as:
 \begin{equation}\label{eqn:16-cnot-circuit}
 \begin{quantikz}
@@ -187,7 +193,7 @@ This gate can be written in a symbolic form as:
 \end{quantikz}
 \end{equation}
 
-Where $\oplus$ is addition modulo $2$.
+Where $\oplus$ is addition modulo $2$ \footnote{For a single-qubit state $\ket{t}$, $t$\in\{0,1\}; if $c=0$ nothing happens, whereas if $c=1$ the possibile outcomes are: $0\oplus 1 = 1$ and $1\oplus 1 = 0$}.
 
 
 \subsection{Optical implementation of quantum gates}\label{subsec:17-optical-implementation-of-quantum-gates}
@@ -309,9 +315,11 @@ Let's unpack the behavior of this system by considering the possible input state
 
 \item[\textbf{CASE \Rnum{1}:}] \hl{both input photons are horizontally polarized}, $\ket{H}_c$ and $\ket{H}_t$. The target qubit passes through the half-wave plate, which acts as a Hadamard transformation sending it to a superposition of horizontal and vertical polarization:
 \begin{equation}
-\ket{H}_c\ket{H}_t \to 
-\frac{1}{\sqrt{2}}\, 
+\ket{H}_c\ket{H}_t 
+\stackrel{\text{\tiny{H.W.P.}}}{\longrightarrow} 
 \ket{H}_c \, 
+\otimes
+\frac{1}{\sqrt{2}}\, 
 \bigl( 
     \ket{H}_t+\ket{V}_t
 \bigr)
@@ -328,7 +336,10 @@ Overall, requiring two u.B.S. reflections, the amplitude of the successful compo
 
 The output state is then:
 \begin{equation}
-\frac{1}{3}\, \frac{1}{\sqrt{2}} \, \ket{H}_c \, \bigl( \ket{H}_t+\ket{V}_t\bigr)
+\frac{1}{3}\, \ket{H}_c \,
+\otimes
+\frac{1}{\sqrt{2}} \,
+\bigl( \ket{H}_t+\ket{V}_t\bigr)
 \end{equation}
 
 But now we have a second H.W.P. acting on the target qubit, making it go back from a superposition to a vertical state: $\tfrac{1}{\sqrt{2}}  \, \bigl( \ket{H}_t+\ket{V}_t\bigr)\to \ket{H}_t$.
@@ -344,7 +355,12 @@ We obtain the initial state, only with a different amplitude; this is the expect
 
 The target qubit passes through the half-wave plate, which acts as a Hadamard transformation:
 \begin{equation}
-\ket{V}_c\ket{H}_t \to \frac{1}{\sqrt{2}}\, \ket{V}_c \, \bigl( \ket{H}_t+\ket{V}_t\bigr)
+\ket{V}_c\ket{H}_t 
+\stackrel{\text{\tiny{H.W.P.}}}{\longrightarrow}
+\ket{V}_c 
+\otimes
+\frac{1}{\sqrt{2}}\,
+\bigl( \ket{H}_t+\ket{V}_t\bigr)
 \end{equation}
 
 \begin{itemize}
@@ -372,15 +388,24 @@ Given the indistinguishability of the photons, we must consider the total amplit
 
 \end{itemize}
 
-We now are left with a superposition of two target states: one in H one in V, with a relative minus sign:
+We now are left with a superposition of two target outcomes: a $\ket{H}_t$ from the \textbf{\Rnum{3}\hspace{0.2ex}b.} case and $\ket{V}_t$ from the \textbf{\Rnum{3}\hspace{0.2ex}a.} case, with a relative minus sign:
 
 \begin{equation}\label{eqn:17-cnot-case-3-pre-hwp}
-\frac{1}{3}\,\frac{1}{\sqrt{2}}\ket{V}_c\, \bigl(\ket{H}_t-\ket{V}_t\bigr)
+\frac{1}{\sqrt{2}}\ket{V}_c\, 
+\otimes
+\frac{1}{3}\,
+\bigl(\ket{H}_t-\ket{V}_t\bigr)
 \end{equation}
 
 After the target qubit passes through the second half-wave plate, its superposition state is sent back to $\ket{V}_t$, and we finally obtain:
 \begin{equation}
-\frac{1}{3}\,\frac{1}{\sqrt{2}}\ket{V}_c\, \bigl(\ket{H}_t-\ket{V}_t\bigr) \to \frac{1}{3}\ket{V}_t\ket{V}_t
+\frac{1}{\sqrt{2}}\ket{V}_c\, 
+\otimes
+\frac{1}{3}\,
+\bigl(\ket{H}_t-\ket{V}_t\bigr)
+\stackrel{\text{\tiny{H.W.P.}}}{\longrightarrow}
+\frac{1}{3}
+\ket{V}_c \ket{V}_t
 \end{equation}
 
 \calloutinfo{%
@@ -401,7 +426,7 @@ Another approach currently being explored is to use a generic entangled state ca
 
 \subsection{Boson sampling}\label{subsec:17-boson-sampling}
 
-Boson sampling is a sampling problem based on indistinguishable photons propagating through a large linear-optical network. In the occupation-number encoding of the photonic modes, one injects $N$ single photons into a device with $M$ modes, with $M \gg N$ in order to reduce the probability of collisions, i.e. the occurrence of more than one photon in the same output mode. The photons are mixed by beam splitters and phase shifters, and the output modes are measured by photon detectors. 
+Boson sampling is a sampling problem based on indistinguishable photons propagating through a large linear-optical network. In the occupation-number encoding of the photonic modes, one injects $N$ single photons into a device with $M$ modes, with $M \gg N$ in order to reduce the probability of collisions, i.e. the occurrence of more than one photon in the same output mode. The \hl{photons are mixed by beam splitters and phase shifters}, and the output modes are measured by photon detectors. 
 
 \calloutinfo{%
     The goal is to \textbf{predict how the photons are distributed} at the output of the interferometer. Because of multi-particle interference, the resulting probability distribution is extremely complex and is believed to be intractable for classical computers.
@@ -447,7 +472,7 @@ which becomes enormous already for moderately large systems. For this reason, la
 
 \subsection{Today's Challenges: Decoherence and Error Correction}
 
-A quantum system is never perfectly isolated, because it must interact with the environment and with external control fields in order to be manipulated and measured. As a consequence, decoherence becomes one of the main limitations for quantum computation. The dominant sources of noise are thermal fluctuations, coupling to phonons, fluctuating electromagnetic fields, charge noise, and other uncontrolled interactions, all of which can destroy phase coherence and reduce the visibility of quantum interference. In practice, both relaxation and dephasing processes limit the number of operations that can be performed before the state is lost. 
+A quantum system is never perfectly isolated, because it must interact with the environment and with external control fields in order to be manipulated and measured. As a consequence, decoherence becomes one of the main limitations for quantum computation. The dominant sources of noise are thermal fluctuations, coupling to phonons, fluctuating electromagnetic fields, charge noise, and other uncontrolled interactions, all of which can destroy phase coherence and reduce the visibility of quantum interference. In practice, \hl{both relaxation and dephasing processes limit the number of operations} (i.e., the number of layers of gates in a quantum circuit) that can be performed before the state is lost. 
 
 A rough estimate of the available computational depth is
 \begin{equation}\label{eqn:17-computational-depth}
@@ -456,12 +481,14 @@ M = \frac{T_{\text{Dephasing}}}{T_{\text{gate}}}
 
 where $T_{\text{Dephasing}}$ is the dephasing time and $T_{\text{gate}}$ is the duration of a single gate operation.
 
-To overcome these limitations, one introduces \textbf{quantum error correction}. A simple parity check on the data qubits does not work directly, because measuring the qubits would collapse the quantum state and destroy the information we want to protect. 
+\hl{To overcome these limitations, one introduces \textbf{quantum error correction}}. A simple parity check on the data qubits does not work directly, because measuring the qubits would collapse the quantum state and destroy the information we want to protect. 
 
-Instead, one encodes the logical information into a larger entangled register  and uses auxiliary \textbf{ancilla} qubits to extract an error syndrome without measuring the logical state itself or use directly a second register called "sacrificial" register to check the fidelity of data. The syndrome can then be processed by a correction algorithm.
+Instead, one encodes the logical information into a larger entangled register and \hl{uses auxiliary \textbf{ancilla} qubits to extract an error syndrome without destroying the logical state} (\emph{non-demolition measurements}) itself or use directly a second register called \say{sacrificial} register to check the fidelity of data. The syndrome can then be processed by a correction algorithm.
 
-If this procedure is implemented consistently, one obtains \textbf{fault-tolerant quantum computing}. The price to pay is a large overhead: more physical qubits, more gates, and a reduction in speed due to the extra correction steps. This overhead is one of the major challenges in scaling quantum computers.
+If this procedure is implemented consistently, one obtains \textbf{fault-tolerant quantum computing}. The price to pay is a large overhead: more physical qubits, more gates, and a reduction in speed due to the extra correction steps. This \hl{overhead is one of the major challenges in scaling quantum computers}.
 
-The current generation of devices is usually described as belonging to the \textbf{Noisy Intermediate-Scale Quantum (NISQ)} era: quantum processors already exist, but they are not yet large or clean enough to support fully fault-tolerant computation or to guarantee a universal quantum advantage for arbitrary tasks. A further practical difficulty is that many quantum platforms require a large number of optical or electronic components that must be precisely aligned and stabilized. For this reason, integrated photonic chips and semiconductor-based architectures are being actively developed as a route toward scalable quantum technologies \cite{art:Arute-2019-quantum-supremacy,art:Acharya-2024-error-correction}.
+The current generation of devices is usually described as belonging to the \textbf{Noisy Intermediate-Scale Quantum (NISQ)} era: \hl{quantum processors already exist, but they are not yet large or clean enough to support fully fault-tolerant computation} or to guarantee a universal quantum advantage for arbitrary tasks. A further practical difficulty is that many quantum platforms require a large number of optical or electronic components that must be precisely aligned and stabilized. For this reason, integrated photonic chips and semiconductor-based architectures are being actively developed as a route toward scalable quantum technologies \cite{art:Arute-2019-quantum-supremacy,art:Acharya-2024-error-correction}.
+
+\vspace{2ex}
 
 \emph{The end.}
