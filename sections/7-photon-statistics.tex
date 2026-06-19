@@ -29,7 +29,7 @@ The \hl{first two types of statistics are consistent with classical theory of li
 \subsection{Poissonian photon statistics}\label{subsec:poissonian-light}
 Suppose we have a \textbf{coherent light} beam:
 \[
-E(x,t) = E_0 \cdot \cos(kx-\omega_0 t + \phi),
+E(x,t) = E_0 \, \cos(kx-\omega_0 t + \phi),
 \]
 
 where $E_0$ and $\phi$ are fixed, and $k = \frac{\omega_0}{c}$.\\
@@ -43,7 +43,7 @@ The answer is \textbf{NO}. Even though the intensity is constant, the arrival ti
 \begin{proof}
 Assume a light beam with constant optical power $P$ and photon flux $\Phi$. Let $\overline{n}$ be the average number of photons within a beam segment of length $L$:
 \[
-\Phi = \frac{P}{\hbar \omega}, \qquad \overline{n} = \Phi \cdot \frac{L}{c}.
+\Phi = \frac{P}{\hbar \omega}, \qquad \overline{n} = \Phi \, \frac{L}{c}.
 \]
 
 Divide the segment $L$ into $N$ sub-intervals, with $N$ large enough that the probability of finding one photon in a given interval is
@@ -54,14 +54,14 @@ p = \frac{\overline{n}}{N},
 while the probability of finding more than one photon in the same interval is negligible. The probability of finding $n$ intervals containing one photon and $N-n$ empty intervals is given by the binomial distribution:
 \[
 \begin{split}
-P(n) &= \frac{N!}{n!(N-n)!}\cdot p^n\cdot (1-p)^{N-n} \\
-&= \frac{N!}{n!(N-n)!}\cdot \left(\frac{\overline{n}}{N}\right)^n \cdot \left(1-\frac{\overline{n}}{N}\right)^{N-n}.
+P(n) &= \frac{N!}{n!(N-n)!}\, p^n\, (1-p)^{N-n} \\
+&= \frac{N!}{n!(N-n)!}\, \left(\frac{\overline{n}}{N}\right)^n \, \left(1-\frac{\overline{n}}{N}\right)^{N-n}.
 \end{split}
 \]
 
 In the limit $N \to \infty$, this expression converges to the \textbf{Poisson distribution}:
 \begin{equation}\label{eqn:7-poisson-distribution}
-P(n) = \frac{1}{n!}\cdot (\overline{n})^n\cdot e^{-\overline{n}}, \qquad n=0,1,2,\dots
+P(n) = \frac{1}{n!}\, (\overline{n})^n\, e^{-\overline{n}}, \qquad n=0,1,2,\dots
 \end{equation}
 
 \end{proof}
@@ -69,14 +69,17 @@ P(n) = \frac{1}{n!}\cdot (\overline{n})^n\cdot e^{-\overline{n}}, \qquad n=0,1,2
 Notice that:
 \begin{itemize}
     \item The distribution peaks around $\overline{n}$;
+    
     \item The variance is
     \[
     (\Delta n)^2 \coloneqq \sigma^2 = \sum_{n=0}^{\infty} (n-\overline{n})^2 P(n) = \overline{n};
     \]
+    
     \item Standard deviation is
     \[
     \Delta n \coloneqq \sigma = \sqrt{\overline{n}},
     \]
+
     which shows that fluctuations increase with the mean photon number, while the relative fluctuations decrease as $1/\sqrt{\overline{n}}$.
 \end{itemize}
 \subsection{Super Poissonian light}\label{subsec:7-super-poissonian-light}
@@ -99,8 +102,8 @@ According to Boltzmann statistics, the probability that there are $n$ photons in
 \begin{equation}
 P_{\omega}(n) = 
 \frac{e^{-\beta E_n}}{\sum_{n=0}^{\infty} e^{-\beta E_n}}= 
-\frac{e^{-\beta \cdot \hbar \omega \cdot n}}
-{\sum_{n=0}^{\infty} e^{-\beta \cdot \hbar \omega \cdot n}}
+\frac{e^{-\beta \, \hbar \omega \, n}}
+{\sum_{n=0}^{\infty} e^{-\beta \, \hbar \omega \, n}}
 \end{equation}
 
 which is something in the form of $\frac{x^n}{\sum x^n}$, where:
@@ -111,8 +114,8 @@ which is something in the form of $\frac{x^n}{\sum x^n}$, where:
 so that:
 \begin{equation}
 P_{\omega}(n) = 
-e^{-\beta\cdot \hbar \omega \cdot n}\  
-\left(1-e^{-\beta\cdot \hbar \omega}\right),
+e^{-\beta\, \hbar \omega \, n}\  
+\left(1-e^{-\beta\, \hbar \omega}\right),
 \end{equation}
 
 \begin{figure}[H]
@@ -122,7 +125,7 @@ e^{-\beta\cdot \hbar \omega \cdot n}\
 
 Observe that the maximum of the distribution is at $n=0$ and that the probability decreases exponentially with $n$. From this expression one obtains the mean photon number and the \textbf{Bose-Einstein distribution}:
 \[
-P_{\omega}(n)= \frac{1}{\overline{n}+1}\cdot \left(\frac{\overline{n}}{\overline{n}+1}\right)^n,
+P_{\omega}(n)= \frac{1}{\overline{n}+1}\, \left(\frac{\overline{n}}{\overline{n}+1}\right)^n,
 \qquad
 \overline{n}=\frac{1}{e^{\beta\hbar\omega}-1}.
 \]
@@ -249,12 +252,12 @@ We can define:
 
 \item  the \textbf{average number of counts} recorded during a time interval $T$: 
 \begin{equation}\label{eqn:7-average-counts}
-M(T) = \eta \cdot \Phi \cdot T = \eta \cdot \frac{P}{\hbar \omega} \cdot T;
+M(T) = \eta \, \Phi \, T = \eta \, \frac{P}{\hbar \omega} \, T;
 \end{equation}
 
 \item the corresponding \textbf{average count rate}:
 \begin{equation}\label{eqn:7-average-count-rate}
-R = \frac{M(T)}{T} = \eta \cdot \frac{P}{\hbar \omega} \quad [\text{counts/s}].
+R = \frac{M(T)}{T} = \eta \, \frac{P}{\hbar \omega} \quad [\text{counts/s}].
 \end{equation}
 
 \end{itemize}

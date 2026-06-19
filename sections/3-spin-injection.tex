@@ -94,16 +94,16 @@ The wave function can be factorized into a radial part and an angular part,
 
 so that the matrix element is obtained by integrating over the full spatial coordinates.
 \[
-M = \int_0^{+\infty} \d{r} \cdot \int_0^{\pi} \d\theta \cdot \int_0^{2\pi} \d\phi \cdot \psi_f^*\cdot  \hat{H} \cdot \psi_i\cdot r^2 \sin^2(\theta)
+M = \int_0^{+\infty} \d{r} \, \int_0^{\pi} \d\theta \, \int_0^{2\pi} \d\phi \, \psi_f^*\,  \hat{H} \, \psi_i\, r^2 \sin^2(\theta)
 \]
 
 The dot product between the dipole operator and the electric field is proportional to:
 
 \begin{equation}
-\vec{e}_{\sigma^{\pm}} = \frac{1}{\sqrt{2}}\cdot (\hat{x} \pm i\hat{y})
+\vec{e}_{\sigma^{\pm}} = \frac{1}{\sqrt{2}}\, (\hat{x} \pm i\hat{y})
 \implies 
 \vec{e}_{\sigma^{\pm}} \cdot \vec{r} =
-\frac{1}{\sqrt{2}}\cdot (x \pm i y)
+\frac{1}{\sqrt{2}}\, (x \pm i y)
 \end{equation}
 
 Then, in polar coordinates:
@@ -119,7 +119,7 @@ x \pm i y = r(\cos\phi \pm i \sin\phi)
 
 The angular part of the matrix element is therefore proportional to:
 \[
-M_{\sigma^{\pm}} \propto \int_0^{2\pi} d\phi\cdot  Y_{\ell',m'}^*(\theta,\phi) \cdot e^{\pm i \phi} \cdot Y_{\ell,m}(\theta,\phi) \propto \int_0^{2\pi} d\phi\cdot  e^{-im'\phi} \cdot e^{\pm i \phi} \cdot e^{im\phi} \ne 0
+M_{\sigma^{\pm}} \propto \int_0^{2\pi} d\phi\,  Y_{\ell',m'}^*(\theta,\phi) \, e^{\pm i \phi} \, Y_{\ell,m}(\theta,\phi) \propto \int_0^{2\pi} d\phi\,  e^{-im'\phi} \, e^{\pm i \phi} \, e^{im\phi} \ne 0
 \]
 
 which is nonzero only if the selection rule
