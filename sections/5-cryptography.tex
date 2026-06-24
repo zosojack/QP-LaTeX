@@ -21,6 +21,7 @@ Bob performs the following steps:
     d \equiv e^{-1} \pmod{\varphi(n)}.
     \]
 \end{itemize}
+
 Here $\gcd$ denotes the greatest common divisor, i.e. the largest positive integer dividing both numbers. The notation $x \equiv y \pmod{n}$ means that $x-y$ is an integer multiple of $n$.
 
 Alice then does the following:
@@ -39,12 +40,16 @@ M \equiv C^d \pmod{n}.
 The security of RSA relies on the fact that Eve knows $n$ and $e$, but in order to find $d$ she would need to factorize $n$ into $p$ and $q$. For \textbf{sufficiently large} $n$ this is \textbf{computationally infeasible} with classical algorithms. However, quantum computers would be able to solve the factoring problem efficiently using Shor's algorithm.
 
 \subsection{Quantum key distribution}\label{subsec:quantum-key-distribution}
+
+\subsubsection{Polarized beam splitters}
+
 Suppose that a beam of light is sent onto a \textbf{polarized beam splitter}. Three cases are relevant:
 \begin{itemize}
     \item \textbf{State} $\ket{H}$: the light is horizontally polarized and is transmitted to detector $D_1$.
     \item \textbf{State} $\ket{V}$: the light is vertically polarized and is reflected to detector $D_2$.
     \item \textbf{State} $\ket{\theta}$: the light is prepared in a superposition of horizontal and vertical polarization, so both detectors may receive a signal with different probabilities.
 \end{itemize}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{images_in_pdf/5-/Grafico_21.pdf}
@@ -55,22 +60,29 @@ Suppose that a beam of light is sent onto a \textbf{polarized beam splitter}. Th
 \end{figure}
 
 For a generic linearly polarized state,
-\[
-\ket{\theta} = \cos(\theta)\ket{H} + \sin(\theta)\ket{V},
-\]
+\begin{equation}\label{eqn:5-generic-linear-polarization}
+    \ket{\theta} = \cos(\theta)\ket{H} + \sin(\theta)\ket{V}
+\end{equation}
+
 the probabilities of obtaining the two outcomes are
 \[
 P_H = |\braket{H|\theta}|^2 = \cos^2(\theta),
 \qquad
 P_V = |\braket{V|\theta}|^2 = \sin^2(\theta).
 \]
+
 For a diagonal state, we define
 \[
-\ket{D_+} = \frac{1}{\sqrt{2}}\left(\ket{H}+\ket{V}\right),
+\ket{D_+} \coloneqq
+\frac{1}{\sqrt{2}}\left(\ket{H}+\ket{V}\right),
 \qquad
-\ket{D_-} = \frac{1}{\sqrt{2}}\left(\ket{H}-\ket{V}\right).
+\ket{D_-} \coloneqq
+\frac{1}{\sqrt{2}}\left(\ket{H}-\ket{V}\right).
 \]
+
 These states are orthogonal and form another basis of the polarization Hilbert space. In this way, polarized photons can be used to encode one bit of information.
+
+\subsubsection{Eavesdropping and the cloning problem}
 
 The key idea is that Alice and Bob want to communicate, while Eve wants to intercept the message. If Eve measures a photon in the same basis used by Alice, she can reproduce the state correctly. However, if she measures in the wrong basis, the state is disturbed. When she re--sends the photon to Bob, her intervention becomes detectable. Thus, \hl{the measurement process modifies the quantum state itself}, revealing Eve's presence.
 
@@ -80,25 +92,30 @@ The key idea is that Alice and Bob want to communicate, while Eve wants to inter
 \[
 \ket{\psi}\ket{X} \longrightarrow \ket{\psi}\ket{\psi}.
 \]
+
 Assume that the machine works for the basis states $\ket{H}$ and $\ket{V}$:
 \[
 \ket{H}\ket{X} \longrightarrow \ket{H}\ket{H},
 \qquad
 \ket{V}\ket{X} \longrightarrow \ket{V}\ket{V}.
 \]
+
 Because quantum evolution is linear, it should also work for the superposition
 \[
 \ket{D_+} = \frac{1}{\sqrt{2}}\left(\ket{H}+\ket{V}\right).
 \]
+
 Linearity would imply
 \[
 \ket{D_+}\ket{X} \longrightarrow \frac{1}{\sqrt{2}}\left(\ket{H}\ket{H}+\ket{V}\ket{V}\right),
 \]
+
 whereas perfect cloning would require
 \[
 \ket{D_+}\ket{X} \longrightarrow \ket{D_+}\ket{D_+}
 = \frac{1}{2}\left(\ket{H}\ket{H}+\ket{H}\ket{V}+\ket{V}\ket{H}+\ket{V}\ket{V}\right).
 \]
+
 These two results are different, so a universal cloning machine cannot exist.
 
 \callout{No cloning theorem - Alternative proof}{%

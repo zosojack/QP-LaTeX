@@ -183,20 +183,27 @@ P_s = P_s(E=\hbar\omega).
 
 \subsection{Experimental determination of spin polarization}
 
-While analytically modeling this $P_s(E)$ behavior away from the Brillouin zone center is highly complex due to these band-mixing effects, we can experimentally determine the spin polarization by exploiting optical techniques. Since the selection rules governing absorption must also dictate the radiative recombination of spin-polarized carriers, we can rely on \textbf{circularly polarized photoluminescence} (PL) as a direct probe. By measuring the luminescence polarization, and assuming that the same transition rules remain valid for recombination:
+While analytically modeling this $P_s(E)$ behavior away from the Brillouin zone center is highly complex due to these band-mixing effects, we can experimentally determine the spin polarization by exploiting optical techniques. Since the selection rules governing absorption must also dictate the radiative recombination of spin-polarized carriers, we can rely on \textbf{circularly polarized photoluminescence} (PL) as a direct probe. \hl{By measuring the luminescence polarization, and assuming that the same transition rates remain valid for recombination}:
 \begin{figure}[H]       
     \centering            
     \includegraphics[width=0.8\textwidth]{images_in_pdf/3-/Grafico_13.pdf} 
 \end{figure}
 
-\[
+\begin{equation}\label{eqn:3-circular-polarization-photoluminescence}
 \rho_c = \frac{I^+ - I^-}{I^+ + I^-}
 = \frac{(1\cdot n_{\uparrow} + 3\cdot n_{\downarrow}) - (3\cdot n_{\uparrow} + 1\cdot n_{\downarrow})}
-{(1\cdot n_{\uparrow} + 3\cdot n_{\downarrow}) + (3\cdot n_{\uparrow} + 1\cdot n_{\downarrow})}
-= 25\% = -\frac{P_s}{2},
-\]
+{(1\cdot n_{\uparrow} + 3\cdot n_{\downarrow}) + (3\cdot n_{\uparrow} + 1\cdot n_{\downarrow})},
+\end{equation}
 
-where $I^\pm$ denotes the intensity of the luminescence component with helicity $\sigma^\pm$.
+where $I^\pm$ denotes the intensity of the luminescence component with helicity $\sigma^\pm$. \hl{If now we consider the case of a $\sigma^+$ circularly polarized excitation, we have a net spin-down population, so that $n_{\downarrow} = 3 n_{\uparrow}$}, and the resulting circular polarization of the emitted light is:
+\begin{equation}\label{eqn:3-circular-polarization-photoluminescence-2}
+\rho_c = 
+\frac{(1 n_{\uparrow} + 3\cdot3 n_{\uparrow}) -
+(3 n_{\uparrow} + 1\cdot3 n_{\uparrow})}%
+{(1 n_{\uparrow} + 3\cdot3 n_{\uparrow}) +
+(3 n_{\uparrow} + 1\cdot3 n_{\uparrow})} =
+\frac{10-6}{10+6} = \frac{4}{16} = 25\%.
+\end{equation}
 
 This shows that the maximum observable polarization in this simplified bulk picture is $25\%$, although experimentally the measured value is usually smaller.
 \begin{figure}[H]       
@@ -345,7 +352,7 @@ here, we apply the Euler's formula:
 and we finally obtain:
 \begin{equation}\label{eqn:3-spin-superposition-time-evolution-final}
 \ket{\uparrow_z(t)} =
-\ket{\uparrow_x}\cos\left(\frac{\omega_L t}{2}\right) + i\ket{\downarrow_x}\sin\left(\frac{\omega_L t}{2}\right)
+\ket{\uparrow_z}\cos\left(\frac{\omega_L t}{2}\right) + i\ket{\downarrow_z}\sin\left(\frac{\omega_L t}{2}\right)
 \end{equation}
 
 \calloutwarn{This means that the system oscillates coherently between spin--up and spin--down components.}
